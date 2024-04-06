@@ -1,0 +1,1029 @@
+pos.general,pos.categoria,numero,nombres,categoria,estado,tiempo,localidad_origen
+1,1,1779,John Deivis,Masculino,Finalizado,1:06:12,Santa Fe
+2,2,1074,Nicolás Alejandro,Masculino,Finalizado,1:06:40,Antonio Narino
+3,3,1213,Iván,Masculino,Finalizado,1:07:16,Antonio Narino
+4,4,1663,Franklin,Masculino,Finalizado,1:07:40,Puente Aranda
+5,5,722,Jeisson,Masculino,Finalizado,1:09:59,Rafael Uribe Uribe
+6,6,901,Carlos Mario,Masculino,Finalizado,1:11:33,San Cristobal
+7,7,718,Víctor Hugo,Masculino,Finalizado,1:12:31,Tunjuelito
+8,8,844,Rodrigo,Masculino,Finalizado,1:13:20,Bosa
+9,9,1794,Sergio Alejandro,Masculino,Finalizado,1:13:26,Rafael Uribe Uribe
+10,10,1156,Oscar Andrés,Masculino,Finalizado,1:14:11,Sumapaz
+11,11,262,Fidel,Masculino,Finalizado,1:14:48,Ciudad Bolivar
+12,12,1765,Jefferson Andres,Masculino,Finalizado,1:16:14,Santa Fe
+13,13,491,Carlos Mario,Masculino,Finalizado,1:19:16,La Candelaria
+14,1,1409,Maria Fernanda,Femenino,Finalizado,1:19:29,Santa Fe
+15,2,1784,Laura Gerardin,Femenino,Finalizado,1:19:42,Usaquen
+16,14,444,Guiovanni Andres,Masculino,Finalizado,1:19:59,Fontibon
+17,15,1684,Andres Felipe,Masculino,Finalizado,1:21:28,Chapinero
+18,3,1781,Sonia Catalina,Femenino,Finalizado,1:22:01,Rafael Uribe Uribe
+19,16,454,Iván Andrés,Masculino,Finalizado,1:22:40,Tunjuelito
+20,17,920,José Ricardo,Masculino,Finalizado,1:22:43,Chapinero
+21,18,476,Juan David,Masculino,Finalizado,1:22:54,Rafael Uribe Uribe
+22,19,588,Juan Sebastian,Masculino,Finalizado,1:22:56,Engativa
+23,20,99,John Mario,Masculino,Finalizado,1:23:41,Engativa
+24,21,482,Jorge Wilson,Masculino,Finalizado,1:23:45,Usaquen
+25,22,490,Daniel Eduardo,Masculino,Finalizado,1:24:34,Los Martires
+26,4,1780,Angela,Femenino,Finalizado,1:24:46,Teusaquillo
+27,23,334,Alexander Hernan,Masculino,Finalizado,1:24:59,Fontibon
+28,24,1080,José Norbey,Masculino,Finalizado,1:25:06,San Cristobal
+29,25,236,Jimmy,Masculino,Finalizado,1:25:38,Bosa
+30,26,980,Victor Mauricio,Masculino,Finalizado,1:25:42,Antonio Narino
+31,27,1236,Diego Armando,Masculino,Finalizado,1:26:03,Fontibon
+32,28,1523,Oscar Ferney,Masculino,Finalizado,1:26:11,Usme
+33,29,451,Jorge Luis,Masculino,Finalizado,1:26:12,Usaquen
+34,30,630,John Fredy,Masculino,Finalizado,1:26:27,Puente Aranda
+35,31,122,Mauricio,Masculino,Finalizado,1:26:35,Antonio Narino
+36,32,531,Andrés Felipe,Masculino,Finalizado,1:26:38,Los Martires
+37,33,284,Melquisedec,Masculino,Finalizado,1:26:45,Engativa
+38,34,404,Yohan Andrés,Masculino,Finalizado,1:27:00,La Candelaria
+39,35,1060,Juan Carlos,Masculino,Finalizado,1:27:19,Bosa
+40,36,1203,John Alexander,Masculino,Finalizado,1:27:19,Santa Fe
+41,37,1283,Jhon Alexander,Masculino,Finalizado,1:27:33,Engativa
+42,38,779,Cesar Asdrubal,Masculino,Finalizado,1:27:39,Tunjuelito
+43,39,1166,Jorge Andrés,Masculino,Finalizado,1:27:45,Chapinero
+44,40,839,Edwin Alberto,Masculino,Finalizado,1:28:00,Usaquen
+45,41,1774,Alexander,Masculino,Finalizado,1:28:07,Los Martires
+46,42,1169,Emerson,Masculino,Finalizado,1:28:11,Usme
+47,43,865,Juan Felipe,Masculino,Finalizado,1:28:36,Rafael Uribe Uribe
+48,44,1304,Francisco,Masculino,Finalizado,1:28:40,Los Martires
+49,45,1084,Juan Nicolás,Masculino,Finalizado,1:28:44,Engativa
+50,46,239,Brayam,Masculino,Finalizado,1:28:46,Rafael Uribe Uribe
+51,47,1375,Álvaro Antonio,Masculino,Finalizado,1:28:58,Antonio Narino
+52,48,783,David Esteban,Masculino,Finalizado,1:29:12,Santa Fe
+53,49,1512,Ismael Antonio,Masculino,Finalizado,1:29:27,Engativa
+54,50,1685,Diego Oswaldo,Masculino,Finalizado,1:29:28,Bosa
+55,51,172,William Alexander,Masculino,Finalizado,1:29:49,Rafael Uribe Uribe
+56,52,1800,Fermin,Masculino,Finalizado,1:29:53,Barrios Unidos
+57,53,1528,Wilmar Efren,Masculino,Finalizado,1:30:08,Los Martires
+58,54,6,Cristhian,Masculino,Finalizado,1:30:11,Rafael Uribe Uribe
+59,55,1520,Nestor Javier,Masculino,Finalizado,1:30:12,Usaquen
+60,56,15,Fernando,Masculino,Finalizado,1:30:20,Chapinero
+61,57,469,Fabian,Masculino,Finalizado,1:30:24,Suba
+62,58,1777,Julian Alexis,Masculino,Finalizado,1:30:25,Ciudad Bolivar
+63,59,1291,Javier,Masculino,Finalizado,1:30:31,Bosa
+64,60,198,Alvaro José,Masculino,Finalizado,1:30:36,Bosa
+65,61,913,Ruddyan Rachid,Masculino,Finalizado,1:30:47,Santa Fe
+66,5,830,Adriana Katherine,Femenino,Finalizado,1:30:52,Ciudad Bolivar
+67,62,1086,Juan Carlos,Masculino,Finalizado,1:31:21,Antonio Narino
+68,63,387,Luis Felipe,Masculino,Finalizado,1:31:23,Barrios Unidos
+69,64,22,Fabio Andres,Masculino,Finalizado,1:31:23,Bosa
+70,65,1333,Hermes Andres,Masculino,Finalizado,1:31:27,Chapinero
+71,66,130,Alexánder,Masculino,Finalizado,1:32:00,Antonio Narino
+72,67,1008,Germán,Masculino,Finalizado,1:32:07,Usaquen
+73,68,33,Johan,Masculino,Finalizado,1:32:10,Usaquen
+74,69,1395,Jairo,Masculino,Finalizado,1:32:15,Fontibon
+75,70,73,Juan Manuel,Masculino,Finalizado,1:32:30,Chapinero
+76,71,894,Juan Manuel,Masculino,Finalizado,1:32:43,Teusaquillo
+77,72,421,Abelardo,Masculino,Finalizado,1:32:45,Bosa
+78,73,1511,Red Mauricio,Masculino,Finalizado,1:32:46,Usme
+79,74,266,Henry,Masculino,Finalizado,1:32:47,Santa Fe
+80,75,1675,Andres,Masculino,Finalizado,1:33:02,Los Martires
+81,76,1638,Juan Sebastián,Masculino,Finalizado,1:33:08,Los Martires
+82,77,1505,Mauricio,Masculino,Finalizado,1:33:10,Suba
+83,78,1081,Daniel Alejandro,Masculino,Finalizado,1:33:13,Usme
+84,79,1852,Jairo,Masculino,Finalizado,1:33:21,Usaquen
+85,80,547,Eduar German,Masculino,Finalizado,1:33:32,Suba
+86,81,943,Cristian David,Masculino,Finalizado,1:33:33,Engativa
+87,82,1183,Jaime Alberto,Masculino,Finalizado,1:33:36,Los Martires
+88,83,979,Carlos Andrés,Masculino,Finalizado,1:33:38,Ciudad Bolivar
+89,84,132,Daniel Ernesto,Masculino,Finalizado,1:33:49,Rafael Uribe Uribe
+90,85,1428,Diego Fernando,Masculino,Finalizado,1:33:52,Kennedy
+91,86,168,José Jacinto,Masculino,Finalizado,1:33:53,Santa Fe
+92,87,456,Jhon Alexander,Masculino,Finalizado,1:34:08,Engativa
+93,88,331,Hector Mauricio,Masculino,Finalizado,1:34:10,Los Martires
+94,89,653,Juan David,Masculino,Finalizado,1:34:18,Suba
+95,90,1867,Marco David,Masculino,Finalizado,1:34:27,Antonio Narino
+96,91,1285,Fabian Andres,Masculino,Finalizado,1:34:29,Usaquen
+97,92,325,Jose Antonio,Masculino,Finalizado,1:34:31,Barrios Unidos
+98,93,514,John Helman,Masculino,Finalizado,1:34:32,Antonio Narino
+99,94,991,Alejandro,Masculino,Finalizado,1:34:38,Teusaquillo
+100,6,509,Fany De Jesús,Femenino,Finalizado,1:34:42,Santa Fe
+101,95,1597,Frank Alejandro,Masculino,Finalizado,1:34:43,Santa Fe
+102,96,628,Jesus Alexander,Masculino,Finalizado,1:34:50,Teusaquillo
+103,97,390,Cristian Alfonso,Masculino,Finalizado,1:34:55,Barrios Unidos
+104,98,732,Jaime,Masculino,Finalizado,1:35:00,Puente Aranda
+105,99,829,Juan Carlos,Masculino,Finalizado,1:35:01,Kennedy
+106,100,749,Carlos Eduardo,Masculino,Finalizado,1:35:09,Tunjuelito
+107,101,200,José Mario,Masculino,Finalizado,1:35:18,Fontibon
+108,102,96,Nelson Andres,Masculino,Finalizado,1:35:23,Puente Aranda
+109,103,771,Edwin Alonso,Masculino,Finalizado,1:35:24,La Candelaria
+110,104,1152,Oscar Javier,Masculino,Finalizado,1:35:27,Antonio Narino
+111,105,274,Cristian Alejandro,Masculino,Finalizado,1:35:35,Los Martires
+112,106,770,Yeison Alejandro,Masculino,Finalizado,1:35:40,Bosa
+113,107,192,Omar Eduardo,Masculino,Finalizado,1:35:41,La Candelaria
+114,108,111,Edwin Ricardo,Masculino,Finalizado,1:35:42,Usaquen
+115,109,196,Jonathan,Masculino,Finalizado,1:35:50,La Candelaria
+116,110,302,Mario Alejandro,Masculino,Finalizado,1:36:06,La Candelaria
+117,111,1593,Octavio Alberto,Masculino,Finalizado,1:36:09,San Cristobal
+118,112,67,Carlos,Masculino,Finalizado,1:36:10,Usaquen
+119,113,1328,Rodolfo Eduardo,Masculino,Finalizado,1:36:14,Sumapaz
+120,114,221,Victor Alfonso,Masculino,Finalizado,1:36:22,Suba
+121,7,1338,Nubia Pilar,Femenino,Finalizado,1:36:38,Bosa
+122,115,1895,Jose Luis,Masculino,Finalizado,1:36:39,Rafael Uribe Uribe
+123,116,1123,Jhon Jairo,Masculino,Finalizado,1:36:45,La Candelaria
+124,117,423,Jaime,Masculino,Finalizado,1:36:49,Teusaquillo
+125,118,1029,Julian,Masculino,Finalizado,1:37:06,Los Martires
+126,119,214,Gerard Sebastián,Masculino,Finalizado,1:37:09,San Cristobal
+127,120,116,Mauricio,Masculino,Finalizado,1:37:13,Kennedy
+128,121,1403,Johan,Masculino,Finalizado,1:37:15,Fontibon
+129,8,1310,Jhodi Andrea,Femenino,Finalizado,1:37:17,Fontibon
+130,122,179,Juan Sebastian,Masculino,Finalizado,1:37:27,Kennedy
+131,123,781,Bayron Alejandro,Masculino,Finalizado,1:37:38,Usaquen
+132,124,1163,Juan Sebastian,Masculino,Finalizado,1:37:39,San Cristobal
+133,125,1196,Angel Hernando,Masculino,Finalizado,1:37:42,La Candelaria
+134,126,1698,Carlos Humberto,Masculino,Finalizado,1:37:51,Suba
+135,127,790,Javier Alexander,Masculino,Finalizado,1:37:51,Chapinero
+136,128,597,Juan David,Masculino,Finalizado,1:37:53,Kennedy
+137,129,1300,Carlos,Masculino,Finalizado,1:37:54,Ciudad Bolivar
+138,130,113,Luis Felipe,Masculino,Finalizado,1:37:58,Usaquen
+139,131,1256,Wilfer Arturo,Masculino,Finalizado,1:38:01,Puente Aranda
+140,132,1531,Armando,Masculino,Finalizado,1:38:09,Fontibon
+141,133,303,Alexander,Masculino,Finalizado,1:38:20,Kennedy
+142,134,1363,Edmundo Antonio,Masculino,Finalizado,1:38:31,Tunjuelito
+143,135,1503,Gabriel,Masculino,Finalizado,1:38:34,La Candelaria
+144,136,38,Jhon Alexander,Masculino,Finalizado,1:38:39,Kennedy
+145,137,696,Javier,Masculino,Finalizado,1:38:42,Usaquen
+146,138,447,Luis Alfredo,Masculino,Finalizado,1:38:45,Suba
+147,139,1679,Oscar Julio,Masculino,Finalizado,1:38:47,Rafael Uribe Uribe
+148,140,386,Ricardo,Masculino,Finalizado,1:38:50,Kennedy
+149,141,1174,Diego Alejandro,Masculino,Finalizado,1:38:56,Kennedy
+150,142,997,Robinson Antonio,Masculino,Finalizado,1:38:58,Puente Aranda
+151,143,1378,Victor Emilio,Masculino,Finalizado,1:39:01,San Cristobal
+152,144,376,Raul Eduardo,Masculino,Finalizado,1:39:09,Rafael Uribe Uribe
+153,145,220,Lucio Giovanny,Masculino,Finalizado,1:39:11,Usme
+154,146,858,Juan Camilo,Masculino,Finalizado,1:39:12,Chapinero
+155,147,1339,Juan De Dios,Masculino,Finalizado,1:39:12,Barrios Unidos
+156,148,1570,Julián Yesid,Masculino,Finalizado,1:39:14,Suba
+157,149,372,Hollman Adrián,Masculino,Finalizado,1:39:17,Teusaquillo
+158,150,1346,San Nicolás,Masculino,Finalizado,1:39:17,San Cristobal
+159,151,3279,Jesús Antonio,Masculino,Finalizado,1:39:17,Kennedy
+160,152,12,Cristhian Fabian,Masculino,Finalizado,1:39:21,Chapinero
+161,153,805,Camilo,Masculino,Finalizado,1:39:26,Chapinero
+162,154,507,Javier,Masculino,Finalizado,1:39:41,Tunjuelito
+163,155,883,Alexander,Masculino,Finalizado,1:39:42,Los Martires
+164,156,981,Luis Fernando,Masculino,Finalizado,1:39:55,Rafael Uribe Uribe
+165,157,1499,Eider Javier,Masculino,Finalizado,1:39:55,Tunjuelito
+166,158,494,Luis Felipe,Masculino,Finalizado,1:40:07,Usme
+167,159,990,Mario Andrés,Masculino,Finalizado,1:40:09,San Cristobal
+168,160,215,Nelson Eduardo,Masculino,Finalizado,1:40:13,Chapinero
+169,9,994,Laura Melissa,Femenino,Finalizado,1:40:15,Santa Fe
+170,161,1636,Ricardo,Masculino,Finalizado,1:40:16,Suba
+171,162,102,Geoffrey,Masculino,Finalizado,1:40:21,Usaquen
+172,163,1682,José Mauricio,Masculino,Finalizado,1:40:27,Los Martires
+173,164,426,Camilo Eduardo,Masculino,Finalizado,1:40:29,Chapinero
+174,165,895,Esteban,Masculino,Finalizado,1:40:31,Suba
+175,166,1016,Andres,Masculino,Finalizado,1:40:35,Barrios Unidos
+176,167,1268,Samuel,Masculino,Finalizado,1:40:55,La Candelaria
+177,168,1057,Camilo Alberto,Masculino,Finalizado,1:41:15,Puente Aranda
+178,169,816,Santiago,Masculino,Finalizado,1:41:26,Usme
+179,170,207,Mauricio,Masculino,Finalizado,1:41:28,Usaquen
+180,171,2751,Jamilton Orlando,Masculino,Finalizado,1:41:31,Kennedy
+181,172,40,Christian,Masculino,Finalizado,1:41:34,Tunjuelito
+182,173,1605,Juan Carlos,Masculino,Finalizado,1:41:39,Antonio Narino
+183,174,296,Jheisson,Masculino,Finalizado,1:41:51,Antonio Narino
+184,175,984,Juan Paulo,Masculino,Finalizado,1:41:51,Santa Fe
+185,176,692,Jorge Alirio,Masculino,Finalizado,1:41:55,Fontibon
+186,177,10,Javier,Masculino,Finalizado,1:42:04,La Candelaria
+187,178,463,Fabian Dario,Masculino,Finalizado,1:42:12,Puente Aranda
+188,179,917,Sergio De Jesús,Masculino,Finalizado,1:42:18,La Candelaria
+189,180,225,Ruben Dario,Masculino,Finalizado,1:42:25,Kennedy
+190,181,1632,Alejandro,Masculino,Finalizado,1:42:26,Barrios Unidos
+191,182,50,Carlos Andrés,Masculino,Finalizado,1:42:34,Ciudad Bolivar
+192,10,1491,Yuly Andrea,Femenino,Finalizado,1:42:35,Chapinero
+193,183,916,Larry Stivel,Masculino,Finalizado,1:42:37,Engativa
+194,184,1573,Julio Hernando,Masculino,Finalizado,1:42:39,Tunjuelito
+195,185,223,Orley Yesid,Masculino,Finalizado,1:42:47,La Candelaria
+196,186,343,Jacobo,Masculino,Finalizado,1:42:51,Engativa
+197,187,1546,Ricardo,Masculino,Finalizado,1:42:52,Santa Fe
+198,188,1218,Cristian,Masculino,Finalizado,1:42:59,Usme
+199,189,877,Pablo Alejandro,Masculino,Finalizado,1:43:00,Santa Fe
+200,190,47,Luis,Masculino,Finalizado,1:43:02,Suba
+201,191,1198,Fabián Andres,Masculino,Finalizado,1:43:04,Usaquen
+202,192,264,Alberto,Masculino,Finalizado,1:43:29,La Candelaria
+203,193,1829,Iván Enrique,Masculino,Finalizado,1:43:36,La Candelaria
+204,11,328,Melisa,Femenino,Finalizado,1:43:40,La Candelaria
+205,12,364,Martha Susana,Femenino,Finalizado,1:43:45,Rafael Uribe Uribe
+206,194,693,Jota,Masculino,Finalizado,1:43:54,Rafael Uribe Uribe
+207,195,1142,Ruben Dario,Masculino,Finalizado,1:44:07,Barrios Unidos
+208,196,516,Nelver Evelio,Masculino,Finalizado,1:44:21,Antonio Narino
+209,197,275,Héctor Fabio,Masculino,Finalizado,1:44:32,San Cristobal
+210,198,590,Julian,Masculino,Finalizado,1:44:35,La Candelaria
+211,199,1,Wilmar Andres,Masculino,Finalizado,1:44:36,San Cristobal
+212,200,56,Ricardo Andrés,Masculino,Finalizado,1:44:39,Bosa
+213,201,812,Carlos Alberto,Masculino,Finalizado,1:44:41,Ciudad Bolivar
+214,202,1623,Julio César,Masculino,Finalizado,1:44:41,Engativa
+215,203,1321,Luis Felipe,Masculino,Finalizado,1:44:44,Barrios Unidos
+216,204,36,Jairo Ivan,Masculino,Finalizado,1:44:45,Bosa
+217,13,854,Maria Del Pilar,Femenino,Finalizado,1:44:49,Barrios Unidos
+218,205,1210,Jesus Antonio,Masculino,Finalizado,1:44:55,Teusaquillo
+219,206,1215,Torwall Mauricio,Masculino,Finalizado,1:44:58,Fontibon
+220,14,1014,Viviana Andrea,Femenino,Finalizado,1:44:59,Usaquen
+221,207,1666,Juan Guillermo,Masculino,Finalizado,1:45:00,Antonio Narino
+222,208,1792,Edward Jarber,Masculino,Finalizado,1:45:00,Chapinero
+223,209,157,Pedro Alfonso,Masculino,Finalizado,1:45:03,Antonio Narino
+224,15,37,Ana Maria,Femenino,Finalizado,1:45:04,Barrios Unidos
+225,210,340,Javier Alonso,Masculino,Finalizado,1:45:08,La Candelaria
+226,211,1096,Jhon Jairo,Masculino,Finalizado,1:45:11,Engativa
+227,16,218,Zully Katherine,Femenino,Finalizado,1:45:14,Ciudad Bolivar
+228,212,145,Carlos Fernando,Masculino,Finalizado,1:45:15,Engativa
+230,214,1258,José Alfredo,Masculino,Finalizado,1:45:31,Bosa
+231,215,1603,Janier Emigdio,Masculino,Finalizado,1:45:33,Engativa
+232,216,609,Hugo Fernando,Masculino,Finalizado,1:45:38,Teusaquillo
+233,217,1138,Victor Alfonso,Masculino,Finalizado,1:45:47,Fontibon
+234,218,1537,Wiliam Alberto,Masculino,Finalizado,1:45:49,Los Martires
+235,219,252,William,Masculino,Finalizado,1:45:49,San Cristobal
+236,220,457,Juan Diego,Masculino,Finalizado,1:45:50,Engativa
+237,221,1891,Alexander,Masculino,Finalizado,1:45:52,Bosa
+238,222,1707,Gerardo,Masculino,Finalizado,1:45:59,Usme
+239,223,1468,Victor Manuel Rodriguez,Masculino,Finalizado,1:46:00,Rafael Uribe Uribe
+240,224,682,Edgar,Masculino,Finalizado,1:46:03,Puente Aranda
+241,225,87,Julián,Masculino,Finalizado,1:46:03,San Cristobal
+242,226,836,Fernando,Masculino,Finalizado,1:46:07,Fontibon
+243,227,965,Jaiver Ernesto,Masculino,Finalizado,1:46:07,Engativa
+244,228,537,Carlos Adrián,Masculino,Finalizado,1:46:09,Los Martires
+245,229,330,Diego Alejandro,Masculino,Finalizado,1:46:13,Usme
+246,230,1431,Jorge Armando,Masculino,Finalizado,1:46:16,Los Martires
+247,231,1652,Hector Jaime,Masculino,Finalizado,1:46:17,Antonio Narino
+248,232,59,Milton Arturo,Masculino,Finalizado,1:46:18,Usaquen
+249,233,1374,Oswaldo,Masculino,Finalizado,1:46:18,Barrios Unidos
+250,234,234,Christian Felipe,Masculino,Finalizado,1:46:22,La Candelaria
+251,235,1325,Sebastián,Masculino,Finalizado,1:46:25,Usaquen
+252,236,1633,Orlando,Masculino,Finalizado,1:46:27,Usme
+253,237,366,David Camilo,Masculino,Finalizado,1:46:29,Los Martires
+254,17,278,Daniela,Femenino,Finalizado,1:46:34,Barrios Unidos
+255,238,26,Cristian Gilberto,Masculino,Finalizado,1:46:35,Kennedy
+256,239,1311,Dave Andrés,Masculino,Finalizado,1:46:37,Kennedy
+257,240,1419,Luis Eduardo,Masculino,Finalizado,1:46:38,Tunjuelito
+258,241,35,Oscar Santiago,Masculino,Finalizado,1:46:38,Chapinero
+259,242,540,Carlos Enrique,Masculino,Finalizado,1:46:39,Puente Aranda
+260,243,338,Sabas Fernando,Masculino,Finalizado,1:46:45,Suba
+261,244,61,Cristian Alejandro,Masculino,Finalizado,1:46:52,Usme
+262,18,1530,Sandra Lucia,Femenino,Finalizado,1:46:53,Fontibon
+263,19,1474,Denice Tatiana,Femenino,Finalizado,1:46:53,Fontibon
+264,245,603,Carlos De Jesus,Masculino,Finalizado,1:47:00,Usme
+265,246,974,Kevin Mateo,Masculino,Finalizado,1:47:00,Barrios Unidos
+266,247,231,Juan Carlos,Masculino,Finalizado,1:47:00,Bosa
+267,20,369,Ana Consuelo,Femenino,Finalizado,1:47:03,Teusaquillo
+268,21,481,Monica,Femenino,Finalizado,1:47:06,Antonio Narino
+269,248,1604,Hernán Cerveleón,Masculino,Finalizado,1:47:10,Kennedy
+270,249,1422,Oscar Fernando,Masculino,Finalizado,1:47:10,Los Martires
+271,250,1527,William,Masculino,Finalizado,1:47:16,Suba
+272,251,1577,Luis Albeiro,Masculino,Finalizado,1:47:21,Ciudad Bolivar
+273,252,458,Cesar Mauricio,Masculino,Finalizado,1:47:28,Sumapaz
+274,253,743,Carlos,Masculino,Finalizado,1:47:35,Rafael Uribe Uribe
+275,254,1124,Hugo Enrique,Masculino,Finalizado,1:47:40,Bosa
+276,22,1085,Martha Lorena,Femenino,Finalizado,1:47:46,Suba
+277,255,952,Edwin,Masculino,Finalizado,1:47:50,Barrios Unidos
+278,256,313,William Javier,Masculino,Finalizado,1:47:52,La Candelaria
+279,257,44,Yeison Andres,Masculino,Finalizado,1:47:55,Usme
+280,258,859,Andres Fernando,Masculino,Finalizado,1:47:57,Fontibon
+281,259,394,Sergio Nicolás,Masculino,Finalizado,1:48:02,Usaquen
+282,23,263,Alejandra,Femenino,Finalizado,1:48:02,Sumapaz
+283,260,773,Krystyan Sneyder,Masculino,Finalizado,1:48:10,Suba
+284,261,668,Omar,Masculino,Finalizado,1:48:12,Fontibon
+285,262,9,Diego Mauricio,Masculino,Finalizado,1:48:23,Los Martires
+286,263,1599,Juan Camilo,Masculino,Finalizado,1:48:23,Bosa
+287,264,589,Luis Fernando,Masculino,Finalizado,1:48:34,Tunjuelito
+288,265,139,Sebastián,Masculino,Finalizado,1:48:41,Puente Aranda
+289,266,982,Yeison Andres,Masculino,Finalizado,1:48:48,Chapinero
+290,267,389,Libaniel,Masculino,Finalizado,1:48:55,Suba
+291,268,339,Jorge,Masculino,Finalizado,1:48:57,Bosa
+292,269,161,Carlos Emilio,Masculino,Finalizado,1:49:00,Chapinero
+293,270,1165,Harold,Masculino,Finalizado,1:49:11,Chapinero
+294,24,16,Juliana,Femenino,Finalizado,1:49:11,Barrios Unidos
+295,271,1472,Julio Roberto,Masculino,Finalizado,1:49:11,Fontibon
+296,25,948,Samantha Yulieth,Femenino,Finalizado,1:49:12,Tunjuelito
+297,272,1368,José Miguel,Masculino,Finalizado,1:49:15,Fontibon
+298,273,247,Carlos Enrique,Masculino,Finalizado,1:49:15,Los Martires
+299,274,1801,Cristian Camilo,Masculino,Finalizado,1:49:17,Suba
+300,275,1789,Jhonny Mauricio,Masculino,Finalizado,1:49:17,Sumapaz
+301,276,1860,Elkin,Masculino,Finalizado,1:49:17,Barrios Unidos
+302,277,499,Luis Anselmo,Masculino,Finalizado,1:49:18,Suba
+303,26,135,Carolina,Femenino,Finalizado,1:49:19,Barrios Unidos
+304,278,174,Andrés Felipe,Masculino,Finalizado,1:49:20,Fontibon
+305,279,548,Diego Alejandro,Masculino,Finalizado,1:49:21,Suba
+306,280,1923,Johan Sebastian,Masculino,Finalizado,1:49:30,Antonio Narino
+307,281,31,Sebastian,Masculino,Finalizado,1:49:45,Suba
+308,282,326,Gustavo,Masculino,Finalizado,1:49:48,Puente Aranda
+309,283,306,Yeferson José,Masculino,Finalizado,1:49:53,Antonio Narino
+310,284,1516,Darío De Jesus,Masculino,Finalizado,1:50:00,Usaquen
+311,285,228,Luis Santiago,Masculino,Finalizado,1:50:06,Engativa
+312,27,72,Paola,Femenino,Finalizado,1:50:13,Engativa
+313,286,434,Nelson Ricardo,Masculino,Finalizado,1:50:14,Los Martires
+314,287,1493,Rudyard Freddy,Masculino,Finalizado,1:50:24,Chapinero
+315,288,398,Diego Ezequiel,Masculino,Finalizado,1:50:34,Santa Fe
+316,289,1854,Miller Daniel,Masculino,Finalizado,1:50:50,Ciudad Bolivar
+317,290,855,Freddy,Masculino,Finalizado,1:50:52,Los Martires
+318,28,1649,Juanita,Femenino,Finalizado,1:50:54,Engativa
+319,291,524,Baudelino,Masculino,Finalizado,1:50:57,Usaquen
+320,292,65,Sebastián,Masculino,Finalizado,1:50:57,Barrios Unidos
+321,293,1068,Nelson Geovanny,Masculino,Finalizado,1:51:05,Tunjuelito
+322,294,1776,Andres Felipe,Masculino,Finalizado,1:51:08,Tunjuelito
+323,29,976,Fanny Mayerly,Femenino,Finalizado,1:51:09,Usme
+324,295,148,Diego Alejandro,Masculino,Finalizado,1:51:13,Usaquen
+325,296,70,Jonathan,Masculino,Finalizado,1:51:13,Los Martires
+326,297,78,Juan Sebastian,Masculino,Finalizado,1:51:14,Tunjuelito
+327,30,1785,Leidy Tatiana,Femenino,Finalizado,1:51:19,Santa Fe
+328,298,527,Alejandro,Masculino,Finalizado,1:51:21,Suba
+329,299,519,Manuel,Masculino,Finalizado,1:51:22,Usme
+330,31,272,Angela,Femenino,Finalizado,1:51:28,Ciudad Bolivar
+331,300,1386,Brian David,Masculino,Finalizado,1:51:32,Usme
+332,301,385,Juan Jose,Masculino,Finalizado,1:51:34,Suba
+333,302,165,Cristian,Masculino,Finalizado,1:51:44,Antonio Narino
+334,32,941,Alexandra,Femenino,Finalizado,1:51:47,Engativa
+335,303,902,Fermin Hernando,Masculino,Finalizado,1:51:50,La Candelaria
+336,304,3095,Eduwin Manuel,Masculino,Finalizado,1:51:52,Sumapaz
+337,33,405,Olga Patricia,Femenino,Finalizado,1:51:57,San Cristobal
+338,305,800,Arly,Masculino,Finalizado,1:52:01,Tunjuelito
+339,306,856,Fabian Andres,Masculino,Finalizado,1:52:02,Teusaquillo
+340,307,66,John Faber,Masculino,Finalizado,1:52:04,Suba
+341,308,988,Alvaro,Masculino,Finalizado,1:52:08,Sumapaz
+342,309,1749,Danilo,Masculino,Finalizado,1:52:10,Los Martires
+343,34,1560,Santiago,Femenino,Finalizado,1:52:13,Santa Fe
+344,310,1621,German David,Masculino,Finalizado,1:52:16,Rafael Uribe Uribe
+345,311,91,Francisco Pastor,Masculino,Finalizado,1:52:16,Chapinero
+346,312,1580,Jairo,Masculino,Finalizado,1:52:24,San Cristobal
+347,313,1190,Carlos Andrés,Masculino,Finalizado,1:52:27,La Candelaria
+348,314,382,Juan Carlos,Masculino,Finalizado,1:52:32,Ciudad Bolivar
+349,315,86,Ricardo,Masculino,Finalizado,1:52:33,Santa Fe
+350,35,76,Daniela,Femenino,Finalizado,1:52:34,Santa Fe
+351,316,625,Rafael Antonio,Masculino,Finalizado,1:52:40,Teusaquillo
+352,36,316,Daniela,Femenino,Finalizado,1:52:43,Suba
+353,317,828,Oscar,Masculino,Finalizado,1:52:48,Teusaquillo
+354,37,297,Mónica Marcela,Femenino,Finalizado,1:52:57,La Candelaria
+355,318,1591,Jimmy,Masculino,Finalizado,1:53:00,Usaquen
+356,38,595,Leidy,Femenino,Finalizado,1:53:00,Chapinero
+357,319,801,Juan Sebastian,Masculino,Finalizado,1:53:00,Teusaquillo
+358,320,1397,John Fernando,Masculino,Finalizado,1:53:12,Usme
+359,39,195,Laura Liliana,Femenino,Finalizado,1:53:12,Barrios Unidos
+360,321,690,José Enrique,Masculino,Finalizado,1:53:25,Rafael Uribe Uribe
+361,322,529,Carlos Alberto,Masculino,Finalizado,1:53:31,Puente Aranda
+362,323,1572,Luis Alexander,Masculino,Finalizado,1:53:37,Usaquen
+363,324,402,Juan Martin,Masculino,Finalizado,1:53:37,Sumapaz
+364,325,1385,Paulo,Masculino,Finalizado,1:53:40,Los Martires
+365,326,1478,Oscar Fernando,Masculino,Finalizado,1:53:44,Antonio Narino
+366,327,19,Jairo Alexander,Masculino,Finalizado,1:53:49,Kennedy
+367,328,321,Ivan Guillermo,Masculino,Finalizado,1:53:49,Los Martires
+368,329,1596,Juan Esteban,Masculino,Finalizado,1:53:50,Kennedy
+369,330,1894,Luis Fernando,Masculino,Finalizado,1:53:54,Rafael Uribe Uribe
+370,40,64,Hedna Rocio,Femenino,Finalizado,1:53:55,Usaquen
+371,331,1484,César Augusto,Masculino,Finalizado,1:54:01,Tunjuelito
+372,332,149,Carlos Andrés,Masculino,Finalizado,1:54:16,Teusaquillo
+373,333,1430,John Jairo,Masculino,Finalizado,1:54:21,Barrios Unidos
+374,334,1334,Juan Felipe,Masculino,Finalizado,1:54:24,Suba
+375,335,287,Alejandro,Masculino,Finalizado,1:54:34,San Cristobal
+376,336,1736,Javier,Masculino,Finalizado,1:54:40,La Candelaria
+377,337,131,Iván Mauricio,Masculino,Finalizado,1:54:46,Bosa
+378,338,613,Manuel,Masculino,Finalizado,1:54:47,Barrios Unidos
+379,41,1566,Edulfo,Femenino,Finalizado,1:54:47,Kennedy
+380,339,83,German,Masculino,Finalizado,1:54:51,San Cristobal
+381,340,606,Bernardo Vladimir Ilich,Masculino,Finalizado,1:55:05,Engativa
+382,341,393,Camilo Eduardo,Masculino,Finalizado,1:55:19,Los Martires
+383,342,1809,David,Masculino,Finalizado,1:55:23,Bosa
+384,42,518,Diana,Femenino,Finalizado,1:55:33,Barrios Unidos
+385,343,1348,David Alberto,Masculino,Finalizado,1:55:38,Los Martires
+386,344,60,Juan Esteban,Masculino,Finalizado,1:55:48,Barrios Unidos
+387,345,505,Didier,Masculino,Finalizado,1:55:53,Antonio Narino
+388,346,897,José Leonardo,Masculino,Finalizado,1:55:56,Suba
+389,347,535,Pedro Nel,Masculino,Finalizado,1:56:06,Sumapaz
+390,348,1257,Carlos Arturo,Masculino,Finalizado,1:56:15,Barrios Unidos
+391,349,1608,Wilson,Masculino,Finalizado,1:56:15,Engativa
+392,350,608,Luis Eduardo,Masculino,Finalizado,1:56:18,Fontibon
+393,351,526,Jairo Alberto,Masculino,Finalizado,1:56:20,Chapinero
+394,352,1584,Pablo Antonio,Masculino,Finalizado,1:56:25,Santa Fe
+395,353,436,Oscar Enrique,Masculino,Finalizado,1:56:25,Santa Fe
+396,354,1033,Juan Andres,Masculino,Finalizado,1:56:30,La Candelaria
+397,355,357,Mauricio Alejandro,Masculino,Finalizado,1:56:31,Bosa
+398,356,863,Anderson,Masculino,Finalizado,1:56:35,Suba
+399,357,659,Wilmar Humberto,Masculino,Finalizado,1:57:02,Barrios Unidos
+400,358,34,Andres Fabio,Masculino,Finalizado,1:57:09,Barrios Unidos
+401,43,3320,Maritza Del Pilar,Femenino,Finalizado,1:57:27,Suba
+402,359,164,Ivan,Masculino,Finalizado,1:57:32,Suba
+403,360,428,Julio César,Masculino,Finalizado,1:57:32,San Cristobal
+404,361,1176,Jose Luis,Masculino,Finalizado,1:57:34,Kennedy
+405,362,118,Ivan,Masculino,Finalizado,1:57:43,Kennedy
+406,363,375,Tito Wilson,Masculino,Finalizado,1:57:58,Usaquen
+407,364,120,Johan Mauricio,Masculino,Finalizado,1:57:59,Puente Aranda
+408,365,1117,Jorge Enrique,Masculino,Finalizado,1:58:05,Puente Aranda
+409,366,1177,Alejandro,Masculino,Finalizado,1:58:12,Tunjuelito
+410,44,1065,Ma Angela,Femenino,Finalizado,1:58:17,San Cristobal
+411,367,1943,Elkin De Jesus,Masculino,Finalizado,1:58:19,La Candelaria
+412,368,94,Andrés,Masculino,Finalizado,1:58:20,Sumapaz
+413,45,1306,Jacqueline,Femenino,Finalizado,1:58:22,Rafael Uribe Uribe
+414,369,1341,Harrison Arbey,Masculino,Finalizado,1:58:24,Antonio Narino
+415,370,641,Oswald Leonardo,Masculino,Finalizado,1:58:26,San Cristobal
+416,371,1489,Noel,Masculino,Finalizado,1:58:30,Tunjuelito
+417,46,1838,Claudia Lorena,Femenino,Finalizado,1:58:32,Sumapaz
+418,372,1811,Manzur Alonso,Masculino,Finalizado,1:58:39,Tunjuelito
+419,373,55,Jhon Faber,Masculino,Finalizado,1:58:43,Suba
+420,47,493,Maria Adelaida,Femenino,Finalizado,1:58:46,Rafael Uribe Uribe
+421,48,329,Yitsully Geraldine,Femenino,Finalizado,1:58:52,Kennedy
+422,374,256,Jose German,Masculino,Finalizado,1:58:52,Tunjuelito
+423,375,1657,Jesús Alirio,Masculino,Finalizado,1:58:52,San Cristobal
+424,376,46,Mauricio,Masculino,Finalizado,1:58:58,La Candelaria
+425,49,230,Maria Antonia,Femenino,Finalizado,1:59:05,La Candelaria
+426,377,1799,Salvador,Masculino,Finalizado,1:59:08,Los Martires
+427,50,1805,Maria Causil,Femenino,Finalizado,1:59:08,Ciudad Bolivar
+428,378,1274,Jairo,Masculino,Finalizado,1:59:11,Ciudad Bolivar
+429,379,1382,Jose Alcibiades,Masculino,Finalizado,1:59:11,Kennedy
+430,51,69,Carolina Maria,Femenino,Finalizado,1:59:12,Engativa
+431,52,1286,Yuri Estefania,Femenino,Finalizado,1:59:13,Rafael Uribe Uribe
+432,380,1032,Nelson Fernando,Masculino,Finalizado,1:59:17,Ciudad Bolivar
+433,381,80,José Gilberto,Masculino,Finalizado,1:59:20,La Candelaria
+434,382,14,Sebastian,Masculino,Finalizado,1:59:40,Bosa
+435,383,392,Ernesto,Masculino,Finalizado,1:59:45,Barrios Unidos
+436,384,1495,Fernando,Masculino,Finalizado,1:59:46,San Cristobal
+437,385,176,Robert Alexander,Masculino,Finalizado,1:59:47,Ciudad Bolivar
+438,53,612,Alexandra,Femenino,Finalizado,1:59:48,Santa Fe
+439,54,170,Alejandra,Femenino,Finalizado,1:59:50,Sumapaz
+440,386,1026,Miguel Ángel,Masculino,Finalizado,1:59:52,Suba
+441,387,646,Walter,Masculino,Finalizado,1:59:53,Kennedy
+442,388,495,Jose Manuel,Masculino,Finalizado,1:59:59,Bosa
+443,389,1664,Ivan Dario,Masculino,Finalizado,2:00:04,Ciudad Bolivar
+444,390,775,Jorge Ivan,Masculino,Finalizado,2:00:07,Ciudad Bolivar
+445,391,1665,Juan Fernando,Masculino,Finalizado,2:00:12,Teusaquillo
+446,55,1797,Liz Patricia,Femenino,Finalizado,2:00:13,Teusaquillo
+447,392,93,Oscar Camilo,Masculino,Finalizado,2:00:17,Chapinero
+448,393,933,Jose Guillermo,Masculino,Finalizado,2:00:24,Rafael Uribe Uribe
+449,394,3461,Hector Alejandro,Masculino,Finalizado,2:00:26,Teusaquillo
+450,395,1353,Noel,Masculino,Finalizado,2:00:29,San Cristobal
+451,56,244,Maria Eleany,Femenino,Finalizado,2:00:31,Kennedy
+452,396,1275,Edinson De Jesus,Masculino,Finalizado,2:00:33,Engativa
+453,397,1659,Jose Manuel,Masculino,Finalizado,2:00:34,Chapinero
+454,398,1806,Victor Manuel,Masculino,Finalizado,2:00:35,Puente Aranda
+455,399,1552,Oscar Diego,Masculino,Finalizado,2:00:38,Suba
+456,57,1429,Teresa Alicia,Femenino,Finalizado,2:00:38,Bosa
+457,400,796,Luis Eduardo,Masculino,Finalizado,2:00:39,Puente Aranda
+458,58,348,Gloria Isabel,Femenino,Finalizado,2:00:42,Suba
+459,401,1162,Gildardo De Jesus,Masculino,Finalizado,2:00:48,Bosa
+460,402,1775,Jose Manuel,Masculino,Finalizado,2:00:55,Puente Aranda
+461,403,374,Jose Rubiel,Masculino,Finalizado,2:01:01,Puente Aranda
+462,404,688,Alexander,Masculino,Finalizado,2:01:10,Puente Aranda
+463,405,973,Julián,Masculino,Finalizado,2:01:17,Los Martires
+464,406,1713,Uriel Eduardo,Masculino,Finalizado,2:01:21,Santa Fe
+465,407,24,Elder Yovani,Masculino,Finalizado,2:01:23,Bosa
+466,408,312,Robinson,Masculino,Finalizado,2:01:29,Puente Aranda
+467,59,1767,Adriana,Femenino,Finalizado,2:01:59,Tunjuelito
+468,409,1280,José Vicente,Masculino,Finalizado,2:02:01,Teusaquillo
+469,410,1807,Jorge Alberto,Masculino,Finalizado,2:02:01,Rafael Uribe Uribe
+470,411,835,Yimmy,Masculino,Finalizado,2:02:10,Bosa
+471,412,1106,Sebastian Eduardo,Masculino,Finalizado,2:02:11,Suba
+472,413,1151,Camilo,Masculino,Finalizado,2:02:14,Barrios Unidos
+473,414,25,Víctor Hugo,Masculino,Finalizado,2:02:20,Kennedy
+474,415,1479,Leonardo,Masculino,Finalizado,2:02:22,La Candelaria
+475,416,1626,Luis Ernesto,Masculino,Finalizado,2:02:23,Suba
+476,417,1660,Jesus Andrey,Masculino,Finalizado,2:02:25,Ciudad Bolivar
+477,60,769,Diana Maria,Femenino,Finalizado,2:02:32,Ciudad Bolivar
+478,418,1253,Carlos Julio,Masculino,Finalizado,2:02:32,La Candelaria
+479,61,246,Angela,Femenino,Finalizado,2:02:34,Rafael Uribe Uribe
+480,419,224,Alejandro,Masculino,Finalizado,2:02:39,Puente Aranda
+481,420,238,Roberto Alejandro,Masculino,Finalizado,2:02:40,Puente Aranda
+482,421,1440,Jose Alexander,Masculino,Finalizado,2:02:41,Chapinero
+483,422,1723,Jorge Iván,Masculino,Finalizado,2:02:48,Tunjuelito
+484,423,1802,Roosevel,Masculino,Finalizado,2:02:52,Fontibon
+485,424,851,Alejandro,Masculino,Finalizado,2:02:55,Usaquen
+486,425,459,Cristian Camilo,Masculino,Finalizado,2:02:58,Ciudad Bolivar
+487,62,958,Luz Edith,Femenino,Finalizado,2:02:59,Sumapaz
+488,426,1302,Hugo Enrrique,Masculino,Finalizado,2:03:00,Kennedy
+489,427,115,Jaime Leonardo,Masculino,Finalizado,2:03:03,Santa Fe
+490,428,140,Brian Smith,Masculino,Finalizado,2:03:04,Teusaquillo
+491,429,850,Yon Felber,Masculino,Finalizado,2:03:08,Suba
+492,430,1434,Wilson Samir,Masculino,Finalizado,2:03:10,San Cristobal
+493,63,342,Alba Jazmidt,Femenino,Finalizado,2:03:10,San Cristobal
+494,431,1893,Miguel Angel,Masculino,Finalizado,2:03:16,Tunjuelito
+495,64,1103,Yuly Paola,Femenino,Finalizado,2:03:22,Los Martires
+496,432,1116,Jorge Eduardo,Masculino,Finalizado,2:03:23,Santa Fe
+497,433,1102,Ciro Javier,Masculino,Finalizado,2:03:23,Usaquen
+498,65,1655,María Del Carmen,Femenino,Finalizado,2:03:27,Rafael Uribe Uribe
+499,434,388,Jesus David,Masculino,Finalizado,2:03:27,Antonio Narino
+500,66,53,Sandra Patricia,Femenino,Finalizado,2:03:30,La Candelaria
+501,67,100,Luisa Fernanda,Femenino,Finalizado,2:03:30,Antonio Narino
+502,435,1816,Javier,Masculino,Finalizado,2:03:38,Kennedy
+503,68,1941,Andrea,Femenino,Finalizado,2:03:44,Usme
+504,436,664,Carlos Jair,Masculino,Finalizado,2:03:46,Santa Fe
+505,437,97,Jorge Iván,Masculino,Finalizado,2:03:48,Chapinero
+506,438,1241,Carlos Felipe,Masculino,Finalizado,2:03:52,San Cristobal
+507,439,793,Fernando,Masculino,Finalizado,2:03:52,Engativa
+508,440,1243,Alejandro,Masculino,Finalizado,2:03:55,Usme
+509,441,972,Cesar Alfonso,Masculino,Finalizado,2:04:01,Barrios Unidos
+510,69,971,Yenyfer Marcela,Femenino,Finalizado,2:04:02,Rafael Uribe Uribe
+511,442,210,Wilson,Masculino,Finalizado,2:04:02,Rafael Uribe Uribe
+512,443,1327,Einer,Masculino,Finalizado,2:04:03,Usaquen
+513,444,1616,Carlos Eduardo,Masculino,Finalizado,2:04:11,Sumapaz
+514,445,1629,Jaime Andres,Masculino,Finalizado,2:04:12,Los Martires
+515,70,1641,Lizeth Daniela,Femenino,Finalizado,2:04:13,Santa Fe
+516,446,871,Eduardo,Masculino,Finalizado,2:04:17,Ciudad Bolivar
+517,447,471,Giovanni,Masculino,Finalizado,2:04:22,Teusaquillo
+518,448,853,Carlos Felipe,Masculino,Finalizado,2:04:23,Bosa
+519,449,1446,Alejandro,Masculino,Finalizado,2:04:24,Bosa
+520,71,418,Tatiana,Femenino,Finalizado,2:04:24,Tunjuelito
+521,450,1376,Andres Felipe,Masculino,Finalizado,2:04:24,Bosa
+522,451,1808,Jose Miguel,Masculino,Finalizado,2:04:25,Sumapaz
+523,452,464,Javier Alberto,Masculino,Finalizado,2:04:27,Tunjuelito
+524,72,1442,Maira Alejandra,Femenino,Finalizado,2:04:27,Los Martires
+525,453,1610,Daniel Alejandro,Masculino,Finalizado,2:04:28,Barrios Unidos
+526,73,567,Lakxmy Yuridia,Femenino,Finalizado,2:04:32,Tunjuelito
+527,454,565,Juan Manuel,Masculino,Finalizado,2:04:34,La Candelaria
+528,455,1082,Nolberto,Masculino,Finalizado,2:04:35,Los Martires
+529,456,1139,Carlos Iván,Masculino,Finalizado,2:04:42,Fontibon
+530,457,1791,Andres Felipe,Masculino,Finalizado,2:04:51,Engativa
+531,458,1427,Esteban,Masculino,Finalizado,2:04:54,Suba
+532,74,554,Leidy Rocío,Femenino,Finalizado,2:04:57,Sumapaz
+533,75,1034,Eliana Paola,Femenino,Finalizado,2:04:57,Bosa
+534,459,1229,Fabio Alexander,Masculino,Finalizado,2:04:58,Usaquen
+535,460,410,José Eduardo,Masculino,Finalizado,2:05:10,Kennedy
+536,461,843,Jorge Mario,Masculino,Finalizado,2:05:11,Barrios Unidos
+537,462,776,Carlos Andres,Masculino,Finalizado,2:05:12,Rafael Uribe Uribe
+538,463,1709,Guillermo,Masculino,Finalizado,2:05:12,Engativa
+539,464,586,Edward,Masculino,Finalizado,2:05:16,La Candelaria
+540,76,867,Olga,Femenino,Finalizado,2:05:17,Suba
+541,465,538,Héctor Mauricio,Masculino,Finalizado,2:05:23,Fontibon
+542,466,1590,Jorge Hernán,Masculino,Finalizado,2:05:27,Barrios Unidos
+543,467,112,Rodolfo Ignacio,Masculino,Finalizado,2:05:28,Usaquen
+544,468,525,Julián David,Masculino,Finalizado,2:05:45,Santa Fe
+545,77,20,Luisa Fernanda,Femenino,Finalizado,2:05:45,Antonio Narino
+546,78,206,Diana Tatiana,Femenino,Finalizado,2:05:53,Chapinero
+547,469,41,James Todd,Masculino,Finalizado,2:05:57,Tunjuelito
+548,79,243,Sandra Milena,Femenino,Finalizado,2:05:59,Teusaquillo
+549,470,293,Daniel,Masculino,Finalizado,2:05:59,Bosa
+550,80,98,Monica,Femenino,Finalizado,2:06:08,San Cristobal
+551,81,1122,Alejandra,Femenino,Finalizado,2:06:09,Usme
+552,82,279,Catalina,Femenino,Finalizado,2:06:31,Engativa
+553,471,1719,Pablo Humberto,Masculino,Finalizado,2:06:32,Puente Aranda
+554,472,311,Miguel Armando,Masculino,Finalizado,2:06:42,Engativa
+555,473,1662,Alejandro,Masculino,Finalizado,2:06:44,Ciudad Bolivar
+556,474,125,Yulian Norbey,Masculino,Finalizado,2:06:44,Tunjuelito
+557,475,2931,Julio Enrique,Masculino,Finalizado,2:06:46,Barrios Unidos
+558,476,967,Jonathan Camilo,Masculino,Finalizado,2:06:47,Santa Fe
+559,477,429,Joan Sebastián,Masculino,Finalizado,2:06:51,Fontibon
+560,478,260,Andrés,Masculino,Finalizado,2:06:53,Usaquen
+561,83,127,Martha Liliana,Femenino,Finalizado,2:07:04,Engativa
+562,84,1450,Esperanza,Femenino,Finalizado,2:07:10,Chapinero
+563,479,1155,Oscar,Masculino,Finalizado,2:07:26,Antonio Narino
+564,480,432,Carlos Ayende,Masculino,Finalizado,2:07:28,Usaquen
+565,85,610,Sara Isabel,Femenino,Finalizado,2:07:29,Kennedy
+566,481,245,Juan David,Masculino,Finalizado,2:07:32,Santa Fe
+567,86,117,Karla Vanessa,Femenino,Finalizado,2:07:33,Ciudad Bolivar
+568,87,847,Diana Lizeth,Femenino,Finalizado,2:07:45,Fontibon
+569,482,778,Mauricio Enrique,Masculino,Finalizado,2:07:51,La Candelaria
+570,483,3,Faber,Masculino,Finalizado,2:07:52,Los Martires
+571,88,54,Claudia Carolina,Femenino,Finalizado,2:07:54,Usaquen
+572,89,23,Karen,Femenino,Finalizado,2:08:00,Tunjuelito
+573,484,872,Juan Carlos,Masculino,Finalizado,2:08:02,San Cristobal
+574,90,720,Liliana,Femenino,Finalizado,2:08:10,Usaquen
+575,91,13,Marcela,Femenino,Finalizado,2:08:11,Sumapaz
+576,485,355,Andrés Felipe,Masculino,Finalizado,2:08:14,Suba
+577,92,1197,Sonia,Femenino,Finalizado,2:08:17,Los Martires
+578,93,1058,Katherine,Femenino,Finalizado,2:08:17,Usme
+579,94,4,Angela Maria,Femenino,Finalizado,2:08:18,Kennedy
+580,486,1625,Luis Felipe,Masculino,Finalizado,2:08:19,Usaquen
+581,95,968,Deysi Milena,Femenino,Finalizado,2:08:21,Rafael Uribe Uribe
+582,487,1392,Edisson,Masculino,Finalizado,2:08:32,Teusaquillo
+583,96,1813,Eliana Milena,Femenino,Finalizado,2:08:32,Ciudad Bolivar
+584,97,810,María Dolores,Femenino,Finalizado,2:08:34,Barrios Unidos
+585,488,289,Esteban,Masculino,Finalizado,2:08:46,Ciudad Bolivar
+586,489,160,Mario Andrés,Masculino,Finalizado,2:08:48,Engativa
+587,98,319,Katherine,Femenino,Finalizado,2:08:49,Suba
+588,490,1865,Juan Sebastian,Masculino,Finalizado,2:08:51,Fontibon
+589,99,1473,Yudy,Femenino,Finalizado,2:08:52,Los Martires
+590,491,1070,Alexander,Masculino,Finalizado,2:08:52,Tunjuelito
+591,100,1066,Verónica,Femenino,Finalizado,2:08:53,Los Martires
+592,101,1654,Gracieta Lucia,Femenino,Finalizado,2:08:54,Tunjuelito
+593,102,1206,Gladys Sofia,Femenino,Finalizado,2:08:59,Bosa
+594,103,602,Lisa,Femenino,Finalizado,2:09:00,Suba
+595,492,617,Sebastián,Masculino,Finalizado,2:09:03,Usaquen
+596,493,81,Nicolas Hernando,Masculino,Finalizado,2:09:06,Engativa
+597,104,381,Alexandra,Femenino,Finalizado,2:09:09,Chapinero
+598,494,367,Héctor Fabio,Masculino,Finalizado,2:09:15,Chapinero
+599,495,465,William Ricardo,Masculino,Finalizado,2:09:18,Los Martires
+600,105,1863,Romy Veronica,Femenino,Finalizado,2:09:21,Kennedy
+601,496,52,Jhon Jairo,Masculino,Finalizado,2:09:22,Kennedy
+602,497,212,Christian Camilo,Masculino,Finalizado,2:09:29,Barrios Unidos
+603,498,1828,Juan Miguel,Masculino,Finalizado,2:09:29,Fontibon
+604,499,882,Andrés,Masculino,Finalizado,2:09:31,Santa Fe
+605,106,2164,Ana Carolina,Femenino,Finalizado,2:09:32,Engativa
+606,500,767,Luis Eduardo,Masculino,Finalizado,2:09:33,Kennedy
+607,501,269,Cristian,Masculino,Finalizado,2:09:36,Kennedy
+608,107,1669,Paola,Femenino,Finalizado,2:09:38,Kennedy
+609,108,1646,Diana Marcela,Femenino,Finalizado,2:09:44,Teusaquillo
+610,502,211,Amdres Felipe,Masculino,Finalizado,2:09:48,Rafael Uribe Uribe
+611,503,1208,Pedro Nel,Masculino,Finalizado,2:09:49,Antonio Narino
+612,504,1519,Jefferson Daniel,Masculino,Finalizado,2:09:50,Ciudad Bolivar
+613,505,317,Juan Guillermo,Masculino,Finalizado,2:10:02,Fontibon
+614,109,49,Tatiana,Femenino,Finalizado,2:10:05,Ciudad Bolivar
+615,506,1278,Diego Armando,Masculino,Finalizado,2:10:06,Usme
+616,507,890,Carlos Alfredo,Masculino,Finalizado,2:10:07,Chapinero
+617,508,315,Cristian David,Masculino,Finalizado,2:10:09,Suba
+618,509,552,Gustavo,Masculino,Finalizado,2:10:11,Santa Fe
+619,510,1521,Carlos Andrés,Masculino,Finalizado,2:10:12,Usme
+620,511,1524,Jesus Andres,Masculino,Finalizado,2:10:14,Los Martires
+621,512,1168,Mario Alberto,Masculino,Finalizado,2:10:17,Tunjuelito
+622,513,577,Oscar Mario,Masculino,Finalizado,2:10:18,Suba
+623,110,1002,Karen,Femenino,Finalizado,2:10:19,Antonio Narino
+624,514,1212,Erwin Severino,Masculino,Finalizado,2:10:20,Tunjuelito
+625,515,1842,Julio Cesar,Masculino,Finalizado,2:10:21,Teusaquillo
+626,111,446,Olga Lucia,Femenino,Finalizado,2:10:21,Kennedy
+627,516,453,Jose Fernando,Masculino,Finalizado,2:10:21,Kennedy
+628,112,126,Yesika,Femenino,Finalizado,2:10:21,Santa Fe
+629,517,949,Víctor Manuel,Masculino,Finalizado,2:10:23,Barrios Unidos
+630,518,1441,German,Masculino,Finalizado,2:10:27,Bosa
+631,519,1245,Walter William,Masculino,Finalizado,2:10:30,Los Martires
+632,520,197,Rubén Alberto,Masculino,Finalizado,2:10:32,Puente Aranda
+633,521,1691,Tomás,Masculino,Finalizado,2:10:41,Sumapaz
+634,522,2729,Daniel Alberto,Masculino,Finalizado,2:10:43,Barrios Unidos
+635,523,1741,Carlos Andrés,Masculino,Finalizado,2:10:46,Puente Aranda
+636,524,1436,Aldemar,Masculino,Finalizado,2:10:48,Rafael Uribe Uribe
+637,525,571,Arlex,Masculino,Finalizado,2:10:52,Tunjuelito
+638,113,1695,Irene,Femenino,Finalizado,2:10:59,Engativa
+639,526,194,Eliceo,Masculino,Finalizado,2:10:59,Antonio Narino
+640,114,614,María Liliana,Femenino,Finalizado,2:11:02,Santa Fe
+641,527,251,Joan Manuel,Masculino,Finalizado,2:11:08,Engativa
+642,115,232,Isabel,Femenino,Finalizado,2:11:12,San Cristobal
+643,528,1456,Angel Raul,Masculino,Finalizado,2:11:13,Suba
+644,529,623,Cristian Camilo,Masculino,Finalizado,2:11:14,San Cristobal
+645,530,670,Adrian Eliecer,Masculino,Finalizado,2:11:21,Chapinero
+646,116,103,Fernanda,Femenino,Finalizado,2:11:24,Engativa
+647,531,173,Óscar Eduardo,Masculino,Finalizado,2:11:24,La Candelaria
+648,117,728,Lizeth Dahiana,Femenino,Finalizado,2:11:27,Usme
+649,532,629,Ruben Darío,Masculino,Finalizado,2:11:30,Tunjuelito
+650,533,1420,Rubén Darío,Masculino,Finalizado,2:11:31,Barrios Unidos
+651,118,961,Martha Nelly,Femenino,Finalizado,2:11:44,Puente Aranda
+652,534,39,Jhon Jairo,Masculino,Finalizado,2:11:46,Teusaquillo
+653,119,485,Luisa Fernanda,Femenino,Finalizado,2:11:49,Antonio Narino
+654,535,177,Absalob,Masculino,Finalizado,2:11:59,La Candelaria
+655,536,341,Pablo Roberto,Masculino,Finalizado,2:12:00,Tunjuelito
+656,537,167,Juan Diego,Masculino,Finalizado,2:12:00,Bosa
+657,538,704,Carlos Alberto,Masculino,Finalizado,2:12:02,Chapinero
+658,539,862,Giacomo,Masculino,Finalizado,2:12:23,Puente Aranda
+659,540,412,Wilson,Masculino,Finalizado,2:12:32,Fontibon
+660,541,85,Pablo Andres,Masculino,Finalizado,2:12:36,Los Martires
+661,542,1549,Oscar,Masculino,Finalizado,2:12:39,Teusaquillo
+662,543,129,Luis Felipe,Masculino,Finalizado,2:12:39,San Cristobal
+663,544,1059,Andres Julian,Masculino,Finalizado,2:12:42,Engativa
+664,120,550,Diana Paola,Femenino,Finalizado,2:12:46,La Candelaria
+665,545,314,Jaime Alberto,Masculino,Finalizado,2:12:53,Puente Aranda
+666,546,283,Oscar,Masculino,Finalizado,2:12:54,Suba
+667,547,1817,Alonso,Masculino,Finalizado,2:12:58,Suba
+668,548,541,Martin Edgardo,Masculino,Finalizado,2:13:01,Puente Aranda
+669,121,282,Cristina,Femenino,Finalizado,2:13:09,Kennedy
+670,549,216,Juan Sebastian,Masculino,Finalizado,2:13:09,Puente Aranda
+671,122,1061,Marisol,Femenino,Finalizado,2:13:16,Bosa
+672,550,1826,Carlos Miller,Masculino,Finalizado,2:13:16,Engativa
+673,551,1617,Francisco Javier,Masculino,Finalizado,2:13:17,Ciudad Bolivar
+674,552,265,Mauricio,Masculino,Finalizado,2:13:19,Suba
+675,123,1594,Yuliana,Femenino,Finalizado,2:13:23,Ciudad Bolivar
+676,553,1281,Diego,Masculino,Finalizado,2:13:29,Engativa
+677,554,633,Luis Felipe,Masculino,Finalizado,2:13:41,Engativa
+678,555,384,Harry Alexander,Masculino,Finalizado,2:13:48,La Candelaria
+679,124,1694,Ana Lucia,Femenino,Finalizado,2:14:00,Rafael Uribe Uribe
+680,125,765,Myriam,Femenino,Finalizado,2:14:01,Rafael Uribe Uribe
+681,556,1332,Juan Manuel,Masculino,Finalizado,2:14:02,Suba
+682,557,551,Jacobo,Masculino,Finalizado,2:14:03,Santa Fe
+683,126,710,Diana Camila,Femenino,Finalizado,2:14:29,Barrios Unidos
+684,558,975,Jaime Andres,Masculino,Finalizado,2:14:39,Fontibon
+685,127,433,Eliana,Femenino,Finalizado,2:14:44,La Candelaria
+686,559,359,John Fary,Masculino,Finalizado,2:14:45,Barrios Unidos
+687,560,1848,Cristian Camilo,Masculino,Finalizado,2:14:53,Barrios Unidos
+688,128,1647,Elsy Acenneth,Femenino,Finalizado,2:14:53,Ciudad Bolivar
+689,129,1851,Laura Victoria,Femenino,Finalizado,2:14:58,San Cristobal
+690,561,1687,Juan Gabriel,Masculino,Finalizado,2:14:59,Rafael Uribe Uribe
+691,562,3101,Jhon Fredy,Masculino,Finalizado,2:15:03,Puente Aranda
+691,562,580,Nestor Ramiro,Masculino,Finalizado,2:15:04,Chapinero
+692,130,1010,Jennifer,Femenino,Finalizado,2:15:05,Engativa
+693,563,1786,Jairo Antonio,Masculino,Finalizado,2:15:11,Sumapaz
+694,131,188,Karen Dayana,Femenino,Finalizado,2:15:14,Los Martires
+695,132,1069,Adriána,Femenino,Finalizado,2:15:15,Fontibon
+696,133,1853,Juliana,Femenino,Finalizado,2:15:18,Chapinero
+697,564,758,Manuel,Masculino,Finalizado,2:15:48,Kennedy
+698,134,706,Jackhelyn,Femenino,Finalizado,2:15:54,Teusaquillo
+699,135,1266,María Norbery,Femenino,Finalizado,2:15:55,Teusaquillo
+700,565,1798,Hernan Dario,Masculino,Finalizado,2:15:59,Rafael Uribe Uribe
+701,566,985,Mauricio,Masculino,Finalizado,2:15:59,Bosa
+702,567,618,Cristian,Masculino,Finalizado,2:16:17,Bosa
+703,136,473,Gladys,Femenino,Finalizado,2:16:19,Barrios Unidos
+704,568,1772,Luis Eduardo,Masculino,Finalizado,2:16:19,Rafael Uribe Uribe
+705,569,1818,Julian Andres,Masculino,Finalizado,2:16:20,Chapinero
+706,570,184,Jorge Ivan,Masculino,Finalizado,2:16:31,Santa Fe
+707,571,0,Milton Gabriel,Masculino,Finalizado,2:16:43,Ciudad Bolivar
+708,572,133,Camilo Andres,Masculino,Finalizado,2:16:47,Bosa
+709,137,1404,Luisa Fernanda,Femenino,Finalizado,2:16:47,Antonio Narino
+710,138,591,Diana Carolina,Femenino,Finalizado,2:16:52,Sumapaz
+711,139,1121,Luisa Fernanda,Femenino,Finalizado,2:16:53,Usme
+712,573,600,Jhon,Masculino,Finalizado,2:16:53,San Cristobal
+713,574,156,Johns Roberts,Masculino,Finalizado,2:17:04,Bosa
+714,140,1175,María Del Pilar,Femenino,Finalizado,2:17:14,Antonio Narino
+715,575,484,Andrés Felipe,Masculino,Finalizado,2:17:19,Engativa
+716,141,1432,Luz Estella,Femenino,Finalizado,2:17:25,Suba
+717,142,290,Kelly Jimena,Femenino,Finalizado,2:17:32,Teusaquillo
+718,143,142,Franci Liliana,Femenino,Finalizado,2:17:39,Antonio Narino
+719,144,534,Ahida Patricia,Femenino,Finalizado,2:17:49,Sumapaz
+720,576,1922,Cristian David,Masculino,Finalizado,2:18:12,Los Martires
+721,145,977,Nina Milena,Femenino,Finalizado,2:18:12,Ciudad Bolivar
+722,577,422,Carlos Julio,Masculino,Finalizado,2:18:14,Puente Aranda
+723,578,1344,Jhon Jairo,Masculino,Finalizado,2:18:16,Usme
+724,146,604,Elba,Femenino,Finalizado,2:18:36,Teusaquillo
+724,146,1931,Marcela,Femenino,Finalizado,2:18:18,Kennedy
+725,147,1067,Gloria Inés,Femenino,Finalizado,2:18:46,Usme
+726,148,3711,María Isabel,Femenino,Finalizado,2:18:50,Fontibon
+727,579,1287,John Frakzer,Masculino,Finalizado,2:18:58,Usme
+728,580,1586,Daniel Gerardo,Masculino,Finalizado,2:19:08,Sumapaz
+729,149,1079,Marcela,Femenino,Finalizado,2:19:17,Tunjuelito
+730,581,1733,Daimer Andrés,Masculino,Finalizado,2:19:35,Teusaquillo
+731,150,124,Damaris,Femenino,Finalizado,2:19:36,La Candelaria
+732,582,448,Jimmy Alex,Masculino,Finalizado,2:19:46,San Cristobal
+733,151,1607,Imera Luz,Femenino,Finalizado,2:20:01,Usme
+734,583,1790,Pablo Enmanuel,Masculino,Finalizado,2:20:08,Santa Fe
+735,584,910,Humberto,Masculino,Finalizado,2:20:14,Barrios Unidos
+736,585,562,Noel Alberto,Masculino,Finalizado,2:20:20,San Cristobal
+737,152,322,Ingred Tatiana,Femenino,Finalizado,2:20:31,San Cristobal
+738,586,1423,David Andrés,Masculino,Finalizado,2:20:34,San Cristobal
+739,153,815,Liesel,Femenino,Finalizado,2:20:39,Suba
+740,587,1136,Luis Alfonso,Masculino,Finalizado,2:20:40,Engativa
+741,588,1804,Luis Kennedy,Masculino,Finalizado,2:20:46,Kennedy
+742,589,158,Carlos Edgar,Masculino,Finalizado,2:20:50,Chapinero
+743,154,408,Yuliany,Femenino,Finalizado,2:20:55,Chapinero
+744,155,1108,Diana Paola,Femenino,Finalizado,2:21:02,Bosa
+745,590,944,Camilo Eduardo,Masculino,Finalizado,2:21:03,Kennedy
+746,591,273,Wilson De Jesús,Masculino,Finalizado,2:21:04,Rafael Uribe Uribe
+747,592,954,Ricardo,Masculino,Finalizado,2:21:09,Santa Fe
+748,156,678,Maria Alejandra,Femenino,Finalizado,2:21:14,Rafael Uribe Uribe
+749,157,1288,Ángela María,Femenino,Finalizado,2:21:14,La Candelaria
+750,593,360,Christian Felipe,Masculino,Finalizado,2:21:14,Usme
+751,158,578,Andrea,Femenino,Finalizado,2:21:15,Sumapaz
+752,594,1821,Andres,Masculino,Finalizado,2:21:15,Usme
+753,595,605,Orlando,Masculino,Finalizado,2:21:33,Ciudad Bolivar
+754,159,957,Angela Andrea,Femenino,Finalizado,2:21:36,Los Martires
+755,160,119,Catalina,Femenino,Finalizado,2:21:52,Bosa
+756,161,545,Natalia,Femenino,Finalizado,2:22:02,Bosa
+757,162,438,Carolina,Femenino,Finalizado,2:22:07,Suba
+758,596,587,Javier Antonio,Masculino,Finalizado,2:22:20,Chapinero
+759,163,1868,Isabella,Femenino,Finalizado,2:22:34,Fontibon
+760,164,563,Gloria Stella,Femenino,Finalizado,2:22:55,Fontibon
+761,597,594,Víctor Alfonso,Masculino,Finalizado,2:23:01,Kennedy
+762,598,18,Jorge Mario,Masculino,Finalizado,2:23:03,Usaquen
+763,599,573,Harry Fernando,Masculino,Finalizado,2:23:06,Los Martires
+764,600,754,Carlos Augusto,Masculino,Finalizado,2:23:11,Barrios Unidos
+765,165,1735,Evila Janneth,Femenino,Finalizado,2:23:13,Ciudad Bolivar
+766,601,226,Andrés,Masculino,Finalizado,2:23:24,Chapinero
+767,166,748,Jimena,Femenino,Finalizado,2:23:27,Los Martires
+768,602,401,Jorge Iván,Masculino,Finalizado,2:23:33,Los Martires
+769,167,619,Gloria Inés,Femenino,Finalizado,2:23:37,Ciudad Bolivar
+770,603,1305,Jaime Vélez.,Masculino,Finalizado,2:23:43,Tunjuelito
+771,604,2842,Edgar Jesús,Masculino,Finalizado,2:23:47,Rafael Uribe Uribe
+772,605,1408,Alejandro,Masculino,Finalizado,2:23:56,Barrios Unidos
+773,168,1500,Blanca Consuelo,Femenino,Finalizado,2:24:01,Usaquen
+774,169,1704,Ana Bertilde,Femenino,Finalizado,2:24:01,Kennedy
+775,606,208,Jhon Fredy,Masculino,Finalizado,2:24:05,Fontibon
+776,170,1788,Valentina,Femenino,Finalizado,2:24:23,Antonio Narino
+777,171,501,Emilce,Femenino,Finalizado,2:25:00,Engativa
+778,607,1262,Luis Felipe,Masculino,Finalizado,2:25:03,Chapinero
+778,172,3244,Rosalba,Femenino,Finalizado,2:24:53,Fontibon
+779,172,1279,Natalia,Femenino,Finalizado,2:25:06,Tunjuelito
+780,173,1350,Angie Katherin,Femenino,Finalizado,2:25:11,Fontibon
+781,608,652,Eduardo,Masculino,Finalizado,2:25:35,Teusaquillo
+782,609,150,Julián Andrés,Masculino,Finalizado,2:25:42,Puente Aranda
+783,610,1579,Raul,Masculino,Finalizado,2:25:43,San Cristobal
+784,174,570,Meybi Yamile,Femenino,Finalizado,2:25:46,San Cristobal
+785,175,108,Alejandra Maria,Femenino,Finalizado,2:25:49,Rafael Uribe Uribe
+786,611,695,Carlos Eduardo,Masculino,Finalizado,2:25:57,San Cristobal
+787,176,30,Olga Lucía,Femenino,Finalizado,2:25:59,Fontibon
+788,612,539,Jairo Alonso,Masculino,Finalizado,2:26:05,Tunjuelito
+789,177,564,Deyanira,Femenino,Finalizado,2:26:05,Santa Fe
+790,613,665,Jorge Luis,Masculino,Finalizado,2:26:26,Rafael Uribe Uribe
+791,178,1840,Carolina Marcela,Femenino,Finalizado,2:26:29,Usaquen
+792,179,1006,Laura Milena,Femenino,Finalizado,2:26:40,Chapinero
+793,614,240,Yeferson,Masculino,Finalizado,2:26:52,Fontibon
+794,615,691,Jorge Isaac,Masculino,Finalizado,2:26:59,Tunjuelito
+795,180,938,Diana Alejandra,Femenino,Finalizado,2:27:00,Tunjuelito
+796,181,825,Maribel,Femenino,Finalizado,2:27:04,Puente Aranda
+797,616,542,Oscar Javier,Masculino,Finalizado,2:27:09,Usaquen
+798,182,1822,Shirly,Femenino,Finalizado,2:27:11,La Candelaria
+799,183,3505,Yuli,Femenino,Finalizado,2:27:26,Barrios Unidos
+800,617,1568,John Sebastian,Masculino,Finalizado,2:27:36,Kennedy
+801,618,1836,Jaime Andres,Masculino,Finalizado,2:27:43,Rafael Uribe Uribe
+802,619,1681,Nestor Raul,Masculino,Finalizado,2:28:09,Santa Fe
+803,620,1105,Fabio Alejandro,Masculino,Finalizado,2:28:13,Puente Aranda
+804,621,254,Luis Eduardo,Masculino,Finalizado,2:28:13,La Candelaria
+806,185,62,Luisa Fernanda,Femenino,Finalizado,2:28:19,Suba
+807,186,782,Patricia,Femenino,Finalizado,2:28:20,Suba
+808,186,110,Claudia Marcela,Femenino,Finalizado,2:28:18,Los Martires
+808,622,959,Nestor Armando,Masculino,Finalizado,2:28:22,Tunjuelito
+809,623,1485,Kevin Mauricio,Masculino,Finalizado,2:29:22,Kennedy
+810,624,28,]jhonatan,Masculino,Finalizado,2:29:25,Sumapaz
+811,187,700,Sitey,Femenino,Finalizado,2:29:42,San Cristobal
+811,189,3500,Diana Carolina,Femenino,Finalizado,2:28:23,San Cristobal
+812,625,1825,Luis Alfonso,Masculino,Finalizado,2:29:58,Usaquen
+813,626,1644,Alejandro,Masculino,Finalizado,2:30:25,Antonio Narino
+814,188,417,Maira Alejandra,Femenino,Finalizado,2:30:37,Bosa
+815,627,2439,Deibi Jesus,Masculino,Finalizado,2:30:37,Usme
+815,189,1107,Jineth Andrea,Femenino,Finalizado,2:31:05,Suba
+816,190,75,Mishell,Femenino,Finalizado,2:31:08,Puente Aranda
+817,627,1118,Luis Francisco,Masculino,Finalizado,2:31:15,La Candelaria
+818,628,768,Felix Arturo,Masculino,Finalizado,2:31:18,Antonio Narino
+819,629,906,Óscar Fabián,Masculino,Finalizado,2:31:31,Chapinero
+820,629,2088,Gonzalo,Masculino,Finalizado,2:31:28,Bosa
+820,630,169,Cristhian Mauricio,Masculino,Finalizado,2:31:45,Santa Fe
+821,191,3357,Ingrid Milena,Femenino,Finalizado,2:31:58,Puente Aranda
+822,192,3748,Carlos Julio,Femenino,Finalizado,2:32:02,La Candelaria
+823,193,1147,Carolina,Femenino,Finalizado,2:32:20,Tunjuelito
+824,194,582,Diana Patricia,Femenino,Finalizado,2:32:20,Fontibon
+825,195,822,Anabel,Femenino,Finalizado,2:32:30,Bosa
+826,631,450,Carlos Andres,Masculino,Finalizado,2:32:40,Puente Aranda
+827,196,713,María Gimena,Femenino,Finalizado,2:32:42,Usme
+828,197,1563,Dayhana Alejandra,Femenino,Finalizado,2:33:03,Los Martires
+829,198,1884,Valeria,Femenino,Finalizado,2:33:23,Teusaquillo
+830,199,1184,Karen Daniela,Femenino,Finalizado,2:33:50,Usme
+831,200,1111,Natalia,Femenino,Finalizado,2:33:50,Suba
+832,632,1052,Harrison,Masculino,Finalizado,2:33:52,Engativa
+833,201,1778,Sandra Milena,Femenino,Finalizado,2:34:03,Los Martires
+834,633,57,Diego Hernan,Masculino,Finalizado,2:34:07,Santa Fe
+835,634,2786,Yeider Orlando,Masculino,Finalizado,2:34:08,Kennedy
+836,635,1099,Miguel Andres,Masculino,Finalizado,2:34:21,Fontibon
+837,636,1246,Fabian Gustavo,Masculino,Finalizado,2:34:51,Chapinero
+838,637,17,William Andres,Masculino,Finalizado,2:34:56,Los Martires
+839,638,1319,Wilson Alonso,Masculino,Finalizado,2:35:09,Barrios Unidos
+840,639,3379,Victor Manuel,Masculino,Finalizado,2:35:15,La Candelaria
+841,640,209,Gustavo Adolfo,Masculino,Finalizado,2:35:44,Suba
+842,641,413,Kevin David Adrián,Masculino,Finalizado,2:35:45,Chapinero
+843,642,969,John Jairo,Masculino,Finalizado,2:36:10,Ciudad Bolivar
+844,643,658,William Smith,Masculino,Finalizado,2:36:13,Engativa
+845,644,945,Juan Carlos,Masculino,Finalizado,2:36:50,Antonio Narino
+846,202,1857,Lina Marcela,Femenino,Finalizado,2:36:58,San Cristobal
+847,203,3633,Karen Andrea,Femenino,Finalizado,2:37:05,La Candelaria
+848,645,1452,Juan Manuel,Masculino,Finalizado,2:37:21,Ciudad Bolivar
+849,646,715,Julian Octavio,Masculino,Finalizado,2:37:31,Barrios Unidos
+850,204,136,Gabriela,Femenino,Finalizado,2:37:44,Tunjuelito
+851,205,415,Beatriz Elena,Femenino,Finalizado,2:37:47,Engativa
+852,206,3566,Paola,Femenino,Finalizado,2:37:51,Antonio Narino
+853,207,2845,Karen Lorena,Femenino,Finalizado,2:37:59,Barrios Unidos
+854,208,299,Valentina,Femenino,Finalizado,2:38:03,Los Martires
+855,647,840,David Mauricio,Masculino,Finalizado,2:38:31,Puente Aranda
+856,648,622,Ismael Andres,Masculino,Finalizado,2:38:42,Bosa
+857,209,437,Flor María,Femenino,Finalizado,2:38:57,Usaquen
+858,649,1766,Orinson,Masculino,Finalizado,2:39:01,San Cristobal
+859,650,1645,Jose Alejandro,Masculino,Finalizado,2:39:51,Engativa
+860,210,1219,Anita,Femenino,Finalizado,2:40:35,Chapinero
+861,651,336,Francisco Javier,Masculino,Finalizado,2:40:58,Teusaquillo
+862,652,1864,Juan David,Masculino,Finalizado,2:41:12,Antonio Narino
+863,653,472,Kevin Alexander,Masculino,Finalizado,2:41:37,Fontibon
+864,211,868,Luz Hely,Femenino,Finalizado,2:41:42,Kennedy
+865,212,324,Sindy Marcela,Femenino,Finalizado,2:41:44,Barrios Unidos
+866,213,940,Claudia,Femenino,Finalizado,2:41:53,Ciudad Bolivar
+866,213,3005,Andrea,Femenino,Finalizado,2:40:28,Usaquen
+867,214,1631,Luisa María,Femenino,Finalizado,2:42:20,Engativa
+868,215,886,Diana Milena,Femenino,Finalizado,2:42:31,San Cristobal
+869,216,557,Maria Elizabeth,Femenino,Finalizado,2:42:46,Engativa
+870,654,1465,Camilo,Masculino,Finalizado,2:42:46,Fontibon
+871,217,201,Yuri Ximena,Femenino,Finalizado,2:43:11,Barrios Unidos
+872,218,2611,Andrea,Femenino,Finalizado,2:43:20,San Cristobal
+873,655,1612,Javier Enrique,Masculino,Finalizado,2:43:40,Suba
+874,219,1110,Jenny Leticia,Femenino,Finalizado,2:44:02,Usme
+875,220,1869,Erika Viviana,Femenino,Finalizado,2:44:19,Puente Aranda
+876,221,1355,Esperanza,Femenino,Finalizado,2:44:34,Usaquen
+876,221,1870,Lady Maria,Femenino,Finalizado,2:44:27,Chapinero
+877,222,217,Juliana,Femenino,Finalizado,2:44:41,Sumapaz
+878,223,1254,Yurany,Femenino,Finalizado,2:44:42,Engativa
+879,224,814,Edna Yulyeth,Femenino,Finalizado,2:45:18,Sumapaz
+880,225,1769,Diana Yaneth,Femenino,Finalizado,2:45:41,Los Martires
+881,226,1668,Martha Luz,Femenino,Finalizado,2:45:44,Puente Aranda
+882,227,924,Rubiela,Femenino,Finalizado,2:45:50,Fontibon
+883,228,1377,Valentina,Femenino,Finalizado,2:45:56,Usaquen
+884,229,1225,Nelly,Femenino,Finalizado,2:46:17,Ciudad Bolivar
+885,656,291,Samuel,Masculino,Finalizado,2:46:18,Kennedy
+886,657,503,Gustavo Alberto,Masculino,Finalizado,2:46:23,Santa Fe
+887,230,1467,Karen,Femenino,Finalizado,2:46:29,Rafael Uribe Uribe
+888,231,347,Zahira,Femenino,Finalizado,2:46:52,Antonio Narino
+889,232,654,Sandra,Femenino,Finalizado,2:47:05,Fontibon
+890,233,583,Maria Ximena,Femenino,Finalizado,2:47:06,Engativa
+891,658,144,Juan Pablo,Masculino,Finalizado,2:47:18,Chapinero
+892,659,2903,Juan David,Masculino,Finalizado,2:47:45,Tunjuelito
+893,660,1731,Sebastián,Masculino,Finalizado,2:48:16,Suba
+894,661,1830,Diego Mario,Masculino,Finalizado,2:48:19,Puente Aranda
+895,662,11,Luis Eduardo,Masculino,Finalizado,2:48:35,La Candelaria
+896,234,183,Lina Maria,Femenino,Finalizado,2:48:36,Bosa
+897,235,581,Adriana,Femenino,Finalizado,2:49:33,Puente Aranda
+898,236,644,Catalina,Femenino,Finalizado,2:49:34,Antonio Narino
+899,663,1448,Jhon Edinson,Masculino,Finalizado,2:49:41,Fontibon
+900,664,1920,Andres Mauricio,Masculino,Finalizado,2:50:08,Chapinero
+901,237,1161,Norma Constanza,Femenino,Finalizado,2:51:18,Santa Fe
+902,238,1942,Diana Maria,Femenino,Finalizado,2:51:26,Teusaquillo
+903,239,709,Johanna,Femenino,Finalizado,2:51:27,Tunjuelito
+904,665,1837,Jose Carlos,Masculino,Finalizado,3:02:57,Sumapaz
+905,666,1578,Mario Antonio,Masculino,Finalizado,3:03:01,Sumapaz
+906,242,2046,Yexine,Femenino,Finalizado,2:57:20,Chapinero
+906,240,731,Bolivia,Femenino,Finalizado,3:03:12,Ciudad Bolivar
+907,666,2306,Jorge Alejandro,Masculino,Finalizado,2:54:45,La Candelaria
+907,667,1214,John Bryam,Masculino,Finalizado,3:03:13,Sumapaz
+908,241,719,Stella Elizabeth,Femenino,Finalizado,3:03:26,San Cristobal
+909,668,611,Raúl,Masculino,Finalizado,3:28:43,San Cristobal
+910,243,2449,Claudet Fernanda,Femenino,Finalizado,2:58:53,Usaquen
+910,242,63,Luz Adriana,Femenino,Finalizado,3:29:09,San Cristobal
+911,244,3604,Myriam Carmenza,Femenino,Finalizado,2:54:50,Usaquen
+911,669,1908,German,Masculino,Finalizado,3:30:38,Antonio Narino
+913,244,358,Diana Marcela,Femenino,Finalizado,4:19:46,Los Martires
+DNF,DNF,926,María Juliana,Femenino,Retirado,DNF,Antonio Narino
+DNF,DNF,2388,Paula Andrea,Femenino,Retirado,DNF,Sumapaz
+DNF,DNF,1787,Jaime,Masculino,Retirado,DNF,Suba
+DNF,DNF,121,Adriana,Femenino,Retirado,DNF,Rafael Uribe Uribe
+DNF,DNF,1133,Melida,Femenino,Retirado,DNF,Puente Aranda
+DNF,DNF,3335,German,Masculino,Retirado,DNF,Chapinero
+DNF,DNF,1831,Sandra Patricia,Femenino,Retirado,DNF,Usaquen
+DNF,DNF,624,Julian Dario,Masculino,Retirado,DNF,Kennedy
+DNF,DNF,1238,Nadine Stephany,Femenino,Retirado,DNF,Puente Aranda
+DNF,DNF,1072,Óscar Felipe,Masculino,Retirado,DNF,Engativa
+DNF,DNF,1919,Carolina,Femenino,Retirado,DNF,Puente Aranda
+DNF,DNF,235,Ana María,Femenino,Retirado,DNF,Usme
+DNF,DNF,182,Carolina,Femenino,Retirado,DNF,Rafael Uribe Uribe
+DNF,DNF,2249,Cristian Camilo,Masculino,Retirado,DNF,La Candelaria
+DNF,DNF,318,Jose Antonio,Masculino,Retirado,DNF,La Candelaria
+DNF,DNF,3499,Lilia Maria,Femenino,Retirado,DNF,Sumapaz
+DNF,DNF,1211,Luz Andrea,Femenino,Retirado,DNF,Antonio Narino
+DNF,DNF,1548,Diana Marcela,Femenino,Retirado,DNF,Teusaquillo
+DNF,DNF,673,Libardo,Masculino,Retirado,DNF,Ciudad Bolivar
+DNF,DNF,333,Raul,Masculino,Retirado,DNF,Rafael Uribe Uribe
+DNF,DNF,544,Germán,Masculino,Retirado,DNF,Usaquen
+DNF,DNF,708,Doris,Femenino,Retirado,DNF,Ciudad Bolivar
+DNF,DNF,1221,Paula Andrea,Femenino,Retirado,DNF,Fontibon
+DNF,DNF,3337,Rubby,Femenino,Retirado,DNF,Suba
+DNF,DNF,735,Jessica,Femenino,Retirado,DNF,Engativa
+DNF,DNF,1098,Juan Sebastian,Masculino,Retirado,DNF,Ciudad Bolivar
+DNF,DNF,300,Luis Antonio,Masculino,Retirado,DNF,Antonio Narino
+DNF,DNF,751,Jaime,Masculino,Retirado,DNF,Bosa
+DNF,DNF,307,Angela Yanneth,Femenino,Retirado,DNF,Tunjuelito
+DNF,DNF,3208,Jessica,Femenino,Retirado,DNF,Usaquen
+DNF,DNF,1940,Monica,Femenino,Retirado,DNF,San Cristobal
+DNS,DNS,1815,Oscar Fidel,Masculino,Sin salida,DNS,Sumapaz
+DNS,DNS,685,Mauricio,Masculino,Sin salida,DNS,Chapinero
+DNS,DNS,180,Alejandro,Masculino,Sin salida,DNS,Tunjuelito
+DNS,DNS,1480,Sandra Milena,Femenino,Sin salida,DNS,Ciudad Bolivar
+DNS,DNS,879,Ilsa Lucero,Femenino,Sin salida,DNS,San Cristobal
+DNS,DNS,1653,Juan David,Masculino,Sin salida,DNS,Los Martires
+DNS,DNS,1768,Felipe,Masculino,Sin salida,DNS,Puente Aranda
+DNS,DNS,1367,Mary Luz,Femenino,Sin salida,DNS,Sumapaz
+DNS,DNS,213,Luz Adriana,Femenino,Sin salida,DNS,Rafael Uribe Uribe
+DNS,DNS,178,Deibis Antonio,Masculino,Sin salida,DNS,Barrios Unidos
+DNS,DNS,655,Marcelo,Masculino,Sin salida,DNS,Kennedy
+DNS,DNS,875,Camilo,Masculino,Sin salida,DNS,Usaquen
+DNS,DNS,1435,Laura Cristina,Femenino,Sin salida,DNS,Chapinero
+DNS,DNS,378,Alexander,Masculino,Sin salida,DNS,Usme
+DNS,DNS,162,Angela María,Femenino,Sin salida,DNS,Usme
+DNS,DNS,1771,David Alejandro,Masculino,Sin salida,DNS,Engativa
+DNS,DNS,105,Tatiana,Femenino,Sin salida,DNS,Usaquen
+DNS,DNS,249,José Enver,Masculino,Sin salida,DNS,La Candelaria
+DNS,DNS,750,Félix Antonio,Masculino,Sin salida,DNS,Santa Fe
+DNS,DNS,498,Helbert Alexander,Masculino,Sin salida,DNS,Puente Aranda
+DNS,DNS,929,Nicolás,Masculino,Sin salida,DNS,Barrios Unidos
+DNS,DNS,955,Yuri Juliana,Femenino,Sin salida,DNS,Tunjuelito
+DNS,DNS,51,Beyggitte Vanessa,Femenino,Sin salida,DNS,Los Martires
+DNS,DNS,1297,Valery Margarita,Femenino,Sin salida,DNS,Rafael Uribe Uribe
+DNS,DNS,1814,Daniel,Masculino,Sin salida,DNS,Rafael Uribe Uribe
+DNS,DNS,1273,Angela Jeysel,Femenino,Sin salida,DNS,Tunjuelito
+DNS,DNS,1820,Jorge,Masculino,Sin salida,DNS,Los Martires
+DNS,DNS,730,Yovanni,Masculino,Sin salida,DNS,Antonio Narino
+DNS,DNS,371,Johan Alexander,Masculino,Sin salida,DNS,Ciudad Bolivar
+DNS,DNS,229,Robinson Harold,Masculino,Sin salida,DNS,San Cristobal
+DNS,DNS,1028,Paula Andrea,Femenino,Sin salida,DNS,Suba
+DNS,DNS,1714,Victor,Masculino,Sin salida,DNS,Barrios Unidos
+DNS,DNS,549,Hernan,Masculino,Sin salida,DNS,Teusaquillo
+DNS,DNS,1812,Sebastian,Masculino,Sin salida,DNS,Kennedy
+DNS,DNS,1553,Juan Pablo,Masculino,Sin salida,DNS,Antonio Narino
+DNS,DNS,1824,Rodrigo,Masculino,Sin salida,DNS,Engativa
+DNS,DNS,1202,Sebastián,Masculino,Sin salida,DNS,Engativa
+DNS,DNS,592,Juan Camilo,Masculino,Sin salida,DNS,Engativa
+DNS,DNS,911,Leonardo Fabio,Masculino,Sin salida,DNS,Chapinero
+DNS,DNS,725,Carolina,Femenino,Sin salida,DNS,Ciudad Bolivar
+DNS,DNS,1293,Michael Steven,Masculino,Sin salida,DNS,Bosa
+DNS,DNS,257,José Guillermo,Masculino,Sin salida,DNS,Puente Aranda
+DNS,DNS,27,Angélica,Femenino,Sin salida,DNS,Usme
+DNS,DNS,1230,Edna Patricia,Femenino,Sin salida,DNS,Santa Fe
+DNS,DNS,68,Hans Wilher,Masculino,Sin salida,DNS,Usme
+DNS,DNS,1819,Manuel,Masculino,Sin salida,DNS,Antonio Narino
+DNS,DNS,1907,Juan Camilo,Masculino,Sin salida,DNS,Puente Aranda
+DNS,DNS,684,Elber Darío,Masculino,Sin salida,DNS,Santa Fe
+DNS,DNS,295,Laura,Femenino,Sin salida,DNS,Santa Fe
+DQ,DQ,1592,Emiliano,Masculino,Descalificado,DQ,Bosa
+DQ,DQ,1921,Tatiana,Femenino,Descalificado,DQ,Barrios Unidos
+DQ,DQ,1510,Angela,Femenino,Descalificado,DQ,Sumapaz
+DQ,DQ,3374,Esteban,Masculino,Descalificado,DQ,Sumapaz
+DQ,DQ,866,Laura,Femenino,Descalificado,DQ,Bosa
+DQ,DQ,1692,Mateo,Masculino,Descalificado,DQ,Santa Fe
+DQ,DQ,621,Consuelo,Femenino,Descalificado,DQ,Suba
+DQ,DQ,309,Cristian Alberto,Masculino,Descalificado,DQ,La Candelaria
+DQ,DQ,1738,Juan Felipe,Masculino,Descalificado,DQ,San Cristobal
+DQ,DQ,616,Elber Julian,Masculino,Descalificado,DQ,Sumapaz
+DQ,DQ,2117,Leonardo Alfonso,Masculino,Descalificado,DQ,Chapinero
+DQ,DQ,543,Alex Julián,Masculino,Descalificado,DQ,Kennedy
+DQ,DQ,2445,Wilmar Armando,Masculino,Descalificado,DQ,Barrios Unidos
+DQ,DQ,2831,Margarita,Femenino,Descalificado,DQ,Tunjuelito
+DQ,DQ,480,María Cristina,Femenino,Descalificado,DQ,Los Martires
+DQ,DQ,242,Maria Paula,Femenino,Descalificado,DQ,Antonio Narino
+DQ,DQ,1188,Valeria,Femenino,Descalificado,DQ,Usaquen
+DQ,DQ,536,Juan Felipe,Masculino,Descalificado,DQ,Usaquen
+DQ,DQ,2036,Miguel Angel,Masculino,Descalificado,DQ,San Cristobal
+DQ,DQ,1861,Mario Leonardo,Masculino,Descalificado,DQ,Suba
+DQ,DQ,615,Lilian Ximena,Femenino,Descalificado,DQ,Fontibon
+DQ,DQ,2557,Carlos Julio,Masculino,Descalificado,DQ,Chapinero
+DQ,DQ,638,Luz Dary,Femenino,Descalificado,DQ,Ciudad Bolivar
+DQ,DQ,3520,Edilberto,Masculino,Descalificado,DQ,Santa Fe
+DQ,DQ,1526,Horacio,Masculino,Descalificado,DQ,Sumapaz

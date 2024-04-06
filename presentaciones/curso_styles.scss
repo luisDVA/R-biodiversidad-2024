@@ -1,0 +1,79 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Rubik','Source Sans Pro','Cabin',Helvetica, sans-serif, 'News Cycle';
+$font-family-monospace: 'DM Mono','Red Hat Mono', monospace;
+$code-color: #f35b04;
+
+/*-- scss:rules --*/
+
+.reveal h2 {
+    font-size: 1.4em;
+    color:  #3d405b;
+    margin-bottom: 2.8px;
+}
+
+.big-code{
+  font-size: 200%
+}
+
+.med-code{
+  font-size: 150%
+}
+
+.reveal .slide figure>figcaption, .reveal .slide img.stretch+p.caption, .reveal .slide img.r-stretch+p.caption  {
+  font-size: .4em;
+  color: #606060;
+  text-align: center;
+  margin-top: 1;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
+
+.rightref{
+  display:flex;
+  flex-direction:row-reverse;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  align-items:flex-end;
+  align-content:flex-end;
+}
+
+.refbox{
+font-size: 1.5rem;
+box-shadow: 6px 6px grey;
+padding: 9px;
+color: white;
+background-color: #4a4a62;
+border: 1px solid black
+}
+
+.refbox a:link  {
+    color:#FFB833;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+// inline
+.reveal code {
+	font-size: 104%;
+	background-color: #ede7e3;
+	background-color: #ede7e3;
+	padding: 3px;
+}
+

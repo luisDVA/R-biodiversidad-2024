@@ -1,0 +1,33 @@
+---
+title: "Materiales del curso"
+toc: false
+---
+
+Página oficial con todos los recursos (materiales prácticos y presentaciones) para todos los temas. El material será actualizado al finalizar el curso para resolver errores o dudas que surjan durante el mismo.
+
+
+::: columns
+::: {.column width="40%"}
+![](presentaciones/imgs/flyercurso.jpg){width="90%"}
+:::
+
+::: {.column width="60%"}
+
+### Coordina
+
+Dr. Fabricio Villalobos Camacho
+
+## Imparten
+
+Dr. Luis D. Verde Arregoitia  
+Dr. Fabricio Villalobos Camacho  
+M. en C. Juliana Herrera Pérez  
+M. en C. Daniel Valencia Rodríguez
+
+<span class='code'>📆 &ensp; 8-12 de abril, 2024</span>\
+<span class='code'>⏰ &ensp;09:00 - 17:00</span>\
+<span class='code'>🏨 &ensp;Aula de Cómputo</span>\
+
+:::
+:::
+

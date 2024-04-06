@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Herramientas para el manejo de datos de biodiversidad en R"
+  favicon: maevolab.png
+  
+  navbar:
+    background: "#d5eef6"
+    logo: cursologo.png
+    pinned: true
+    align: center
+    left: 
+      - href: index.qmd
+        text: Inicio
+      - href: temario.qmd
+        text: Temario y cronograma
+      - href: materiales.qmd
+        text: Materiales
+  
+  page-footer:
+    left: "Página creada con [Quarto](https://quarto.org/)."
+    right: "Luis D. Verde Arregoitia - 2024"
+
+
+
+format:
+  html:
+    theme: yeti
+    toc: true
+    mainfont: "Cabin"
+    
+execute:
+  freeze: auto

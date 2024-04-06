@@ -1,0 +1,78 @@
+articulo,energia,grasa,carbohidratos,fibra,proteina,tipo,bajo_grasa
+Rollo multigrano,350,8,67,5,10,horneado,TRUE
+Panque de manzana,350,9,64,7,6,horneado,TRUE
+Arrollado de manzana,420,20,59,0,5,horneado,FALSE
+Pan de plátano,490,19,75,4,7,horneado,FALSE
+Mini dona,130,6,17,0,0,horneado,TRUE
+Barra de granola y moras,370,14,47,5,6,horneado,TRUE
+Panque de moras,460,22,61,2,7,horneado,FALSE
+Panque de arándano XL,370,14,55,0,6,horneado,TRUE
+Croissant,310,18,32,0,5,horneado,TRUE
+Pan danés de queso,420,25,39,0,7,horneado,FALSE
+Galleta de chocolate,380,17,51,2,4,horneado,TRUE
+Pan de chocolate y canela,320,12,53,3,6,horneado,TRUE
+Chocolatín,300,17,34,2,5,horneado,TRUE
+Dona de chocolate,420,21,57,2,5,horneado,FALSE
+Bagel,310,5,52,3,12,horneado,TRUE
+Panque de chispas de chocolate,480,18,70,3,7,horneado,TRUE
+Panque de naranja,490,18,73,2,8,horneado,TRUE
+Brownie doble,410,24,46,3,6,horneado,FALSE
+Mini dona con doble chocolate,130,7,16,0,0,horneado,TRUE
+Bagel con todo,280,2,56,2,10,horneado,TRUE
+Galleta de gengibre,360,12,58,0,3,horneado,TRUE
+Panqué de limón y mantequilla,490,23,67,0,5,horneado,FALSE
+Pan dulce,420,25,42,0,7,horneado,FALSE
+Panqué de avena con miel y nueces,440,18,59,3,8,horneado,TRUE
+Marmolado,350,13,54,0,6,horneado,TRUE
+Barra de malvavisco y chocolate,210,4,43,0,0,horneado,TRUE
+Bollo,350,16,45,2,6,horneado,TRUE
+Bagel multigrano,300,3,60,6,15,horneado,TRUE
+Dona glaseada,420,21,57,0,4,horneado,FALSE
+Galleta de avena XL,370,14,56,3,5,horneado,TRUE
+Mini panqué de vainilla y avena,140,5,21,0,0,horneado,TRUE
+Bagel solo,280,1,59,2,9,horneado,TRUE
+Pan de calabaza,390,14,61,2,6,horneado,TRUE
+Mini bollo de calabaza,480,17,78,2,6,horneado,TRUE
+Pan de frambuesa,480,25,59,3,8,horneado,FALSE
+Pastel de frambuesa y vanilla,430,16,69,0,4,horneado,TRUE
+Pastel de chocolate bajo en grasa,400,8,80,4,5,horneado,TRUE
+Pastel light de café con fresas,340,9,62,2,4,horneado,TRUE
+Reduced-Fat Very Berry Coffee Cake,350,10,59,4,7,horneado,TRUE
+Pastel clásico,440,19,63,0,6,horneado,FALSE
+Muffin de almendras,490,28,52,2,7,horneado,FALSE
+Queso con frutas,480,28,39,6,18,almuerzo,FALSE
+Pollo con hummus,270,8,29,6,16,almuerzo,TRUE
+Pollo con lechuga,360,19,32,4,17,almuerzo,FALSE
+Pollo  con salsa dulce,380,15,35,6,26,almuerzo,TRUE
+Almuerzo extra proteína,380,19,37,5,13,almuerzo,FALSE
+Salami con queso,420,26,22,3,25,almuerzo,FALSE
+Fideos,350,11,50,6,15,almuerzo,TRUE
+Ensalada de atún,380,21,25,5,23,almuerzo,FALSE
+Pie de manzana,180,7,27,0,2,individuales,TRUE
+Mini pastel,170,9,22,0,0,individuales,TRUE
+Tarta de nuez,190,12,24,0,2,individuales,TRUE
+Pie de cereza,170,7,24,0,2,individuales,TRUE
+Pie de chocolate con crema,190,11,23,0,0,individuales,TRUE
+Tarta de avellana,180,10,23,0,2,individuales,TRUE
+Mini pastel de frambuesa,160,8,24,0,2,individuales,TRUE
+Mini pastel de moras,190,11,21,0,0,individuales,TRUE
+Mini tiramisu,170,9,22,0,0,individuales,TRUE
+Sandwich de tocino y queso,350,18,30,0,17,desayuno,TRUE
+Sandwich de salchicha de pavo,300,10,33,5,14,desayuno,TRUE
+Sandwich de jamón y queso,350,16,31,0,20,desayuno,TRUE
+Sandwich cĺasico salchicha y queso,500,28,41,0,19,desayuno,FALSE
+Sandwich light queso y espinaca,290,10,33,6,19,desayuno,TRUE
+Avena preparada,140,2.5,25,4,5,desayuno,TRUE
+Sandwich de tocino de pavo con queso,320,7,43,3,18,desayuno,TRUE
+Sandwich de verduras con queso cheddar,350,18,30,0,17,desayuno,TRUE
+Ensalada de fruta,80,0,20,2,0,ensalada,TRUE
+Panini de pollo,400,11,47,2,26,sandwich,TRUE
+Sandwich de huevo,460,27,37,5,22,sandwich,FALSE
+Panini de jamón y queso,360,9,43,2,28,sandwich,TRUE
+Panini tomate y mozarella,390,18,44,3,15,sandwich,TRUE
+Panini de verdura a la plancha,350,12,48,4,13,sandwich,TRUE
+Sandwich de ensalada de pollo,420,13,46,6,32,sandwich,TRUE
+Sandwich de pavo con queso,390,13,36,2,34,sandwich,TRUE
+Yogurt con miel,300,12,44,0,8,lácteos,TRUE
+Yogurt con durazno,300,4,57,3,10,lácteos,TRUE
+Yogurt con frutos rojos,300,3.5,60,3,7,lácteos,TRUE

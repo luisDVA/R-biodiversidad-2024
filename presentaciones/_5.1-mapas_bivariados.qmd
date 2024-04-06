@@ -1,0 +1,495 @@
+---
+title: "Mapas bivariados"
+author: "Gabriel Massaine Moulatlet"
+institute: Instituto de Ecología, A.C.
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: visual
+highlight-style: arrow-light
+---
+
+# Mapas bivariados
+
+## Paquetes
+
+Vamos a utilizar los siguientes paquetes en R
+
+-   bivariate
+-   ggplot2
+
+## Biscale
+
+::: columns
+::: {.column width="20%"}
+![](imgs/biscale.png)
+:::
+
+::: {.column width="80%"}
+-   Paquete para producir mapas bivariados (i.e. dos variables en el mismo layout)
+    -   Sirve para producir leyendas bivariadas
+    -   Herramientas para classificación de datos en categorías usando diferentes técnicas
+    -   [Documentación](https://chris-prener.github.io/biscale/index.html)
+:::
+:::
+
+## Según la wikipedia..
+
+-   Mapas bivariados también son conocidos por *Mapa coropleto* o *Mapa de coropletas*
+
+> Es un tipo de mapa temático en el que las áreas se sombrean de distintos colores, frecuentemente de la misma gama cromática, que representan distintos valores de una variable estadística característica.
+
+## Dos o más variables...
+
+-   Mapas bivariados son útiles para graficar dos variables
+-   Ajuste de colores, transparencias y formas
+
+![](https://www.joshuastevens.net/images/js_finalBivariateMap.png)
+
+## Son bastante comunes para reportar resultados de elecciones
+
+![](imgs/para.png){fig-align="center" fig-size="82%"}
+
+## También usados para reportar indicadores socio-económicos
+
+![](imgs/dengue.png){fig-align="center fig-size="82%""}
+
+## Hay otros ejemplos: colores y marcas
+
+![](imgs/tabaco.png){fig-align="center" fig-size="82%"}
+
+## Hay otros ejemplos: colores y area ![](imgs/happy.png){fig-align="center" fig-size="82%"}
+
+## Leyendas triangulares
+
+-   Tres variables [Sabatini et al. 2022](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.13158) ![](imgs/sabatini.jpg){fig-align="center"}
+
+## Formatos complejos
+
+[Sabatini et al. 2022](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.13158) ![](imgs/forest.jpg){fig-align="center" fig-size="82%"}
+
+## Mapas RGB
+
+![](imgs/dengue3.png){fig-align="center"}
+
+## Leyendas rectangulares con varias categorias
+
+[Peixoto et al. 2017](https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.12561) ![](imgs/peixoto.png){fig-align="center"}
+
+## Pero lo más importante es que la información esté clara
+
+-   ¿Cuál de los dos mapas transmite mejor la información? ![](imgs/dengue2.png){fig-align="center"}
+
+# Producir mapas bivariados
+
+## Teoría:
+
+-   La idea central es buscar una manera de como combinar estas dos variables
+-   Escalas diferentes, número diferente de categorias etc...
+-   Mapas bivariados constan de dos pasos:
+    1.  Categorización de las variables según alguna estadística
+    2.  Preparación de una leyenda con base en una "paleta" de colores
+
+# 1. Categorización de variables
+
+## Pasos:
+
+-   Clasificar los datos en conteos o proporciones
+-   las funciones `cut()` y `summary()` de R base pueden ser útiles
+-   vamos usar la base de datos *iris*
+
+```{r}
+#| eval: true
+#| echo: true
+
+summary(iris$Sepal.Length)
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+
+library(janitor)
+
+# Categorizar de acuerdo a los quantiles
+ci = cut(iris$Sepal.Length,breaks = c(4.3,5.1,5.8,6.4, max(iris$Sepal.Length)))
+
+# Explorar los resultados
+tabyl(ci)
+```
+
+## la función `classIntervals()`
+
+-   Permite categorizar los datos usando varios tipos de categorización
+-   *quantile*, *jenkins*, *equal* para mencionar algunas
+-   hay que definir el numero de clases (parámetro *n*)
+
+```{r}
+#| eval: true
+#| echo: true
+
+library(classInt)
+
+classInt::classIntervals(iris$Sepal.Length,style="quantile",n=4)
+
+```
+
+## 
+
+::: columns
+::: {.column width="50%"}
+-   Luego de categorizar el vector de interés, se puede cortar con la función `cut()`
+-   Tambien se puede generar un vector con las categorías y juntarlo a los datos originales usando la función `findCols()`
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+
+breaks = classInt::classIntervals(iris$Sepal.Length,style="quantile",n=4)$brks
+
+cc = cut(iris$Sepal.Length, breaks = breaks)
+tabyl(cc)
+
+```
+:::
+:::
+
+## la función `findCols()`
+
+```{r}
+#| eval: true
+#| echo: true
+
+# Generar un vector que se pueda juntar a la tabla de datos originales
+
+fc = findCols(classInt::classIntervals(iris$Sepal.Length,style="quantile",n=4))
+head(fc)
+```
+
+## usando el paquete `biscale`
+
+::: columns
+::: {.column width="50%"}
+-   Se utliza la función `bi_class()` para generar las categorías
+-   Una de las ventajas de usar la función `bi_class()` es que hace la categorización de las dos variables elejidas de una sola vez
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+library(biscale)
+
+data <- bi_class(iris, x = Sepal.Length, y = Petal.Length, style = "quantile", dim = 3)
+head(data$bi_class)
+```
+:::
+:::
+
+# 2. Preparación de leyenda bivariada
+
+## Preparación de una leyenda
+
+![](imgs/biva.png)
+
+## 
+
+![](imgs/mix.gif)
+
+## La función `bi_legend()`
+
+-   Para ver las paletas disponibles [aquí](https://chris-prener.github.io/biscale/articles/bivariate_palettes.html)
+
+```{r}
+#| eval: true
+#| echo: true
+
+bi_legend(pal = "GrPink",
+                    dim = 3,
+                    xlab = "Sepal.Length",
+                    ylab = "Petal.Lenght",
+                    size = 12)
+```
+
+## El mapa bivariado
+
+1)  Vamos a ver el ejemplo del [vignette](https://chris-prener.github.io/biscale/articles/biscale.html)
+
+-   Son datos sobre el porcentaje de "brancos" y la ganancia en los EUA.
+-   Vamos usar las columnas `pctWhite` y `medInc` para hacer el mapa.
+-   Vamos usar 3 dimensiones y categorizar los datos usando `quantiles`
+
+## Manos a la obra!
+
+-   El mapa se construye usando ggplot
+-   Determinamos el geom como `geom_sf` y como argumento estético `fill = bi_class`
+-   El `bi_class` debe ser la categorización que hemos visto anteriormente con usando la justamente a función `bi_class()`
+-   Una de las capas del ggplot debe ser `bi_scale_fill`, donde van a poner el argumento `pal` - que es la paleta de colores y `dim` - que es el numero de categorías utilizadas para categorizar los datos.
+
+## 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-overflow: wrap
+
+library(ggplot2)
+library(sf)
+
+data <- bi_class(stl_race_income, x = pctWhite, y = medInc, style = "quantile", dim = 3)
+
+map <- ggplot() +
+  geom_sf(data = data, mapping = aes(fill = bi_class), color = "white", size = 0.1, show.legend = FALSE) +
+  bi_scale_fill(pal = "GrPink", dim = 3)
+```
+
+## 
+
+-   Después de preparar el mapa, hay que preparar la leyenda
+
+```{r}
+#| eval: false
+#| echo: true
+legend <- bi_legend(pal = "GrPink",
+                    dim = 3,
+                    xlab = "Higher % White ",
+                    ylab = "Higher Income ",
+                    size = 8)
+```
+
+-   Por fin, ponerlos lado a lado usando el paquete `patchwork`
+
+```{r}
+#| eval: false
+#| echo: true
+library(patchwork)
+
+map + legend
+```
+
+## 
+
+Se juede jugar con el layout final usando la función `inset`
+
+p1 + inset_element(p2, 0.6, 0.6, 1, 1) \# left, top, right, bottom
+
+![](https://patchwork.data-imaginist.com/reference/inset_element-1.png)
+
+## 
+
+![](https://chris-prener.github.io/biscale/reference/figures/biscale.002.jpeg){fig-align="center"}
+
+# Como hacer mapas bivariados sin usar el paquete `biscale`
+
+## 
+
+-   El tutorial de [Len Kiefer](http://lenkiefer.com/2017/04/24/bivariate-map/)
+-   Usar el paquete `classInt` para categorizar los datos
+-   Usar el esquema de colores de la leyenda para preparar el mapa
+
+![](http://lenkiefer.com/post/2017-04-24-bivariate-map_files/figure-html/04-24-2017-setup-2-1.png)
+
+## 
+
+![](imgs/map.png)
+
+## 
+
+-   La leyenda se hace con la función `expand_grid()` del paquete `tidyr`
+
+```{r}
+#| eval: true
+#| echo: true
+library(tidyr)
+
+d=expand.grid(x=1:3,y=1:3)
+d
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+
+library(ggplot2)
+ggplot(d, aes(x,y))+
+  geom_tile(aes(alpha=x+y,fill=atan(y/x)))+
+  scale_fill_viridis_c()+
+  theme(legend.position="none",
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())+
+  coord_equal()
+```
+
+## 
+
+-   Lo importante aqui es usar el geom `geom_tile`
+-   Permite usar varios [colores](https://ggplot2.tidyverse.org/reference/geom_tile.html)
+-   Vamos jugar con los valores de `alpha` (transparencia) y `fill`
+
+## 
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+ggplot(d, aes(x,y))+
+  geom_tile(aes(fill=atan(y/x)))+
+  scale_fill_viridis_c()+
+  theme(legend.position="none",
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())+
+  coord_equal()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+ggplot(d, aes(x,y))+
+  geom_tile(aes(fill=atan(y/x),alpha=x+y))+
+  scale_fill_viridis_c()+
+  theme(legend.position="none",
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())+
+  coord_equal()
+```
+:::
+:::
+
+## Categorizar los datos
+
+-   vamos a usar las funciones `classInt()` y `findCols()`
+
+```{r}
+#| eval: true
+#| echo: true
+
+ x=classInt::classIntervals(stl_race_income$pctWhite,4,style = "quantile")
+ y=classInt::classIntervals(stl_race_income$medInc,4,style = "quantile")
+ 
+ x
+ 
+```
+
+## 
+
+-   Agregar los valores calculados a la tabla *stl_race_income*
+
+```{r}
+#| eval: true
+#| echo: true
+
+stl_race_income$x = classInt::findCols(x)
+stl_race_income$y = classInt::findCols(y)
+
+```
+
+## Crar un objeto para el `alpha` y otro para el `fill`
+
+```{r}
+#| eval: true
+#| echo: true
+#| 
+stl_race_income$alpha = as.character(stl_race_income$x + stl_race_income$y)
+stl_race_income$color = as.character(atan(stl_race_income$y/stl_race_income$x))
+
+```
+
+## Graficar el mapa
+
+```{r}
+#| eval: true
+#| echo: true
+
+map = ggplot()+
+  geom_sf(data = stl_race_income,aes(fill=color,alpha=alpha),shape=15, size=11,show.legend = FALSE)+
+  scale_fill_viridis_d()+
+  theme_void()
+
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+
+map
+
+```
+
+## Graficar la leyenda
+
+```{r}
+#| eval: true
+#| echo: true
+
+leg = ggplot(d, aes(x,y))+
+  geom_tile(aes(fill=atan(y/x),alpha=x+y))+
+  scale_fill_viridis_c()+
+  theme(legend.position="none",
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())+
+  coord_equal()
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+
+leg
+
+```
+
+## Juntar los dos
+
+```{r}
+#| eval: true
+#| echo: false
+
+library(patchwork)
+
+map + inset_element(leg, -0.5, 0.7, 0.7, 1)
+
+
+```
+
+## Se parecen?
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+
+map + inset_element(leg,  0.6, 0.6, 1, 1)
+```
+:::
+
+::: {.column width="50%"}
+![](https://chris-prener.github.io/biscale/reference/figures/biscale.002.jpeg)
+:::
+:::

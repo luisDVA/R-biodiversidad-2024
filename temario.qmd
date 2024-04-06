@@ -1,0 +1,45 @@
+---
+title: "Temario y cronograma"
+toc-title: Contenido 
+---
+
+## 1) Flujos de trabajo y análisis (0.5 días)
+
+- Organización de proyectos y archivos  
+- Buenas prácticas para nombrar archivos y objetos
+- Trabajando con rutas  
+- Estructuras de datos  
+- Exploración rápida de datos  
+
+## 2) Manipulación y limpieza de datos (1.5 días)
+
+- Pasos a seguir para importar y reestructurar tablas y archivos
+- Principios de datos ordenados (tidy data) y herramientas del 'tidyverse' para ordenar datos  
+- Expresiones regulares para trabajar con cadenas de texto  
+- Herramientas para trabajar con datos faltantes  
+- Formas de identificar Información repetida
+
+## 3) Visualización de Datos (1 día)
+
+- Introducción a `ggplot2` 
+- Representaciones gráficas de información   
+- Personalización de elementos gráficos (ejes, colores, fuentes, leyendas) 
+- Preparación de figuras científicas  
+- Exportando gráficos de alta calidad  
+
+## 4) Lo que nadie nos enseñó sobre R (1 día)
+
+- Entornos de trabajo y configuración  
+- Iteración y vectorización para evitar repetición 
+- Trabajando con listas  
+- Manejo de matrices  
+- Atajos y herramientas para mayor eficiencia   
+- Errores comunes y como solucionarlos  
+
+## 5) Aspectos de geografía de la biodiversidad (1 día)
+
+- Puntos, polígonos, rasters: nuevas paqueterías para manejo de datos espaciales 
+  * Calculando riqueza de especies para diferentes unidades espaciales  
+- Paquetes para generar mapas bivariados  
+- Trabajo con modelos de elevación digital 
+- Filogenias: manejo y visualización 
