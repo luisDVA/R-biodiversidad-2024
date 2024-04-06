@@ -55,6 +55,7 @@ library(fontawesome)
 ¿Dialecto de S?\
 ¿Paquete estadístico?\
 ¿RStudio?\
+¿Empresa?\
 ¿Lenguaje de programación?\
 ¿Dispositivo gráfico?
 

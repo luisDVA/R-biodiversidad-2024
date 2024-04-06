@@ -429,6 +429,7 @@ Luis D. Verde Arregoitia
 <p>¿Dialecto de S?<br>
 ¿Paquete estadístico?<br>
 ¿RStudio?<br>
+¿Empresa?<br>
 ¿Lenguaje de programación?<br>
 ¿Dispositivo gráfico?</p>
 </div>
@@ -563,7 +564,7 @@ Al instalar R instalamos:</p>
 <li><p>Ejecutar RStudio</p></li>
 <li><p>Instalar algunos paquetes para hoy:</p></li>
 </ul>
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-1_d4c94776dada1dd5be551d7e897c93e2">
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-1_ec3e4970962c5791b8a2243c42b594e7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
@@ -758,13 +759,13 @@ Cambiar nombres</p>
 </ul></li>
 </ul>
 <h3 id="los-paquetes-ya-instalados-se-cargan-con-la-función-library">Los paquetes ya instalados se cargan con la función <code>library()</code></h3>
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-2_c16092901a04dba7b3d98d2d5b1030c3">
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-2_ad02eb72af76e5482eacfae48f76a729">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(fs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="crear-nuevas-carpetas-en-el-directorio-del-proyecto" class="slide level2">
 <h2>Crear nuevas carpetas en el directorio del proyecto</h2>
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-3_066c88a900a9a35d0338a4bfbf4374aa">
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-3_f7a59f8f870d941ba3bfde2c2722313a">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">dir_create</span>(<span class="st">"R"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">dir_create</span>(<span class="st">"datos"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">dir_create</span>(<span class="st">"salida"</span>)</span>
@@ -834,7 +835,7 @@ Jenny Bryan (2018)<br>
 <section id="section-7" class="slide level2">
 <h2></h2>
 <p>Si la raíz del proyecto es <code>mi-proyecto</code></p>
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-4_acd0d66e1d005a6c4d60cc274b60066a">
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-4_d1b939314b9f7f1222543bd70be78775">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">here</span>(<span class="st">"analisis"</span>,<span class="st">"script1.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>construye:</p>
@@ -856,12 +857,9 @@ Jenny Bryan (2018)<br>
 <h2></h2>
 <p>Construir rutas:</p>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-5_bcd8f2fc539bc97dfbef6f7a3f796403">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">here</span>(<span class="st">"carpeta ficticia"</span>,<span class="st">"subcarpeta"</span>,<span class="st">"tesis-terminada.doc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-5_f76c8920e23e4657e6e81d8db8c5f6f7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">here</span>(<span class="st">"carpeta ficticia"</span>,<span class="st">"subcarpeta"</span>,<span class="st">"tesis-terminada.doc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024/carpeta ficticia/subcarpeta/tesis-terminada.doc"</code></pre>
 </div>
@@ -886,9 +884,9 @@ Jenny Bryan (2018)<br>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-6_ca94dbbd098cab8115e8c58b0e20b87e">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>mi_tabla <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"mi_ruta/mi-archivo.csv"</span>,</span>
-<span id="cb9-2"><a href="#cb9-2"></a>                     <span class="at">header =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-6_77ce5ad030476e10b140786cf077ac78">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>mi_tabla <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"mi_ruta/mi-archivo.csv"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2"></a>                     <span class="at">header =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>mi_tabla</code> - objeto que creamos<br>
 <code>read.csv()</code> - función para leer archivos de texto<br>
@@ -990,8 +988,8 @@ Jenny Bryan (2018)<br>
 <h2>Vectores</h2>
 <p>Números</p>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-7_e40c2f3b01c8f7ad5c9578f9065c174b">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-7_0d1b85a42348df8d78a8a44469916c24">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4</code></pre>
 </div>
@@ -999,8 +997,8 @@ Jenny Bryan (2018)<br>
 </div>
 <p><br></p>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-8_20fae709a5acd53e4fe9ffb4f4cab1c6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">c</span>(<span class="fl">22.1</span>,<span class="fl">0.006</span>,<span class="fl">4.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-8_ee0c70266a4f3846f6392d3a56ac2aca">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">c</span>(<span class="fl">22.1</span>,<span class="fl">0.006</span>,<span class="fl">4.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.100  0.006  4.100</code></pre>
 </div>
@@ -1011,8 +1009,8 @@ Jenny Bryan (2018)<br>
 <h2>Vectores</h2>
 <p>Caracteres</p>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-9_7d56bda4ea69ca1e603579878c8e2bfd">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">c</span>(<span class="st">"perro"</span>,<span class="st">"gato"</span>,<span class="st">"rata"</span>,<span class="st">"B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-9_7a17cfcefff3e13c7dac94362b28cb7f">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">c</span>(<span class="st">"perro"</span>,<span class="st">"gato"</span>,<span class="st">"rata"</span>,<span class="st">"B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "perro" "gato"  "rata"  "B"    </code></pre>
 </div>
@@ -1023,8 +1021,8 @@ Jenny Bryan (2018)<br>
 <h2>Vectores</h2>
 <p>Lógicos (verdadero/falso)</p>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-10_6ebf8b3c3ddd7efa1be6358ea6a2dfa2">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-10_4ed82c9e76fcec73150cb33a15aeef64">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE FALSE  TRUE</code></pre>
 </div>
@@ -1042,24 +1040,24 @@ Jenny Bryan (2018)<br>
 <section id="creando-objetos" class="slide level2">
 <h2>Creando objetos</h2>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-11_89680147239f928f47adefb0d9d482e1">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-11_25c25dc744a7ca8bd9303ce0fa68a887">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Función <code>c()</code> para juntar elementos en un vector</p>
 <div class="med-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-12_a04bb86f1dbdc10039bef4e9d864f625">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"G"</span>,<span class="st">"h"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-12_a0bc9252620f78b58c2edc6364ea9dfe">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"G"</span>,<span class="st">"h"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="med-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-13_5630d361668a82cb84ed8993a7f44f2a">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-13_6ae029f688f4b949482ab9b3349c26e9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a" "G" "h"</code></pre>
 </div>
@@ -1069,12 +1067,12 @@ Jenny Bryan (2018)<br>
 <section id="los-objetos-tienen-clases" class="slide level2">
 <h2>Los objetos tienen clases</h2>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-14_df53de71f57f045e6c6dd746983bf35f">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-14_8147247aee805dc0cdf47162236c5ee8">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">class</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">class</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -1084,8 +1082,8 @@ Jenny Bryan (2018)<br>
 <section id="los-vectores-solo-pueden-tener-objetos-de-la-misma-clase" class="slide level2">
 <h2>Los vectores solo pueden tener objetos de la misma clase</h2>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-15_56efafc022d72a084a6d672105dd9107">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">"a"</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-15_09b9d8c6b4e7159a48459c64975d90fb">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">"a"</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1" "a" "2"</code></pre>
 </div>
@@ -1114,10 +1112,10 @@ Jenny Bryan (2018)<br>
 <section id="factores-1" class="slide level2">
 <h2>Factores</h2>
 <div class="med-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-16_c73c1fc64d82a56e815cd562a00f5573">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"perro"</span>,<span class="st">"gato"</span>,<span class="st">"ave"</span>,<span class="st">"ninguno"</span>,</span>
-<span id="cb30-2"><a href="#cb30-2"></a>         <span class="st">"perro"</span>,<span class="st">"ninguno"</span>,<span class="st">"perro"</span>,<span class="st">"perro"</span>,</span>
-<span id="cb30-3"><a href="#cb30-3"></a>         <span class="st">"gato"</span>,<span class="st">"ave"</span>,<span class="st">"perro"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-16_c84081e818b1fbab21fd4b10ac953009">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"perro"</span>,<span class="st">"gato"</span>,<span class="st">"ave"</span>,<span class="st">"ninguno"</span>,</span>
+<span id="cb28-2"><a href="#cb28-2"></a>         <span class="st">"perro"</span>,<span class="st">"ninguno"</span>,<span class="st">"perro"</span>,<span class="st">"perro"</span>,</span>
+<span id="cb28-3"><a href="#cb28-3"></a>         <span class="st">"gato"</span>,<span class="st">"ave"</span>,<span class="st">"perro"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] perro   gato    ave     ninguno perro   ninguno perro   perro   gato   
 [10] ave     perro  
@@ -1146,11 +1144,11 @@ Levels: ave gato ninguno perro</code></pre>
 <h2>Data frames</h2>
 <p>Se crean importando un archivo tabular o con <code>data.frame()</code></p>
 <div class="med-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-17_92777addb8932a1c9ff8e85e3a5fefc8">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>mi_tabla <span class="ot">&lt;-</span> </span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">data.frame</span>(<span class="at">id=</span><span class="fu">c</span>(<span class="st">"rana"</span>,<span class="st">"pez"</span>,<span class="st">"nutria"</span>,<span class="st">"gusano"</span>),</span>
-<span id="cb32-3"><a href="#cb32-3"></a>           <span class="at">ind_g=</span><span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">13</span>,<span class="dv">10</span>),</span>
-<span id="cb32-4"><a href="#cb32-4"></a>           <span class="at">listo=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-17_417f9e0fe49bb9363cf2900f572c7dd7">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>mi_tabla <span class="ot">&lt;-</span> </span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">data.frame</span>(<span class="at">id=</span><span class="fu">c</span>(<span class="st">"rana"</span>,<span class="st">"pez"</span>,<span class="st">"nutria"</span>,<span class="st">"gusano"</span>),</span>
+<span id="cb30-3"><a href="#cb30-3"></a>           <span class="at">ind_g=</span><span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">13</span>,<span class="dv">10</span>),</span>
+<span id="cb30-4"><a href="#cb30-4"></a>           <span class="at">listo=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1162,8 +1160,8 @@ Levels: ave gato ninguno perro</code></pre>
 <section id="section-11" class="slide level2">
 <h2></h2>
 <div class="big-code">
-<div class="cell" data-hash="1-flujos_trabajo_cache/html/unnamed-chunk-18_101cbbc884b68d0832b4626c73e1aba9">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>mi_tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="1-flujos_trabajo_cache/revealjs/unnamed-chunk-18_8c8a1bb0d4887639f95de3e3b5cb0d59">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>mi_tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id ind_g listo
 1   rana    12  TRUE
@@ -1392,6 +1390,44 @@ Levels: ave gato ninguno perro</code></pre>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -1691,7 +1691,7 @@
     "href": "presentaciones/1-flujos_trabajo.html#qué-es",
     "title": "Flujos de trabajo y análisis",
     "section": "¿Qué es ?",
-    "text": "¿Qué es ?\n✍️Software\n\n¿Dialecto de S?\n¿Paquete estadístico?\n¿RStudio?\n¿Lenguaje de programación?\n¿Dispositivo gráfico?"
+    "text": "¿Qué es ?\n✍️Software\n\n¿Dialecto de S?\n¿Paquete estadístico?\n¿RStudio?\n¿Empresa?\n¿Lenguaje de programación?\n¿Dispositivo gráfico?"
   },
   {
     "objectID": "presentaciones/1-flujos_trabajo.html#section-1",
@@ -4148,7 +4148,7 @@
     "href": "presentaciones/1-flujos_trabajo.html#section-8",
     "title": "Flujos de trabajo y análisis",
     "section": "",
-    "text": "Construir rutas:\n\n\nlibrary(here)\n\nhere() starts at /home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024\n\nhere(\"carpeta ficticia\",\"subcarpeta\",\"tesis-terminada.doc\")\n\n[1] \"/home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024/carpeta ficticia/subcarpeta/tesis-terminada.doc\""
+    "text": "Construir rutas:\n\n\nlibrary(here)\nhere(\"carpeta ficticia\",\"subcarpeta\",\"tesis-terminada.doc\")\n\n[1] \"/home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024/carpeta ficticia/subcarpeta/tesis-terminada.doc\""
   },
   {
     "objectID": "presentaciones/1-flujos_trabajo.html#section-9",
