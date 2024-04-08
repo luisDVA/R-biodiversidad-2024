@@ -7,7 +7,7 @@ toc-title: Contenido
 
 Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos del curso:
 
-[🗜️[Descargar datos](archivos-ej/datoscurso.zip)]{style="font-size: 1.6rem; background-color: #b46294; 	padding: 3px;	border-radius: 6px; text-align: center;"}
+[️[Descargar datos](archivos-ej/datoscurso.zip)]{style="font-size: 1.6rem; background-color: #b46294; 	padding: 3px;	border-radius: 6px; text-align: center;"}
 
 ## Presentaciones
 

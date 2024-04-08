@@ -4,14 +4,14 @@
     "href": "materiales.html",
     "title": "Materiales del curso",
     "section": "",
-    "text": "Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos del curso:\n🗜️Descargar datos"
+    "text": "Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos del curso:\n️Descargar datos"
   },
   {
     "objectID": "materiales.html#datos",
     "href": "materiales.html#datos",
     "title": "Materiales del curso",
     "section": "",
-    "text": "Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos del curso:\n🗜️Descargar datos"
+    "text": "Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos del curso:\n️Descargar datos"
   },
   {
     "objectID": "materiales.html#presentaciones",
@@ -25,7 +25,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#pipes",
     "title": "Manipulación y limpieza de datos",
     "section": "Pipes",
-    "text": "Pipes\n\n\n\nMano izquierda\n(LHS)\n\noperador ‘pipe’\n%&gt;%\nde 📦 magrittr\n|&gt; en R v &gt;= 4.1.0\n\nMano derecha\n(RHS)\n\n\n\n\nToma un objeto a la izquierda del operador y lo inserta como argumento en la función que esté a su derecha\n* Por defecto lo que esté a la izquierda del ‘pipe’ se inserta como el primer argumento de la función"
+    "text": "Pipes\n\n\n\nMano izquierda\n(LHS)\n\noperador ‘pipe’\n%&gt;%\nde 📦 magrittr\n|&gt; en R v &gt;= 4.1.0\n\nMano derecha\n(RHS)\n\n\n\n\nToma un objeto a la izquierda del operador y lo inserta como argumento en la función a su derecha\n* Por defecto lo que esté a la izquierda del ‘pipe’ se inserta como el primer argumento de la función"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#código-anidado",
@@ -578,7 +578,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#cadenas-de-texto",
     "title": "Manipulación y limpieza de datos",
     "section": "Cadenas de texto",
-    "text": "Cadenas de texto\n\n\nLos nombres de variables, objetos, y los valores en un data frame también pueden ser cadenas de texto:\n\n\n\nWarning: Since gt v0.3.0, `columns = vars(...)` has been deprecated.\n• Please use `columns = c(...)` instead.\n\n\n\n\n\n  \n    \n    \n      bebida\n      precio\n    \n  \n  \n    café\n3.50\n    té\n2.99\n    jugo\n3.20"
+    "text": "Cadenas de texto\n\n\nLos nombres de variables, objetos, y los valores en un data frame también pueden ser cadenas de texto:\n\n\n\n\n\n\n  \n    \n    \n      bebida\n      precio\n    \n  \n  \n    café\n3.50\n    té\n2.99\n    jugo\n3.20"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#r-distingue-entre-mayúsculas-y-minúsculas",
@@ -900,7 +900,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#filtrando-filas",
     "title": "Manipulación y limpieza de datos",
     "section": "Filtrando filas",
-    "text": "Filtrando filas\nDatos de países del paquete 📦 datos\n\nlibrary(datos)\ndata(paises)\n\n\n\npaises %&gt;% select(pais,continente) %&gt;% \n  sample_n(4)\n\n# A tibble: 4 × 2\n  pais       continente\n  &lt;fct&gt;      &lt;fct&gt;     \n1 Botswana   África    \n2 Líbano     Asia      \n3 Baréin     Asia      \n4 Afganistán Asia"
+    "text": "Filtrando filas\nDatos de países del paquete 📦 datos\n\nlibrary(datos)\ndata(paises)\n\n\n\npaises %&gt;% select(pais,continente) %&gt;% \n  sample_n(4)\n\n# A tibble: 4 × 2\n  pais        continente\n  &lt;fct&gt;       &lt;fct&gt;     \n1 Jordania    Asia      \n2 Corea, Rep. Asia      \n3 Marruecos   África    \n4 Comoras     África"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#coincidencias-en-filas",
@@ -942,7 +942,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#identificar-con-get_dupes",
     "title": "Manipulación y limpieza de datos",
     "section": "Identificar con get_dupes()",
-    "text": "Identificar con get_dupes()\n\nordenes_pizza %&gt;%\n  get_dupes() # todas las variables (por defecto)\n\nNo variable names specified - using all columns.\n\n\n# A tibble: 2 × 5\n  IDusuario Direccion   Colonia   Alcaldia   dupe_count\n  &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;           &lt;int&gt;\n1 susana24  Fresnos 114 San Angel A. Obregón          2\n2 susana24  Fresnos 114 San Angel A. Obregón          2\n\n\n\nAñade una variable dupe_count que cuantifica las filas con valores duplicados\nAcomoda las variables de interés al principio del data frame resultante"
+    "text": "Identificar con get_dupes()\n\nordenes_pizza %&gt;%\n  get_dupes() # todas las variables (por defecto)\n\n# A tibble: 2 × 5\n  IDusuario Direccion   Colonia   Alcaldia   dupe_count\n  &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;           &lt;int&gt;\n1 susana24  Fresnos 114 San Angel A. Obregón          2\n2 susana24  Fresnos 114 San Angel A. Obregón          2\n\n\n\nAñade una variable dupe_count que cuantifica las filas con valores duplicados\nAcomoda las variables de interés al principio del data frame resultante"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-28",
@@ -956,7 +956,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-29",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "pinguinos %&gt;% \n  select(especie, matches(\"larg\")) %&gt;% \n  sample_n(3)\n\n# A tibble: 3 × 3\n  especie largo_pico_mm largo_aleta_mm\n  &lt;fct&gt;           &lt;dbl&gt;          &lt;int&gt;\n1 Barbijo          47              185\n2 Adelia           36              186\n3 Adelia           38.8            191"
+    "text": "pinguinos %&gt;% \n  select(especie, matches(\"larg\")) %&gt;% \n  sample_n(3)\n\n# A tibble: 3 × 3\n  especie largo_pico_mm largo_aleta_mm\n  &lt;fct&gt;           &lt;dbl&gt;          &lt;int&gt;\n1 Papúa            45.2            215\n2 Barbijo          48.5            191\n3 Barbijo          52.7            197"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-30",

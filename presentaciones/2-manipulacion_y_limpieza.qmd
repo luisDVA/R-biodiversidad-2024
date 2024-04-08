@@ -116,7 +116,7 @@ Mano derecha\
 :::
 
 ::: fragment
-Toma un objeto a la izquierda del operador y lo inserta como argumento en la función que esté a su derecha
+Toma un objeto a la izquierda del operador y lo inserta como argumento en la función a su derecha
 
 \* Por defecto lo que esté a la izquierda del 'pipe' se inserta como el primer argumento de la función
 :::
