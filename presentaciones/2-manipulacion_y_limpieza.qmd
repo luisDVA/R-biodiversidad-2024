@@ -936,6 +936,65 @@ paises_m %>%
 ```
 :::
 
+## Operaciones de dos tablas
+
+- Funciones `_join()` para combinar tablas a partir de identificadores comunes
+
+[🤹 tidyexplain]{style="font-size: 2.5em; text-align: center"}
+[tidy animated verbs](https://www.garrickadenbuie.com/project/tidyexplain/)
+
+
+```{r}
+paises_convenio <- tibble::tibble(pais=c("Peru","China","Indonesia"),
+               desde=c(2014,2011,2013))
+
+```
+
+##
+
+```{r}
+left_join(paises_m,paises_convenio)
+```
+
+> Atención al orden en el que mencionamos los objetos
+
+##
+
+```{r}
+left_join(paises_convenio,paises_m)
+```
+
+> Si la columna en común no tiene el mismo nombre la especificamos con el argumento "by"
+
+## "Pegando" tablas
+
+- `bind_rows` apila filas (siempre y cuando los nombres de columna tengan correspondencia)
+
+
+```{r}
+NZ <- tibble(pais="Nueva Zelanda",especies=2,amenazadas=2,region="Oceania")
+bind_rows(paises_m,NZ)
+```
+
+##
+- `bind_cols` pega columnas indiscriminadamente si las longitudes son iguales
+
+```{r}
+col_nueva <- tibble(ranking_eco=c(12,3,5,6,1,7,8,1,6,77,33,5))
+bind_cols(paises_m,col_nueva)
+```
+
+## 🍕 rebanando filas
+
+Familia de funciones `slice_` para obtener máximos, mínimos, muestreos aleatorios, etc.
+
+```{r}
+paises_m %>% slice_max(especies)
+slice_min(paises_m,amenazadas)
+paises_m %>% slice_sample(n=2)
+```
+
+
 ## Ejercicio - Datos desde paquetes (1) {background-color="#a4c5ff"}
 
 </br>

@@ -437,8 +437,8 @@
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-11",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-11",
     "title": "Manipulación y limpieza de datos",
-    "section": "!",
-    "text": "!\nDevuelve el complemento de un conjunto de variables\n\n\npaises_m %&gt;% \n  select(!c(region,amenazadas)) %&gt;% head()\n\n# A tibble: 6 × 2\n  pais      especies\n  &lt;chr&gt;        &lt;int&gt;\n1 Indonesia      670\n2 Brasil         648\n3 China          551\n4 Mexico         523\n5 Peru           467\n6 Congo          430"
+    "section": "",
+    "text": "left_join(paises_m,paises_convenio)\n\n# A tibble: 12 × 5\n   pais      especies amenazadas region  desde\n   &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;\n 1 Indonesia      670        191 Asia     2013\n 2 Brasil         648         80 America    NA\n 3 China          551         73 Asia     2011\n 4 Mexico         523         96 America    NA\n 5 Peru           467         53 America  2014\n 6 Congo          430         15 Africa     NA\n 7 India          412         93 Asia       NA\n 8 Kenya          376         30 Africa     NA\n 9 Argentina      374         38 America    NA\n10 Ecuador        372         47 America    NA\n11 Venezuela      363         35 America    NA\n12 Tanzania       359         41 Africa     NA\n\n\n\nAtención al orden en el que mencionamos los objetos"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#reestructurando-datos-con-tidyr",
@@ -451,8 +451,8 @@
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-12",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-12",
     "title": "Manipulación y limpieza de datos",
-    "section": ":",
-    "text": ":\nSelecciona variables contiguas\n\n\npaises_m %&gt;% \n  select(pais:amenazadas) %&gt;% head()\n\n# A tibble: 6 × 3\n  pais      especies amenazadas\n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt;\n1 Indonesia      670        191\n2 Brasil         648         80\n3 China          551         73\n4 Mexico         523         96\n5 Peru           467         53\n6 Congo          430         15"
+    "section": "",
+    "text": "left_join(paises_convenio,paises_m)\n\n# A tibble: 3 × 5\n  pais      desde especies amenazadas region \n  &lt;chr&gt;     &lt;dbl&gt;    &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Peru       2014      467         53 America\n2 China      2011      551         73 Asia   \n3 Indonesia  2013      670        191 Asia   \n\n\n\nSi la columna en común no tiene el mismo nombre la especificamos con el argumento “by”"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#ancho-a-largo",
@@ -465,15 +465,15 @@
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-13",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-13",
     "title": "Manipulación y limpieza de datos",
-    "section": "-",
-    "text": "-\nExcluir variables\n(devuelve todos los elementos excepto el que sigue el operador de resta)\n\n\npaises_m %&gt;% \n  select(-region) %&gt;% head()\n\n# A tibble: 6 × 3\n  pais      especies amenazadas\n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt;\n1 Indonesia      670        191\n2 Brasil         648         80\n3 China          551         73\n4 Mexico         523         96\n5 Peru           467         53\n6 Congo          430         15"
+    "section": "",
+    "text": "bind_cols pega columnas indiscriminadamente si las longitudes son iguales\n\n\ncol_nueva &lt;- tibble(ranking_eco=c(12,3,5,6,1,7,8,1,6,77,33,5))\nbind_cols(paises_m,col_nueva)\n\n# A tibble: 12 × 5\n   pais      especies amenazadas region  ranking_eco\n   &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;\n 1 Indonesia      670        191 Asia             12\n 2 Brasil         648         80 America           3\n 3 China          551         73 Asia              5\n 4 Mexico         523         96 America           6\n 5 Peru           467         53 America           1\n 6 Congo          430         15 Africa            7\n 7 India          412         93 Asia              8\n 8 Kenya          376         30 Africa            1\n 9 Argentina      374         38 America           6\n10 Ecuador        372         47 America          77\n11 Venezuela      363         35 America          33\n12 Tanzania       359         41 Africa            5"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-14",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-14",
     "title": "Manipulación y limpieza de datos",
-    "section": "",
-    "text": "Datos anchos\n\nLectura y captura más fácil\n\nÚtil para edición interactiva en hojas de cálculo\n\n\n\nDatos largos\n\nTiende a seguir principios de Datos Ordenados\n\nListos para analizar\n\nSe vinculan directamente con parámetros estéticos en un gráfico"
+    "section": "!",
+    "text": "!\nDevuelve el complemento de un conjunto de variables\n\n\npaises_m %&gt;% \n  select(!c(region,amenazadas)) %&gt;% head()\n\n# A tibble: 6 × 2\n  pais      especies\n  &lt;chr&gt;        &lt;int&gt;\n1 Indonesia      670\n2 Brasil         648\n3 China          551\n4 Mexico         523\n5 Peru           467\n6 Congo          430"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#largo-a-ancho",
@@ -486,8 +486,8 @@
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-15",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-15",
     "title": "Manipulación y limpieza de datos",
-    "section": "",
-    "text": "coloniasDatos\n\n\n\n\n\n\n\n  \n    \n    \n      Asentamiento\n      Tipo\n      CP\n      Abarrotes\n      Supermercado\n      Minisuper\n    \n  \n  \n    Arroyo Blanco\nColonia\n91025\n7\n2\n1\n    Atenas\nFraccionamiento\n91184\n1\n0\n2\n    Colibris\nColonia\n91067\n8\n3\n2\n    Del Valle\nUnidad Habitacional\n91097\n2\n1\n1\n    El Cafetal\nFraccionamiento\n91150\n2\n0\n0\n  \n  \n  \n\n\n\n\n\n\n\ncolonias &lt;- \ntibble::tribble(\n    ~Asentamiento,                 ~Tipo,    ~CP, ~Abarrotes, ~Supermercado, ~Minisuper,\n  \"Arroyo Blanco\",             \"Colonia\", 91025L,         7L,            2L,         1L,\n         \"Atenas\",     \"Fraccionamiento\", 91184L,         1L,            0L,         2L,\n       \"Colibris\",             \"Colonia\", 91067L,         8L,            3L,         2L,\n      \"Del Valle\", \"Unidad Habitacional\", 91097L,         2L,            1L,         1L,\n     \"El Cafetal\",     \"Fraccionamiento\", 91150L,         2L,            0L,         0L\n  )\n\n\n\n\n¿Qué variables tenemos?"
+    "section": ":",
+    "text": ":\nSelecciona variables contiguas\n\n\npaises_m %&gt;% \n  select(pais:amenazadas) %&gt;% head()\n\n# A tibble: 6 × 3\n  pais      especies amenazadas\n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt;\n1 Indonesia      670        191\n2 Brasil         648         80\n3 China          551         73\n4 Mexico         523         96\n5 Peru           467         53\n6 Congo          430         15"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#ejercicio---pivot",
@@ -500,8 +500,8 @@
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-16",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-16",
     "title": "Manipulación y limpieza de datos",
-    "section": "",
-    "text": "colonias %&gt;%\n  pivot_longer(\n    cols = c(Abarrotes,Supermercado,Minisuper),\n    names_to = \"tipo_negocio\",\n    values_to = \"n_negocios\")"
+    "section": "-",
+    "text": "-\nExcluir variables\n(devuelve todos los elementos excepto el que sigue el operador de resta)\n\n\npaises_m %&gt;% \n  select(-region) %&gt;% head()\n\n# A tibble: 6 × 3\n  pais      especies amenazadas\n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt;\n1 Indonesia      670        191\n2 Brasil         648         80\n3 China          551         73\n4 Mexico         523         96\n5 Peru           467         53\n6 Congo          430         15"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#dplyrcoalesce",
@@ -515,28 +515,28 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-17",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "colonias %&gt;%\n  pivot_longer(\n    cols = c(Abarrotes,Supermercado,Minisuper),\n    names_to = \"tipo_negocio\",\n    values_to = \"n_negocios\")\n\n# A tibble: 15 × 5\n   Asentamiento  Tipo                   CP tipo_negocio n_negocios\n   &lt;chr&gt;         &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;             &lt;int&gt;\n 1 Arroyo Blanco Colonia             91025 Abarrotes             7\n 2 Arroyo Blanco Colonia             91025 Supermercado          2\n 3 Arroyo Blanco Colonia             91025 Minisuper             1\n 4 Atenas        Fraccionamiento     91184 Abarrotes             1\n 5 Atenas        Fraccionamiento     91184 Supermercado          0\n 6 Atenas        Fraccionamiento     91184 Minisuper             2\n 7 Colibris      Colonia             91067 Abarrotes             8\n 8 Colibris      Colonia             91067 Supermercado          3\n 9 Colibris      Colonia             91067 Minisuper             2\n10 Del Valle     Unidad Habitacional 91097 Abarrotes             2\n11 Del Valle     Unidad Habitacional 91097 Supermercado          1\n12 Del Valle     Unidad Habitacional 91097 Minisuper             1\n13 El Cafetal    Fraccionamiento     91150 Abarrotes             2\n14 El Cafetal    Fraccionamiento     91150 Supermercado          0\n15 El Cafetal    Fraccionamiento     91150 Minisuper             0"
+    "text": "Datos anchos\n\nLectura y captura más fácil\n\nÚtil para edición interactiva en hojas de cálculo\n\n\n\nDatos largos\n\nTiende a seguir principios de Datos Ordenados\n\nListos para analizar\n\nSe vinculan directamente con parámetros estéticos en un gráfico"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-18",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-18",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "colonias_largo %&gt;% \n  pivot_wider(names_from = tipo_negocio, \n              values_from = n_negocios)\n\n# A tibble: 5 × 6\n  Asentamiento  Tipo                   CP Abarrotes Supermercado Minisuper\n  &lt;chr&gt;         &lt;chr&gt;               &lt;int&gt;     &lt;int&gt;        &lt;int&gt;     &lt;int&gt;\n1 Arroyo Blanco Colonia             91025         7            2         1\n2 Atenas        Fraccionamiento     91184         1            0         2\n3 Colibris      Colonia             91067         8            3         2\n4 Del Valle     Unidad Habitacional 91097         2            1         1\n5 El Cafetal    Fraccionamiento     91150         2            0         0"
+    "text": "coloniasDatos\n\n\n\n\n\n\n\n  \n    \n    \n      Asentamiento\n      Tipo\n      CP\n      Abarrotes\n      Supermercado\n      Minisuper\n    \n  \n  \n    Arroyo Blanco\nColonia\n91025\n7\n2\n1\n    Atenas\nFraccionamiento\n91184\n1\n0\n2\n    Colibris\nColonia\n91067\n8\n3\n2\n    Del Valle\nUnidad Habitacional\n91097\n2\n1\n1\n    El Cafetal\nFraccionamiento\n91150\n2\n0\n0\n  \n  \n  \n\n\n\n\n\n\n\ncolonias &lt;- \ntibble::tribble(\n    ~Asentamiento,                 ~Tipo,    ~CP, ~Abarrotes, ~Supermercado, ~Minisuper,\n  \"Arroyo Blanco\",             \"Colonia\", 91025L,         7L,            2L,         1L,\n         \"Atenas\",     \"Fraccionamiento\", 91184L,         1L,            0L,         2L,\n       \"Colibris\",             \"Colonia\", 91067L,         8L,            3L,         2L,\n      \"Del Valle\", \"Unidad Habitacional\", 91097L,         2L,            1L,         1L,\n     \"El Cafetal\",     \"Fraccionamiento\", 91150L,         2L,            0L,         0L\n  )\n\n\n\n\n¿Qué variables tenemos?"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-19",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-19",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "coalesce() - Combina valores. A partir de dos o más vectores, retiene valores en orden y rellena datos faltantes con valores de los siguientes vectores.\n\nfill() Rellena valores adyacentes. Ayuda a evitar datos faltantes innecesarios. Similar a las funciones para rellenar valores contiguos en hojas de cálculo."
+    "text": "colonias %&gt;%\n  pivot_longer(\n    cols = c(Abarrotes,Supermercado,Minisuper),\n    names_to = \"tipo_negocio\",\n    values_to = \"n_negocios\")"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-20",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-20",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\nVectores numéricos del mismo largo, hay valores faltantes.\n\n\ncoalesce(x, y, z)\n\n[1] 1 2 3 4 5\n\n\n\n\nEl orden de los argumentos importa"
+    "text": "colonias %&gt;%\n  pivot_longer(\n    cols = c(Abarrotes,Supermercado,Minisuper),\n    names_to = \"tipo_negocio\",\n    values_to = \"n_negocios\")\n\n# A tibble: 15 × 5\n   Asentamiento  Tipo                   CP tipo_negocio n_negocios\n   &lt;chr&gt;         &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;             &lt;int&gt;\n 1 Arroyo Blanco Colonia             91025 Abarrotes             7\n 2 Arroyo Blanco Colonia             91025 Supermercado          2\n 3 Arroyo Blanco Colonia             91025 Minisuper             1\n 4 Atenas        Fraccionamiento     91184 Abarrotes             1\n 5 Atenas        Fraccionamiento     91184 Supermercado          0\n 6 Atenas        Fraccionamiento     91184 Minisuper             2\n 7 Colibris      Colonia             91067 Abarrotes             8\n 8 Colibris      Colonia             91067 Supermercado          3\n 9 Colibris      Colonia             91067 Minisuper             2\n10 Del Valle     Unidad Habitacional 91097 Abarrotes             2\n11 Del Valle     Unidad Habitacional 91097 Supermercado          1\n12 Del Valle     Unidad Habitacional 91097 Minisuper             1\n13 El Cafetal    Fraccionamiento     91150 Abarrotes             2\n14 El Cafetal    Fraccionamiento     91150 Supermercado          0\n15 El Cafetal    Fraccionamiento     91150 Minisuper             0"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#tidyrfill",
@@ -550,7 +550,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-21",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\n\n\ncoalesce(z,x,y)\n\n[1] 1 4 3 5 3"
+    "text": "colonias_largo %&gt;% \n  pivot_wider(names_from = tipo_negocio, \n              values_from = n_negocios)\n\n# A tibble: 5 × 6\n  Asentamiento  Tipo                   CP Abarrotes Supermercado Minisuper\n  &lt;chr&gt;         &lt;chr&gt;               &lt;int&gt;     &lt;int&gt;        &lt;int&gt;     &lt;int&gt;\n1 Arroyo Blanco Colonia             91025         7            2         1\n2 Atenas        Fraccionamiento     91184         1            0         2\n3 Colibris      Colonia             91067         8            3         2\n4 Del Valle     Unidad Habitacional 91097         2            1         1\n5 El Cafetal    Fraccionamiento     91150         2            0         0"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#expresiones-regulares",
@@ -648,7 +648,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-22",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "humedad sueloDatos\n\n\n\n\n\n\n\n  \n    \n    \n      muestra\n      sensor_1\n      sensor_respaldo\n      literatura\n    \n  \n  \n    ladera sur\nNA\n4.9\n2.6\n    ladera norte\n2.2\nNA\n4.3\n    urbano\n4.5\n5.0\n3.4\n    invernadero A\nNA\n2.7\n3.5\n    invernadero B\n2.5\nNA\n2.3\n  \n  \n  \n\n\n\n\n\n\n\nhumedad &lt;- \ntibble::tribble(\n         ~muestra, ~sensor_1, ~sensor_respaldo, ~literatura,\n     \"ladera sur\",        NA,              4.9,         2.6,\n   \"ladera norte\",       2.2,               NA,         4.3,\n         \"urbano\",       4.5,                5,         3.4,\n  \"invernadero A\",        NA,              2.7,         3.5,\n  \"invernadero B\",       2.5,               NA,         2.3\n  )"
+    "text": "coalesce() - Combina valores. A partir de dos o más vectores, retiene valores en orden y rellena datos faltantes con valores de los siguientes vectores.\n\nfill() Rellena valores adyacentes. Ayuda a evitar datos faltantes innecesarios. Similar a las funciones para rellenar valores contiguos en hojas de cálculo."
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#patrones-posibles",
@@ -809,7 +809,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-24",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "carbon_mamiferos\n\n# A tibble: 9 × 2\n  mamiferos biomasa\n  &lt;chr&gt;       &lt;dbl&gt;\n1 ganado         21\n2 &lt;NA&gt;            5\n3 &lt;NA&gt;            7\n4 &lt;NA&gt;           23\n5 &lt;NA&gt;           74\n6 silvestre      23\n7 &lt;NA&gt;           65\n8 &lt;NA&gt;           12\n9 &lt;NA&gt;            5\n\n\n\n\ncarbon_mamiferos %&gt;% \n  fill(mamiferos)\n\n# A tibble: 9 × 2\n  mamiferos biomasa\n  &lt;chr&gt;       &lt;dbl&gt;\n1 ganado         21\n2 ganado          5\n3 ganado          7\n4 ganado         23\n5 ganado         74\n6 silvestre      23\n7 silvestre      65\n8 silvestre      12\n9 silvestre       5"
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\n\n\ncoalesce(z,x,y)\n\n[1] 1 4 3 5 3"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#stringr",
@@ -893,7 +893,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-26",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "Podemos crear subconjuntos de filas y columnas mediante coincidencias entre expresiones regulares y nombres de variables o con sus valores"
+    "text": "humedad %&gt;% \n  mutate(val_completo = coalesce(sensor_1, sensor_respaldo, literatura))\n\n# A tibble: 5 × 5\n  muestra       sensor_1 sensor_respaldo literatura val_completo\n  &lt;chr&gt;            &lt;dbl&gt;           &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;\n1 ladera sur        NA               4.9        2.6          4.9\n2 ladera norte       2.2            NA          4.3          2.2\n3 urbano             4.5             5          3.4          4.5\n4 invernadero A     NA               2.7        3.5          2.7\n5 invernadero B      2.5            NA          2.3          2.5"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#filtrando-filas",
@@ -935,7 +935,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-27",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "Podemos crear subconjuntos de filas y columnas mediante coincidencias entre expresiones regulares y nombres de variables o con sus valores"
+    "text": "carbon_mamiferos\n\n# A tibble: 9 × 2\n  mamiferos biomasa\n  &lt;chr&gt;       &lt;dbl&gt;\n1 ganado         21\n2 &lt;NA&gt;            5\n3 &lt;NA&gt;            7\n4 &lt;NA&gt;           23\n5 &lt;NA&gt;           74\n6 silvestre      23\n7 &lt;NA&gt;           65\n8 &lt;NA&gt;           12\n9 &lt;NA&gt;            5\n\n\n\n\ncarbon_mamiferos %&gt;% \n  fill(mamiferos)\n\n# A tibble: 9 × 2\n  mamiferos biomasa\n  &lt;chr&gt;       &lt;dbl&gt;\n1 ganado         21\n2 ganado          5\n3 ganado          7\n4 ganado         23\n5 ganado         74\n6 silvestre      23\n7 silvestre      65\n8 silvestre      12\n9 silvestre       5"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#identificar-con-get_dupes",
@@ -949,7 +949,7 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-28",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "pinguinos %&gt;% \n  select(especie, matches(\"larg\")) %&gt;% \n  sample_n(3)\n\n# A tibble: 3 × 3\n  especie largo_pico_mm largo_aleta_mm\n  &lt;fct&gt;           &lt;dbl&gt;          &lt;int&gt;\n1 Papúa            45.2            215\n2 Barbijo          48.5            191\n3 Barbijo          52.7            197"
+    "text": "El poder y la flexibilidad de las expresiones regulares viene de su capacidad de describir patrones complejos\n\n\n\n Si un patrón de texto se puede describir verbalmente, seguramente se puede codificar en una expresión regular"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-29",
@@ -963,28 +963,28 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-30",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "ordenes_pizzadatos\n\n\n\n\n\n\n\n  \n    \n    \n      IDusuario\n      Direccion\n      Colonia\n      Alcaldia\n    \n  \n  \n    Pablitoo\nCafetal 395 Casa 2\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    jd.adriana\nCafetal 395 Casa 8\nSan Angel\nA. Obregón\n    JuanManuel\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    JoaquinED\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    e_ric2\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n  \n  \n  \n\n\n\n\n\n\n\nordenes_pizza &lt;- \ntibble::tribble(\n    ~IDusuario,            ~Direccion,    ~Colonia,    ~Alcaldia,\n    \"Pablitoo\",  \"Cafetal 395 Casa 2\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n  \"jd.adriana\",  \"Cafetal 395 Casa 8\", \"San Angel\", \"A. Obregón\",\n  \"JuanManuel\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n   \"JoaquinED\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n      \"e_ric2\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\"\n  )"
+    "text": "Podemos crear subconjuntos de filas y columnas mediante coincidencias entre expresiones regulares y nombres de variables o con sus valores"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-31",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-31",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "get_dupes() asignando una variable para definir nuestra unidad observacional\n¿Alguien ordenó más de una vez?\n\nordenes_pizza %&gt;%\n  get_dupes(IDusuario)\n\n# A tibble: 2 × 5\n  IDusuario dupe_count Direccion   Colonia   Alcaldia  \n  &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;     \n1 susana24           2 Fresnos 114 San Angel A. Obregón\n2 susana24           2 Fresnos 114 San Angel A. Obregón"
+    "text": "ordenes_pizzadatos\n\n\n\n\n\n\n\n  \n    \n    \n      IDusuario\n      Direccion\n      Colonia\n      Alcaldia\n    \n  \n  \n    Pablitoo\nCafetal 395 Casa 2\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    jd.adriana\nCafetal 395 Casa 8\nSan Angel\nA. Obregón\n    JuanManuel\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    JoaquinED\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    e_ric2\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n  \n  \n  \n\n\n\n\n\n\n\nordenes_pizza &lt;- \ntibble::tribble(\n    ~IDusuario,            ~Direccion,    ~Colonia,    ~Alcaldia,\n    \"Pablitoo\",  \"Cafetal 395 Casa 2\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n  \"jd.adriana\",  \"Cafetal 395 Casa 8\", \"San Angel\", \"A. Obregón\",\n  \"JuanManuel\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n   \"JoaquinED\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n      \"e_ric2\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\"\n  )"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-32",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-32",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "get_dupes() con combinaciones de variables\n\nFilas repetidas en dirección * colonia\n\n\naccepta funciones auxiliares de 📦 tidyselect\n\n\nordenes_pizza %&gt;%\n  get_dupes(Direccion, starts_with(\"Col\"))\n\n# A tibble: 5 × 5\n  Direccion           Colonia   dupe_count IDusuario  Alcaldia  \n  &lt;chr&gt;               &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;     \n1 Hidalgo 11 Depto 1B Campestre          3 JuanManuel A. Obregón\n2 Hidalgo 11 Depto 1B Campestre          3 JoaquinED  A. Obregón\n3 Hidalgo 11 Depto 1B Campestre          3 e_ric2     A. Obregón\n4 Fresnos 114         San Angel          2 susana24   A. Obregón\n5 Fresnos 114         San Angel          2 susana24   A. Obregón"
+    "text": "pinguinos %&gt;% \n  select(especie, matches(\"larg\")) %&gt;% \n  sample_n(3)\n\n# A tibble: 3 × 3\n  especie largo_pico_mm largo_aleta_mm\n  &lt;fct&gt;           &lt;dbl&gt;          &lt;int&gt;\n1 Papúa            45.2            215\n2 Barbijo          48.5            191\n3 Barbijo          52.7            197"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-33",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-33",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "Descartar con distinct() de 📦 dplyr\n\n\nordenes_pizza %&gt;%\n  distinct() # todas las variables\n\n# A tibble: 6 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón\n5 JoaquinED  Hidalgo 11 Depto 1B Campestre A. Obregón\n6 e_ric2     Hidalgo 11 Depto 1B Campestre A. Obregón"
+    "text": "ordenes_pizzadatos\n\n\n\n\n\n\n\n  \n    \n    \n      IDusuario\n      Direccion\n      Colonia\n      Alcaldia\n    \n  \n  \n    Pablitoo\nCafetal 395 Casa 2\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    susana24\nFresnos 114\nSan Angel\nA. Obregón\n    jd.adriana\nCafetal 395 Casa 8\nSan Angel\nA. Obregón\n    JuanManuel\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    JoaquinED\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n    e_ric2\nHidalgo 11 Depto 1B\nCampestre\nA. Obregón\n  \n  \n  \n\n\n\n\n\n\n\nordenes_pizza &lt;- \ntibble::tribble(\n    ~IDusuario,            ~Direccion,    ~Colonia,    ~Alcaldia,\n    \"Pablitoo\",  \"Cafetal 395 Casa 2\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n    \"susana24\",         \"Fresnos 114\", \"San Angel\", \"A. Obregón\",\n  \"jd.adriana\",  \"Cafetal 395 Casa 8\", \"San Angel\", \"A. Obregón\",\n  \"JuanManuel\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n   \"JoaquinED\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\",\n      \"e_ric2\", \"Hidalgo 11 Depto 1B\", \"Campestre\", \"A. Obregón\"\n  )"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#ejercicio-5",
@@ -4197,21 +4197,21 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-23",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "humedad %&gt;% \n  mutate(val_completo = coalesce(sensor_1, sensor_respaldo, literatura))\n\n# A tibble: 5 × 5\n  muestra       sensor_1 sensor_respaldo literatura val_completo\n  &lt;chr&gt;            &lt;dbl&gt;           &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;\n1 ladera sur        NA               4.9        2.6          4.9\n2 ladera norte       2.2            NA          4.3          2.2\n3 urbano             4.5             5          3.4          4.5\n4 invernadero A     NA               2.7        3.5          2.7\n5 invernadero B      2.5            NA          2.3          2.5"
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\nVectores numéricos del mismo largo, hay valores faltantes.\n\n\ncoalesce(x, y, z)\n\n[1] 1 2 3 4 5\n\n\n\n\nEl orden de los argumentos importa"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-34",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-34",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "distinct() con la variables que definen las unidades observacionales\n\nordenes_pizza %&gt;%\n  distinct(IDusuario, .keep_all = TRUE)\n\n# A tibble: 6 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón\n5 JoaquinED  Hidalgo 11 Depto 1B Campestre A. Obregón\n6 e_ric2     Hidalgo 11 Depto 1B Campestre A. Obregón\n\n\n\n.keep_all para retener o no las demás columnas"
+    "text": "get_dupes() asignando una variable para definir nuestra unidad observacional\n¿Alguien ordenó más de una vez?\n\nordenes_pizza %&gt;%\n  get_dupes(IDusuario)\n\n# A tibble: 2 × 5\n  IDusuario dupe_count Direccion   Colonia   Alcaldia  \n  &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;     \n1 susana24           2 Fresnos 114 San Angel A. Obregón\n2 susana24           2 Fresnos 114 San Angel A. Obregón"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-35",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-35",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "distinct() con combinaciones de variables\n\nCombinaciones únicas de dirección * colonia\n\n\nordenes_pizza %&gt;%\n  distinct(Direccion,Colonia)\n\n# A tibble: 4 × 2\n  Direccion           Colonia  \n  &lt;chr&gt;               &lt;chr&gt;    \n1 Cafetal 395 Casa 2  San Angel\n2 Fresnos 114         San Angel\n3 Cafetal 395 Casa 8  San Angel\n4 Hidalgo 11 Depto 1B Campestre"
+    "text": "get_dupes() con combinaciones de variables\n\nFilas repetidas en dirección * colonia\n\n\naccepta funciones auxiliares de 📦 tidyselect\n\n\nordenes_pizza %&gt;%\n  get_dupes(Direccion, starts_with(\"Col\"))\n\n# A tibble: 5 × 5\n  Direccion           Colonia   dupe_count IDusuario  Alcaldia  \n  &lt;chr&gt;               &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;     \n1 Hidalgo 11 Depto 1B Campestre          3 JuanManuel A. Obregón\n2 Hidalgo 11 Depto 1B Campestre          3 JoaquinED  A. Obregón\n3 Hidalgo 11 Depto 1B Campestre          3 e_ric2     A. Obregón\n4 Fresnos 114         San Angel          2 susana24   A. Obregón\n5 Fresnos 114         San Angel          2 susana24   A. Obregón"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#para-preparar-transformar-y-estructurar-datos",
@@ -4267,14 +4267,14 @@
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-25",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "El poder y la flexibilidad de las expresiones regulares viene de su capacidad de describir patrones complejos\n\n\n\n Si un patrón de texto se puede describir verbalmente, seguramente se puede codificar en una expresión regular"
+    "text": "humedad sueloDatos\n\n\n\n\n\n\n\n  \n    \n    \n      muestra\n      sensor_1\n      sensor_respaldo\n      literatura\n    \n  \n  \n    ladera sur\nNA\n4.9\n2.6\n    ladera norte\n2.2\nNA\n4.3\n    urbano\n4.5\n5.0\n3.4\n    invernadero A\nNA\n2.7\n3.5\n    invernadero B\n2.5\nNA\n2.3\n  \n  \n  \n\n\n\n\n\n\n\nhumedad &lt;- \ntibble::tribble(\n         ~muestra, ~sensor_1, ~sensor_respaldo, ~literatura,\n     \"ladera sur\",        NA,              4.9,         2.6,\n   \"ladera norte\",       2.2,               NA,         4.3,\n         \"urbano\",       4.5,                5,         3.4,\n  \"invernadero A\",        NA,              2.7,         3.5,\n  \"invernadero B\",       2.5,               NA,         2.3\n  )"
   },
   {
     "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-36",
     "href": "presentaciones/2-manipulacion_y_limpieza.html#section-36",
     "title": "Manipulación y limpieza de datos",
     "section": "",
-    "text": "⚠️ Si .keep_all = TRUE y hay valores duplicados en otras variables, distinct solo retiene la primera fila\n\n\nordenes_pizza %&gt;%\n  distinct(Direccion,Colonia, .keep_all = TRUE)\n\n# A tibble: 4 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón"
+    "text": "Descartar con distinct() de 📦 dplyr\n\n\nordenes_pizza %&gt;%\n  distinct() # todas las variables\n\n# A tibble: 6 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón\n5 JoaquinED  Hidalgo 11 Depto 1B Campestre A. Obregón\n6 e_ric2     Hidalgo 11 Depto 1B Campestre A. Obregón"
   },
   {
     "objectID": "presentaciones/3-visualizacion.html#theme",
@@ -4667,5 +4667,47 @@
     "title": "Exploración rápida de datos",
     "section": "¿Cuántos goles cada jugador ha hecho?",
     "text": "¿Cuántos goles cada jugador ha hecho?\n\n# Cruzar la información \"jugadores\" y \"goles\"\ntable(df$jugadores,df$goles)\n\n          \n           12 30\n  Alvarez   1  0\n  Benzema   0  1\n  DiMaria   0  1\n  Haaland   0  1\n  Lautaro   1  0\n  Maradona  0  0\n  Messi     1  0"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#operaciones-de-dos-tablas",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#operaciones-de-dos-tablas",
+    "title": "Manipulación y limpieza de datos",
+    "section": "Operaciones de dos tablas",
+    "text": "Operaciones de dos tablas\n\nFunciones _join() para combinar tablas a partir de identificadores comunes\n\n🤹 tidyexplain tidy animated verbs\n\npaises_convenio &lt;- tibble::tibble(pais=c(\"Peru\",\"China\",\"Indonesia\"),\n               desde=c(2014,2011,2013))"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#pegando-tablas",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#pegando-tablas",
+    "title": "Manipulación y limpieza de datos",
+    "section": "“Pegando” tablas",
+    "text": "“Pegando” tablas\n\nbind_rows apila filas (siempre y cuando los nombres de columna tengan correspondencia)\n\n\nNZ &lt;- tibble(pais=\"Nueva Zelanda\",especies=2,amenazadas=2,region=\"Oceania\")\nbind_rows(paises_m,NZ)\n\n# A tibble: 13 × 4\n   pais          especies amenazadas region \n   &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n 1 Indonesia          670        191 Asia   \n 2 Brasil             648         80 America\n 3 China              551         73 Asia   \n 4 Mexico             523         96 America\n 5 Peru               467         53 America\n 6 Congo              430         15 Africa \n 7 India              412         93 Asia   \n 8 Kenya              376         30 Africa \n 9 Argentina          374         38 America\n10 Ecuador            372         47 America\n11 Venezuela          363         35 America\n12 Tanzania           359         41 Africa \n13 Nueva Zelanda        2          2 Oceania"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-37",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#section-37",
+    "title": "Manipulación y limpieza de datos",
+    "section": "",
+    "text": "distinct() con la variables que definen las unidades observacionales\n\nordenes_pizza %&gt;%\n  distinct(IDusuario, .keep_all = TRUE)\n\n# A tibble: 6 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón\n5 JoaquinED  Hidalgo 11 Depto 1B Campestre A. Obregón\n6 e_ric2     Hidalgo 11 Depto 1B Campestre A. Obregón\n\n\n\n.keep_all para retener o no las demás columnas"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#rebanando-filas",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#rebanando-filas",
+    "title": "Manipulación y limpieza de datos",
+    "section": "🍕 rebanando filas",
+    "text": "🍕 rebanando filas\nFamilia de funciones slice_ para obtener máximos, mínimos, muestreos aleatorios, etc.\n\npaises_m %&gt;% slice_max(especies)\n\n# A tibble: 1 × 4\n  pais      especies amenazadas region\n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt; \n1 Indonesia      670        191 Asia  \n\nslice_min(paises_m,amenazadas)\n\n# A tibble: 1 × 4\n  pais  especies amenazadas region\n  &lt;chr&gt;    &lt;int&gt;      &lt;int&gt; &lt;chr&gt; \n1 Congo      430         15 Africa\n\npaises_m %&gt;% slice_sample(n=2)\n\n# A tibble: 2 × 4\n  pais  especies amenazadas region\n  &lt;chr&gt;    &lt;int&gt;      &lt;int&gt; &lt;chr&gt; \n1 Congo      430         15 Africa\n2 India      412         93 Asia"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-38",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#section-38",
+    "title": "Manipulación y limpieza de datos",
+    "section": "",
+    "text": "distinct() con combinaciones de variables\n\nCombinaciones únicas de dirección * colonia\n\n\nordenes_pizza %&gt;%\n  distinct(Direccion,Colonia)\n\n# A tibble: 4 × 2\n  Direccion           Colonia  \n  &lt;chr&gt;               &lt;chr&gt;    \n1 Cafetal 395 Casa 2  San Angel\n2 Fresnos 114         San Angel\n3 Cafetal 395 Casa 8  San Angel\n4 Hidalgo 11 Depto 1B Campestre"
+  },
+  {
+    "objectID": "presentaciones/2-manipulacion_y_limpieza.html#section-39",
+    "href": "presentaciones/2-manipulacion_y_limpieza.html#section-39",
+    "title": "Manipulación y limpieza de datos",
+    "section": "",
+    "text": "⚠️ Si .keep_all = TRUE y hay valores duplicados en otras variables, distinct solo retiene la primera fila\n\n\nordenes_pizza %&gt;%\n  distinct(Direccion,Colonia, .keep_all = TRUE)\n\n# A tibble: 4 × 4\n  IDusuario  Direccion           Colonia   Alcaldia  \n  &lt;chr&gt;      &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     \n1 Pablitoo   Cafetal 395 Casa 2  San Angel A. Obregón\n2 susana24   Fresnos 114         San Angel A. Obregón\n3 jd.adriana Cafetal 395 Casa 8  San Angel A. Obregón\n4 JuanManuel Hidalgo 11 Depto 1B Campestre A. Obregón"
   }
 ]
