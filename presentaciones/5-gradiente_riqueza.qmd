@@ -1,0 +1,201 @@
+---
+title: "Patrones geográficos de riqueza de especies"
+author: Fabricio Villalobos
+institute: Instituto de Ecología, A.C. - INECOL
+format:
+  revealjs:
+    theme: curso_styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Áreas de distribución y patrones geográficos de riqueza
+
+> "To do science is to search for repeated patterns, not simply to accumulate facts" R. MacArthur
+
+
+-   A partir de las distribuciones geográficas de las especies es posible describir y evaluar diferentes patrones de biodiversidad que emergen cuando estudiamos conjuntos de especies (y no a nivel indivual)
+
+## Áreas de distribución y patrones geográficos de riqueza
+
+-   En este ejercicio veremos cómo usar las distribuciones de las especies (polígonos, como los que generamos en el ejercicio anterior) para generar el patrón geográfico de riqueza de especies
+
+
+## 
+
+Los datos (polígonos) son del orden PRIMATES (MAMMALIA) obtenidos de la [IUCN](https://www.iucnredlist.org/)
+
+## Paquetes necesarios:
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+
+library(letsR)
+library(sf)
+library(ggplot2)
+library(viridisLite)
+library(tmap)
+library(here)
+```
+
+# letsR (Vilela & Villalobos 2015 MEE)
+
+## 
+
+Cargar los polígonos de las especies de interés (shapefiles en su carpeta de trabajo)
+
+```{r}
+#| eval: true
+#| echo: true
+primates_maps <- st_read(here("dados","primates_maps.shp"))
+
+```
+
+. . .
+
+Conocer el dominio ("extent") de los datos, para usarlo después en la delimitación del espacio (geográfico) de trabajo
+
+```{r}
+#| eval: true
+#| echo: true
+st_bbox(primates_maps)
+```
+
+
+## 
+
+Crear una matriz de presencia-ausencia a partir de los polígonos
+
+```{r}
+#| eval: true
+#| echo: true
+primates.pam <- lets.presab(primates_maps, xmn = -100,xmx = 141, ymn = -35, ymx = 42, resol=1, count=T)
+```
+
+## ¿Cómo se ve el patrón geográfico?
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+plot(primates.pam)
+```
+
+## 
+
+¿Qué tiene el objeto que se graficó?
+
+```{r}
+#| eval: true
+#| echo: true
+primates.pam$Richness_Raster
+```
+
+## 
+
+Vamos a verlo en `ggplot`
+
+. . .
+
+Primero, convertimos el raster en un `data.frame`
+
+```{r}
+#| eval: true
+#| echo: true
+rdf <- as.data.frame(primates.pam$Richness_Raster, xy=TRUE) #Convert raster to data.frame
+names(rdf)[3] <- 'richness' #Name value column
+head(rdf)
+rdf2 <- rdf
+rdf2[,3] <- ifelse(rdf[,3]==0,NA,rdf[,3])
+head(rdf2)
+
+```
+
+## 
+
+Ahora sí, lo graficamos
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot(data = rdf2)+
+  geom_raster(mapping=aes(x=x, y=y, fill=richness))+
+  scale_fill_gradientn(colours= rev(inferno(10)), name='Richness')
+```
+
+##
+
+¿Qué más podemos hacer con esto?
+
+. . . 
+
+Por ejemplo, relacionar el patrón de riqueza con alguna variable ambiental 
+
+. . .
+
+Carguemos una variable ambiental (temperatura máxima, que viene de [WorldClim](https://www.worldclim.org))
+```{r}
+#| eval: false
+#| echo: true
+temp <- rast(here("dados","bio1.bil"))
+
+plot(temp)
+```
+
+##
+```{r}
+#| eval: true
+#| echo: true
+temp <- rast(here("dados","bio1.bil"))
+
+plot(temp)
+```
+
+##
+
+Ahora, podemos extraer ambos valores/variables de interés: riqueza y temperatura
+
+¿Cómo?
+. . . 
+```{r}
+#| eval: true
+#| echo: true
+library(dplyr)
+
+primates.pam2 <- primates.pam2 <- as_tibble(primates.pam$Presence_and_Absence_Matrix)
+
+primates.richness <- primates.pam2 %>% 
+  mutate(richness=rowSums(primates.pam2[,-c(1:2)])) %>% 
+  select(`Longitude(x)`,`Latitude(y)`,richness) %>% 
+  filter(richness>0)
+
+
+temp2 <- extract(temp, primates.pam2[,1:2])
+  
+```
+
+##
+Ahora ya podemos evaluar la relación entre riqueza y temperatura
+
+```{r}
+#| eval: true
+#| echo: true
+
+plot(primates.richness$richness~temp2$bio1)
+  
+```
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+
+cor.test(temp2$bio1, primates.richness$richness, method="spearman")
+  
+```

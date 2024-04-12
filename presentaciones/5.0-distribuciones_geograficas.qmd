@@ -1,0 +1,720 @@
+---
+title: "Distribuciones geográficas"
+subtitle: Daniel Valencia, Juliana Herrera & Fabricio Villalobos
+author: "Instituto de Ecología, A.C."
+format:
+  revealjs:
+    theme: curso_styles.scss
+    chalkboard: true
+    transition: fade
+    progress: true
+    preview-links: true
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+
+editor: visual
+---
+
+## Área de distribución geográfica
+
+"...el espacio donde las condiciones ecológicas favorecen, real o potencialmente y en varios niveles, las interacciones no efímeras de los individuos de una especie" Mota-Vargas & Rojas-Soto 2012
+
+## Puntos, polígonos y mapas de distribución
+
+Los registros (colectas georreferenciadas) de las especies son los datos primarios de biodiversidad, a partir de los cuales podemos estimar las áreas de distribución de estas y describir/evaluar los patrones de diversidad que emergen de su agregación (traslape; e.g., gradiente geográfico de riqueza)
+
+. . .
+
+## 
+
+-   En este ejemplo/ejercicio veremos cómo obtener dichos registros directamente desde R
+
+. . .
+
+-   También, veremos cómo generar áreas de distribución (extensiones de presencia) a partir de estos registros, creando polígonos de diferentes tipos (mínimo, alpha y alpha dinámico)
+
+. . .
+
+-   Los datos de registros serán obtenidos de la plataforma en línea [Global Biodiversity Information Facility - GBIF](https://www.gbif.org/)
+
+. . .
+
+## Paquetes necesarios:
+
+```{r}
+#| eval: true
+#| echo: true
+library(readr)
+library(rgbif)
+library(dplyr)
+library(here)
+library(ggplot2)
+library(sf)
+library(terra)
+library(rnaturalearth)
+library(alphahull)
+library(rangeBuilder)
+library(janitor)
+library(ggthemes)
+library(patchwork)
+```
+
+# Obteniendo registros de presencia de GBIF
+
+## 
+
+Para comenzar podemos escoger una especie y aplicar la función `occ_data`
+
+El objeto `sp_data` es una lista con datos sobre los resultados obtenidos en GBIF (incluyendo algunos metadatos)
+
+Para trabajar únicamente con la tabla de registros hay que seleccionar el objeto data dentro del mismo
+
+```{r}
+#| eval: true
+#| echo: true
+sp_data <- occ_data(scientificName = "Musonycteris harrisoni", limit = 500)[[2]]
+
+```
+
+. . .
+
+## 
+
+Checar el nombre de las columnas (para después buscar únicamente las de posición geográfica: lat/long)
+
+```{r}
+#| eval: true
+#| echo: true
+names(sp_data)[1:30]
+```
+
+. . .
+
+## 
+
+1.  Crear otro objeto a partir `sp_data` únicamente con long/lat
+
+. . .
+
+2.  Quedarse únicamente con los puntos/registros individuales (i.e., excluir duplicados)
+
+. . .
+
+3.  Transformarlo en un objeto espacial
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+sp_p1<-sp_data%>%
+  select(decimalLongitude,decimalLatitude,species)%>%
+  mutate(lat=decimalLatitude,lon=decimalLongitude)%>%
+  distinct() %>%
+  na.omit() %>% 
+  st_as_sf(coords = c('decimalLongitude','decimalLatitude'),crs="EPSG: 4326")
+
+```
+
+::: {.alert .alert-success role="alert"}
+NOTA: el nombre de la variable puede ser diferente (*e.g.*, "LATITUDE", "Latidude", "lat", etc. Siempre hay que checar antes)
+:::
+
+. . .
+
+## 
+
+Graficar (poner en un mapa) los puntos de presencia de nuestra especie
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+ geom_sf(data=sp_p1, col="blue",pch=19)
+```
+
+## 
+
+Agregar el mapa del mundo para saber qué onda!
+
+```{r}
+#| eval: true
+#| echo: true
+wrld <- ne_countries(scale = "small",returnclass = "sf")
+```
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=wrld)+geom_sf(data=sp_p1,col="blue",pch=19,size=1)+coord_sf(expand = F) +
+  labs(x="Longitud decimal ",
+       y="Latitud decimal",
+       title=expression(paste("Puntos reportados ", italic("Musonycteris harrisoni"))))+
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+## 
+
+Hay algo claramente equivocado, ¿cierto? Los puntos/registros necesitan ser "curados" (limpiados)
+
+. . .
+
+Eliminar los puntos con mala georeferencia (en este caso, puntos obvios en el "viejo mundo")
+
+```{r}
+#| eval: true
+#| echo: true
+sp_p1<-sp_data%>%
+  select(decimalLongitude,decimalLatitude,species)%>%
+  mutate(lat=decimalLatitude,lon=decimalLongitude)%>%
+  distinct() %>% 
+  na.omit() %>% 
+  st_as_sf(coords = c('decimalLongitude','decimalLatitude'),crs="EPSG: 4326")%>%
+  filter(lat> 0.5) %>% filter(lat< 22)
+```
+
+## 
+
+Ahora sí, mapeamos de nuevo pero sólamente en la región de interés (México)
+
+```{r}
+#| eval: true
+#| echo: true
+mex_map <- filter(wrld,name=="Mexico")
+```
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+geom_sf(data=mex_map)+
+  geom_sf(data=sp_p1,col="blue",pch=19,size=1)+coord_sf(expand = F)
+```
+
+## 
+
+Y ¿Cómo eliminamos los registros que están en el mar?
+
+```{r}
+#| eval: true
+#| echo: true
+sp_p1<-sp_data%>%
+  select(decimalLongitude,decimalLatitude,species)%>%
+  mutate(lat=decimalLatitude,lon=decimalLongitude)%>%
+  distinct() %>%
+  na.omit() %>% 
+  st_as_sf(coords = c('decimalLongitude','decimalLatitude'),crs="EPSG: 4326")%>%
+  filter(lat> 0.5) %>%
+  filter(lat< 22)%>%
+  filter(lon> -105.56611)
+```
+
+## 
+
+Verifiquemos nuevamente los registros en el mapa
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+geom_sf(data=mex_map)+
+  geom_sf(data=sp_p1,col="blue",pch=19,size=1)+coord_sf(expand = F)
+```
+
+# Polígono mínimo convexo
+
+## 
+
+Una vez tenemos los datos curados, podemos crear nuestro poligono mínimo convexo
+
+```{r}
+#| eval: true
+#| echo: true
+sp1_mcp <- st_convex_hull(st_union(sp_p1))
+
+```
+
+. . .
+
+¿Cómo se ve?
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+sp1_mcp2 <- st_as_sf(sp1_mcp)
+
+ggplot()+
+  geom_sf(data=mex_map)+
+  geom_sf(data=sp1_mcp, fill="blue")
+```
+
+# Polígono alfa (alpha hull)
+
+## 
+
+Usamos el paquete `alphahull`
+
+NOTA: Esta función solo acepta tablas como entrada
+
+```{r}
+#| eval: true
+#| echo: true
+sp_p2 <- as.data.frame(st_coordinates(sp_p1))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+#| error: true
+
+sp1_alphahull <- ahull(sp_p2, alpha = 6)
+```
+
+. . .
+
+*Error: shull: duplicate points found*
+
+. . .
+
+Falla porque encuentra puntos duplicados o, como en este caso, puntos en una línea recta (*i.e.*, mismo X y/o mismo Y).
+
+. . .
+
+## 
+
+¿Cómo podemos identificar y solucionar este error?
+
+```{r}
+#| eval: true
+#| echo: true
+
+sp_p3<-sp_p2 %>% select(X, Y)%>% 
+mutate(X = ifelse(duplicated(sp_p2$X), X + rnorm(1, mean = 0, sd = 0.0001), X))%>% 
+mutate(Y = ifelse(duplicated(sp_p2$Y), Y + rnorm(1, mean = 0, sd = 0.0001), Y))
+```
+
+. . .
+
+## 
+
+Ahora si, podemos crear el Alpha Hull con un valor de alpha escogido (por la razón que crean relevante)
+
+```{r}
+#| eval: true
+#| echo: true
+sp1_alphahull <- ahull(sp_p3, alpha = 1) 
+```
+
+. . .
+
+## 
+
+Para observar el alpha hull, necesitamos que el objeto sea de tipo espacial del paquete `sf`. Para eso usaremos una función independiente, disponible en su carpeta de trabajo
+
+```{r}
+#| eval: true
+#| echo: true
+source(file = here("data","ah2sf.R"))
+sp1_alphahull.poly <- ah2sf(sp1_alphahull)
+```
+
+## 
+
+¿Cómo se ve?
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=mex_map)+
+  geom_sf(data=sp1_alphahull.poly,fill="blue")
+
+```
+
+# Polígono alfa dinámico
+
+## 
+
+Usamos el paquete `rangeBuilder`, el cual crea un polígono alpha hull con un valor de alpha "óptimo" basado en la distribución espacial de los puntos
+
+```{r}
+#| eval: true
+#| echo: true
+sp_range <- getDynamicAlphaHull(
+  sp_p3, #Tabla de puntos/registros de la especie
+  coordHeaders = c("decimalLongitude", "decimalLatitude"),# x y y
+  fraction = 0.95,   # la fracción mínima de registros que debe incluir el polígono
+  partCount = 2,  # el máximo de polígonos disyuntos permitidos
+  initialAlpha = 1, # Alpha inicial
+  alphaIncrement = 0.5,
+  alphaCap = 1000,
+  clipToCoast = "terrestrial"  # solo la parte terrestre del polígono se mantendrá (se cortan las partes no-terrestres/acuáticas con base en un mapa descargado de naturalearth).
+)
+```
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+alpha <- sp_range[[2]]
+alpha
+```
+
+## 
+
+Convertir el polígono alpha a un objeto sf
+
+```{r}
+#| eval: true
+#| echo: true
+sp1_dynalpha <- st_make_valid(st_as_sf(sp_range[[1]]))
+```
+
+. . .
+
+¿Cómo podemos visualizarlo?
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+ geom_sf(data=mex_map)+ 
+  geom_sf(data=sp1_dynalpha, fill="blue")
+
+```
+
+## 
+
+¿Y ....Cómo se ven todos los polígonos?
+
+. . .
+
+```{r}
+#| eval: true
+#| echo: true
+
+ggplot()+
+  geom_sf(data=mex_map)+ geom_sf(data=sp1_mcp,fill="red",alpha=0.1) +
+  geom_sf(data=sp_range[[1]], fill="blue",alpha=0.5)+ 
+  geom_sf(data=sp1_alphahull.poly,fill="yellow",alpha=0.5)
+
+
+```
+
+## 
+
+Finalmente, podemos salvar esos polígonos como `shapefiles`, para usarlos en otros software (*e.g.*, QGIS) y eventualmente juntar los de varias especies para otros análisis (ejercicio siguiente)
+
+```{r}
+#| eval: false
+#| echo: true
+st_write(sp1_mcp2, "sp1_min_convex.shp")
+st_write(sp1_alphahull.poly, "sp1_alphahull.shp")
+st_write(sp1_dynalpha, "sp1_dyn_alphahull.shp")
+```
+
+# Ajustes en los polígonos
+
+## 
+
+Por ejemplo, para especies restringidas o dependientes de aguas continentales podemos implementar algunos ajustes luego de determinar su extensión de presencia
+
+. . .
+
+En este ejercicio, vamos a utilizar un pez dulceacuícola (*Cyphocharax naegelii*), que se distribuye en la cuenca alta del río Paraná
+
+. . .
+
+-   Carguemos una base de datos con los registros de la especie ya limpios para la cuenca del alto Paraná
+
+```{r}
+#| eval: true
+#| echo: true
+datos <- read_csv(file = here("data/polygons", "registros.csv")) %>%
+  select("longitude", "latitude") %>%
+  mutate(longitude=ifelse(duplicated(longitude),longitude+rnorm(1,mean=0, sd=0.0001), longitude)) %>%
+  mutate(latitude=ifelse(duplicated(latitude),latitude+rnorm(1,mean=0, sd=0.0001),latitude))
+```
+
+. . .
+
+## 
+
+Y carguemos un shape de referencia para la cuenca del alto Paraná (https://www.hydrosheds.org/)
+
+```{r}
+#| eval: true
+#| echo: true
+M <- st_read( here("data/polygons", "Cyphocharax_naegelii.shp")) %>% 
+  st_transform(4326) %>% st_make_valid()
+```
+
+## 
+
+Grafiquemos los registros y la cuenca
+
+. . .
+
+NOTA: Debemos convertir los registros del objeto `datos` a un objeto de tipo `sf` para poder graficar en `ggplot`
+
+```{r}
+#| eval: true
+#| echo: true
+datos_sf <- st_as_sf(datos, coords = c("longitude", "latitude"), crs = 4326)
+```
+
+. . .
+
+## 
+
+Veamos los registros distribuidos en la cuenca
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth= 0.5, colour="black")+
+  geom_sf(data=datos_sf, colour="blue", size=1)+
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)+
+  labs(x="Longitud decimal", y="Latitud decimal",
+       title=expression(paste("Registros reportados ", italic("Cyphocharax naegelli"))))+
+  theme(plot.title=element_text(hjust=0.5))
+```
+
+. . .
+
+## 
+
+Como vamos a hacer dos tipos de ajustes, necesitamos algunos insumos complementarios:
+
+. . .
+
+1.  Otros shapes de cuencas, pero de menor orden (*i.e.*, cuencas más pequeñas); en este caso, subcuencas nivel 8 (HydroSHEDS)
+
+```{r}
+#| eval: true
+#| echo: true
+# Subcuencas nivel 8 (Hydrobasin)
+cuencas <- st_read(here("data/polygons", "Basins_8.shp")) %>% 
+  st_transform(4326) %>% st_make_valid()
+```
+
+. . .
+
+## 
+
+Grafiquemos las subcuencas para tener una referencia visual
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=cuencas, fill="white", linewidth= 0.1, colour="black")+
+  coord_sf(crs=st_crs(4326),xlim=c(-58.2, -43.9),ylim=c(-28,-15),expand=TRUE)
+```
+
+. . .
+
+## 
+
+2.  Ráster de referencia que represente los cuerpos de agua (*e.g.*, ríos, embalse)
+
+. . .
+
+Dado que solo necesitamos el ráster como una referencia, asignaremos un valor único para todos los píxeles diferentes de NA
+
+```{r}
+#| eval: true
+#| echo: true
+mask <- rast(here("data/polygons", "rivers.tif"))
+mask[!is.na(mask)]<-1
+```
+
+. . .
+
+NOTA: Para graficar el ráster, primero hay que convertirlo en un data.frame
+
+```{r}
+#| eval: true
+#| echo: true
+mask.2 <- as.data.frame(mask, xy = TRUE)
+```
+
+. . .
+
+## 
+
+¿cómo se ve?
+
+```{r}
+#| eval: true
+#| echo: true
+
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth=0.5, colour="black")+
+  geom_raster(data = mask.2, aes(x=x, y=y), fill="red")+
+  coord_sf(crs=st_crs(4326),xlim=c(-58.2, -43.9),ylim=c(-28,-15),expand=TRUE)
+```
+
+. . .
+
+## 
+
+Teniendo los registros, capas de cuencas, y ráster de ríos, calculemos la extensión de presencia de la especie y luego ajustémoslo a las subcuencas, y a los cuerpos de agua
+
+. . .
+
+1.  Trazar el polígono (igual que en el primer ejercicio utilizando la función `ahull`)
+
+. . .
+
+2.  Interceptar el polígono trazado en el numeral anterior con la capa de subcuencas (nivel 8; objeto `cuencas`)
+
+. . .
+
+3.  Rasterizar el polígono interceptado y cortarlo a los cuerpos de agua utilizando la capa ráster de los ríos del objeto `mask`
+
+. . .
+
+## 
+
+Construir el polígono alfa
+
+```{r}
+#| eval: true
+#| echo: true
+naegelli_poly <- ahull(datos, alpha = 1.5) %>% ah2sf()
+```
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth= 0.5, colour="black")+
+  geom_sf(data=naegelli_poly,fill="green",linewidth=0.2,colour="black",alpha=0.3)+
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)
+```
+
+. . .
+
+## 
+
+Interceptar el polígono con las subcuencas
+
+```{r}
+#| eval: true
+#| echo: true
+intersect_poly <- st_intersection(cuencas, naegelli_poly)
+```
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=cuencas, fill="white", linewidth= 0.1, colour="black")+
+  geom_sf(data=intersect_poly$geometry,fill="green",linewidth=0.2,colour="black",alpha=0.3)+
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)
+```
+
+## 
+
+Seleccionar del objeto `cuencas` los ID interceptados para unir las subcuencas seleccionadas
+
+```{r}
+#| eval: true
+#| echo: true
+range_union <- cuencas[(intersect_poly),] %>% st_union()
+```
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth= 0.5, colour="black")+
+  geom_sf(data=range_union,fill="green",linewidth=0.2,colour="black",alpha=0.3)+
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)
+```
+
+. . .
+
+## 
+
+Por último, utilizamos el polígono ajustado a las subcuencas (objeto `range_union`) y lo rasterizamos. Luego, lo cortamos a los ríos usando el ráster del objeto `mask`
+
+. . .
+
+NOTA: Dado que el objeto final es una capa ráster, necesitamos transformarla en un data.frame para poder graficarla en `ggplot`
+
+```{r}
+#| eval: true
+#| echo: true
+water_restric<-rasterize(st_as_sf(vect(range_union)),mask,getCover=TRUE)%>% 
+  crop(mask, mask = TRUE, snap = "near") %>%
+  as.data.frame(xy = TRUE)
+```
+
+. . .
+
+## 
+
+Veamos la extensión de presencia ajustada a los ríos
+
+```{r}
+#| eval: true
+#| echo: true
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth=0.5, colour="black")+
+  geom_raster(data = water_restric, aes(x=x, y=y), fill="red")+
+  coord_sf(crs=st_crs(4326),xlim=c(-58.2, -43.9),ylim=c(-28,-15),expand=TRUE)
+```
+
+. . .
+
+## 
+
+Grafiquemos ambos resultados para tener una aproximación visual
+
+```{r}
+#| eval: true
+#| echo: true
+unrestrict_range <-
+  ggplot()+
+  geom_sf(data=M, fill="white", linewidth= 0.5, colour="black")+
+  geom_sf(data=range_union,fill="green",linewidth=0.2,colour="black",alpha=0.3)+
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)+
+  labs(x="Longitud decimal", y="Latitud decimal",
+       title=expression(paste("Sin restricciones a cuerpos de agua")))+
+  theme(plot.title=element_text(hjust=0.5))
+```
+
+```{r}
+#| eval: true
+#| echo: true
+restrict_range <-
+ggplot()+
+  geom_sf(data=M, fill="white", linewidth=0.5, colour="black")+
+  geom_raster(data = water_restric, aes(x=x, y=y), fill="red") +
+  coord_sf(crs=st_crs(4326), xlim=c(-58.2, -43.9), ylim=c(-28,-15), expand=TRUE)+
+  labs(x="Longitud decimal", y="",
+       title=expression(paste("Restringido a cuerpos de agua")))+
+  theme(plot.title=element_text(hjust=0.5))
+```
+
+. . .
+
+## 
+
+```{r}
+#| eval: true
+#| echo: true
+(unrestrict_range | restrict_range) +
+  plot_layout(widths = c(1, 1))
+
+```
+
+. . .

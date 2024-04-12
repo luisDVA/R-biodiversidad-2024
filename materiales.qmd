@@ -9,6 +9,9 @@ Descargar todos los archivos (datos y scripts) para los ejercicios y ejemplos de
 
 [️[Descargar datos](archivos-ej/datoscurso.zip)]{style="font-size: 1.6rem; background-color: #b46294; 	padding: 3px;	border-radius: 6px; text-align: center;"}
 
+
+[[Datos Actualizados](archivos-ej/datosViernes.zip)]{style="font-size: 1.6rem; background-color: #ff835a; 	padding: 3px;	border-radius: 6px; text-align: center;"}
+
 ## Presentaciones
 
 Estas presentaciones en formato web cuentan con un índice de contenidos interactivo (botón en la esquina inferior izquierda).
@@ -42,6 +45,4 @@ Estas presentaciones en formato web cuentan con un índice de contenidos interac
 
 [Mapas Bivariados](presentaciones/5.1-mapas_bivariados.qmd){.external target="_blank"}
 
-[Reglas Ecogeográficas](presentaciones/5.2-regla_ecogeografica.qmd){.external target="_blank"}
-
-[Filogenias](presentaciones/5.4-filogenias.qmd){.external target="_blank"}
+[Filogenias](presentaciones/5.2-filogenias.qmd){.external target="_blank"}

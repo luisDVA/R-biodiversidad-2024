@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../maevolab.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -10,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.151">
 
-  <meta name="author" content="Fabricio Villalobos &amp; Axel Arango">
+  <meta name="author" content="Fabricio Villalobos">
   <title>Herramientas para el manejo de datos de biodiversidad en R - Patrones geográficos de riqueza de especies</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -396,9 +397,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabricio Villalobos &amp; Axel Arango 
+Fabricio Villalobos 
 </div>
-</div>
+        <p class="quarto-title-affiliation">
+            Instituto de Ecología, A.C. - INECOL
+          </p>
+    </div>
 </div>
 
 </section>
@@ -414,26 +418,22 @@ Fabricio Villalobos &amp; Axel Arango
 <section id="áreas-de-distribución-y-patrones-geográficos-de-riqueza-1" class="slide level2">
 <h2>Áreas de distribución y patrones geográficos de riqueza</h2>
 <ul>
-<li><p>En este ejercicio veremos cómo usar las distribuciones de las especies (polígonos, como los que generamos en el ejercicio anterior) para generar el patrón geográfico de riqueza de especies</p></li>
-<li><p>Usaremos dos paquetes (<code>letsR</code> y <code>epm</code>) para mostrar diferentes maneras de llegar a lo mismo, considerando paquetes obsoletos (y que pronto se retirarán) y nuevos (que suplen los anteriores)</p></li>
+<li>En este ejercicio veremos cómo usar las distribuciones de las especies (polígonos, como los que generamos en el ejercicio anterior) para generar el patrón geográfico de riqueza de especies</li>
 </ul>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p>Los datos (polígonos) son de una familia de aves (Passeriformes:Emberizoidae:Icteridae) obtenidos de <a href="https://www.birdlife.org/">BirdLife International</a></p>
+<p>Los datos (polígonos) son del orden PRIMATES (MAMMALIA) obtenidos de la <a href="https://www.iucnredlist.org/">IUCN</a></p>
 </section>
 <section id="paquetes-necesarios" class="slide level2">
 <h2>Paquetes necesarios:</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(sp)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(letsR)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(rgdal)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(viridisLite)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(epm)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(letsR)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(viridisLite)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section>
@@ -445,22 +445,25 @@ Fabricio Villalobos &amp; Axel Arango
 <h2></h2>
 <p>Cargar los polígonos de las especies de interés (shapefiles en su carpeta de trabajo)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>icteri_maps <span class="ot">&lt;-</span> <span class="fu">readOGR</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"icteridae_maps"</span>,<span class="st">"icteridae_maps.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>primates_maps <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"dados"</span>,<span class="st">"primates_maps.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>OGR data source with driver: ESRI Shapefile 
-Source: "/home/luisd/Dropbox/darcyDB/PDRF/curso-R-biodiversidad/data/icteridae_maps/icteridae_maps.shp", layer: "icteridae_maps"
-with 190 features
-It has 26 fields</code></pre>
+<pre><code>Reading layer `primates_maps' from data source 
+  `/home/luisd/Dropbox/darcyDB/PDRF/R-biodiversidad-2024/dados/primates_maps.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 915 features and 28 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -99.2274 ymin: -34.83983 xmax: 141.9292 ymax: 41.54623
+Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>Conocer el dominio (“extent”) de los datos, para usarlo después en la delimitación del espacio (geográfico) de trabajo</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>icteri_maps<span class="sc">@</span>bbox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">st_bbox</span>(primates_maps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         min       max
-x -166.19269 -34.79010
-y  -55.98218  69.60669</code></pre>
+<pre><code>     xmin      ymin      xmax      ymax 
+-99.22740 -34.83983 141.92917  41.54623 </code></pre>
 </div>
 </div>
 </div>
@@ -469,14 +472,339 @@ y  -55.98218  69.60669</code></pre>
 <h2></h2>
 <p>Crear una matriz de presencia-ausencia a partir de los polígonos</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>icteri.pam <span class="ot">&lt;-</span> <span class="fu">lets.presab</span>(icteri_maps, <span class="at">xmn =</span> <span class="sc">-</span><span class="dv">167</span>,<span class="at">xmx =</span> <span class="sc">-</span><span class="dv">35</span>, <span class="at">ymn =</span> <span class="sc">-</span><span class="dv">56</span>, <span class="at">ymx =</span> <span class="dv">70</span>, <span class="at">resol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>primates.pam <span class="ot">&lt;-</span> <span class="fu">lets.presab</span>(primates_maps, <span class="at">xmn =</span> <span class="sc">-</span><span class="dv">100</span>,<span class="at">xmx =</span> <span class="dv">141</span>, <span class="at">ymn =</span> <span class="sc">-</span><span class="dv">35</span>, <span class="at">ymx =</span> <span class="dv">42</span>, <span class="at">resol=</span><span class="dv">1</span>, <span class="at">count=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |                                                                      |   1%
+  |                                                                            
+  |=                                                                     |   1%
+  |                                                                            
+  |=                                                                     |   2%
+  |                                                                            
+  |==                                                                    |   2%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
+  |===                                                                   |   5%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |====                                                                  |   6%
+  |                                                                            
+  |=====                                                                 |   6%
+  |                                                                            
+  |=====                                                                 |   7%
+  |                                                                            
+  |=====                                                                 |   8%
+  |                                                                            
+  |======                                                                |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |   9%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |=======                                                               |  11%
+  |                                                                            
+  |========                                                              |  11%
+  |                                                                            
+  |========                                                              |  12%
+  |                                                                            
+  |=========                                                             |  12%
+  |                                                                            
+  |=========                                                             |  13%
+  |                                                                            
+  |=========                                                             |  14%
+  |                                                                            
+  |==========                                                            |  14%
+  |                                                                            
+  |==========                                                            |  15%
+  |                                                                            
+  |===========                                                           |  15%
+  |                                                                            
+  |===========                                                           |  16%
+  |                                                                            
+  |============                                                          |  17%
+  |                                                                            
+  |============                                                          |  18%
+  |                                                                            
+  |=============                                                         |  18%
+  |                                                                            
+  |=============                                                         |  19%
+  |                                                                            
+  |==============                                                        |  19%
+  |                                                                            
+  |==============                                                        |  20%
+  |                                                                            
+  |==============                                                        |  21%
+  |                                                                            
+  |===============                                                       |  21%
+  |                                                                            
+  |===============                                                       |  22%
+  |                                                                            
+  |================                                                      |  22%
+  |                                                                            
+  |================                                                      |  23%
+  |                                                                            
+  |=================                                                     |  24%
+  |                                                                            
+  |=================                                                     |  25%
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |===================                                                   |  26%
+  |                                                                            
+  |===================                                                   |  27%
+  |                                                                            
+  |===================                                                   |  28%
+  |                                                                            
+  |====================                                                  |  28%
+  |                                                                            
+  |====================                                                  |  29%
+  |                                                                            
+  |=====================                                                 |  29%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |=====================                                                 |  31%
+  |                                                                            
+  |======================                                                |  31%
+  |                                                                            
+  |======================                                                |  32%
+  |                                                                            
+  |=======================                                               |  32%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |=======================                                               |  34%
+  |                                                                            
+  |========================                                              |  34%
+  |                                                                            
+  |========================                                              |  35%
+  |                                                                            
+  |=========================                                             |  35%
+  |                                                                            
+  |=========================                                             |  36%
+  |                                                                            
+  |==========================                                            |  37%
+  |                                                                            
+  |==========================                                            |  38%
+  |                                                                            
+  |===========================                                           |  38%
+  |                                                                            
+  |===========================                                           |  39%
+  |                                                                            
+  |============================                                          |  39%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |============================                                          |  41%
+  |                                                                            
+  |=============================                                         |  41%
+  |                                                                            
+  |=============================                                         |  42%
+  |                                                                            
+  |==============================                                        |  42%
+  |                                                                            
+  |==============================                                        |  43%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |===============================                                       |  45%
+  |                                                                            
+  |================================                                      |  45%
+  |                                                                            
+  |================================                                      |  46%
+  |                                                                            
+  |=================================                                     |  46%
+  |                                                                            
+  |=================================                                     |  47%
+  |                                                                            
+  |=================================                                     |  48%
+  |                                                                            
+  |==================================                                    |  48%
+  |                                                                            
+  |==================================                                    |  49%
+  |                                                                            
+  |===================================                                   |  49%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |===================================                                   |  51%
+  |                                                                            
+  |====================================                                  |  51%
+  |                                                                            
+  |====================================                                  |  52%
+  |                                                                            
+  |=====================================                                 |  52%
+  |                                                                            
+  |=====================================                                 |  53%
+  |                                                                            
+  |=====================================                                 |  54%
+  |                                                                            
+  |======================================                                |  54%
+  |                                                                            
+  |======================================                                |  55%
+  |                                                                            
+  |=======================================                               |  55%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |========================================                              |  57%
+  |                                                                            
+  |========================================                              |  58%
+  |                                                                            
+  |=========================================                             |  58%
+  |                                                                            
+  |=========================================                             |  59%
+  |                                                                            
+  |==========================================                            |  59%
+  |                                                                            
+  |==========================================                            |  60%
+  |                                                                            
+  |==========================================                            |  61%
+  |                                                                            
+  |===========================================                           |  61%
+  |                                                                            
+  |===========================================                           |  62%
+  |                                                                            
+  |============================================                          |  62%
+  |                                                                            
+  |============================================                          |  63%
+  |                                                                            
+  |=============================================                         |  64%
+  |                                                                            
+  |=============================================                         |  65%
+  |                                                                            
+  |==============================================                        |  65%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |===============================================                       |  66%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |===============================================                       |  68%
+  |                                                                            
+  |================================================                      |  68%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |=================================================                     |  69%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |=================================================                     |  71%
+  |                                                                            
+  |==================================================                    |  71%
+  |                                                                            
+  |==================================================                    |  72%
+  |                                                                            
+  |===================================================                   |  72%
+  |                                                                            
+  |===================================================                   |  73%
+  |                                                                            
+  |===================================================                   |  74%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |====================================================                  |  75%
+  |                                                                            
+  |=====================================================                 |  75%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |======================================================                |  77%
+  |                                                                            
+  |======================================================                |  78%
+  |                                                                            
+  |=======================================================               |  78%
+  |                                                                            
+  |=======================================================               |  79%
+  |                                                                            
+  |========================================================              |  79%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |========================================================              |  81%
+  |                                                                            
+  |=========================================================             |  81%
+  |                                                                            
+  |=========================================================             |  82%
+  |                                                                            
+  |==========================================================            |  82%
+  |                                                                            
+  |==========================================================            |  83%
+  |                                                                            
+  |===========================================================           |  84%
+  |                                                                            
+  |===========================================================           |  85%
+  |                                                                            
+  |============================================================          |  85%
+  |                                                                            
+  |============================================================          |  86%
+  |                                                                            
+  |=============================================================         |  86%
+  |                                                                            
+  |=============================================================         |  87%
+  |                                                                            
+  |=============================================================         |  88%
+  |                                                                            
+  |==============================================================        |  88%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |===============================================================       |  89%
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |===============================================================       |  91%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |================================================================      |  92%
+  |                                                                            
+  |=================================================================     |  92%
+  |                                                                            
+  |=================================================================     |  93%
+  |                                                                            
+  |=================================================================     |  94%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |==================================================================    |  95%
+  |                                                                            
+  |===================================================================   |  95%
+  |                                                                            
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  97%
+  |                                                                            
+  |====================================================================  |  98%
+  |                                                                            
+  |===================================================================== |  98%
+  |                                                                            
+  |===================================================================== |  99%
+  |                                                                            
+  |======================================================================|  99%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+</div>
 </div>
 </section>
 <section id="cómo-se-ve-el-patrón-geográfico" class="slide level2">
 <h2>¿Cómo se ve el patrón geográfico?</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">plot</span>(icteri.pam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">plot</span>(primates.pam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </div>
@@ -487,16 +815,17 @@ y  -55.98218  69.60669</code></pre>
 <h2></h2>
 <p>¿Qué tiene el objeto que se graficó?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>icteri.pam<span class="sc">$</span>Richness_Raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>primates.pam<span class="sc">$</span>Richness_Raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>class      : RasterLayer 
-dimensions : 126, 132, 16632  (nrow, ncol, ncell)
-resolution : 1, 1  (x, y)
-extent     : -167, -35, -56, 70  (xmin, xmax, ymin, ymax)
-crs        : +proj=longlat +datum=WGS84 +no_defs 
-source     : memory
-names      : layer 
-values     : 0, 18  (min, max)</code></pre>
+<pre><code>class       : SpatRaster 
+dimensions  : 77, 241, 1  (nrow, ncol, nlyr)
+resolution  : 1, 1  (x, y)
+extent      : -100, 141, -35, 42  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 +no_defs 
+source(s)   : memory
+name        : lyr.1 
+min value   :     0 
+max value   :    33 </code></pre>
 </div>
 </div>
 </section>
@@ -506,29 +835,29 @@ values     : 0, 18  (min, max)</code></pre>
 <div class="fragment">
 <p>Primero, convertimos el raster en un <code>data.frame</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>rdf <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(icteri.pam<span class="sc">$</span>Richness_Raster, <span class="at">xy=</span><span class="cn">TRUE</span>) <span class="co">#Convert raster to data.frame</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">names</span>(rdf)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">'richness'</span> <span class="co">#Name value column</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">head</span>(rdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>rdf <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(primates.pam<span class="sc">$</span>Richness_Raster, <span class="at">xy=</span><span class="cn">TRUE</span>) <span class="co">#Convert raster to data.frame</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">names</span>(rdf)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">'richness'</span> <span class="co">#Name value column</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">head</span>(rdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       x    y richness
-1 -166.5 69.5        0
-2 -165.5 69.5        0
-3 -164.5 69.5        0
-4 -163.5 69.5        0
-5 -162.5 69.5        0
-6 -161.5 69.5        0</code></pre>
+<pre><code>      x    y richness
+1 -99.5 41.5        0
+2 -98.5 41.5        0
+3 -97.5 41.5        0
+4 -96.5 41.5        0
+5 -95.5 41.5        0
+6 -94.5 41.5        0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>rdf2 <span class="ot">&lt;-</span> rdf</span>
-<span id="cb12-2"><a href="#cb12-2"></a>rdf2[,<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(rdf[,<span class="dv">3</span>]<span class="sc">==</span><span class="dv">0</span>,<span class="cn">NA</span>,rdf[,<span class="dv">3</span>])</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">head</span>(rdf2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>rdf2 <span class="ot">&lt;-</span> rdf</span>
+<span id="cb13-2"><a href="#cb13-2"></a>rdf2[,<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(rdf[,<span class="dv">3</span>]<span class="sc">==</span><span class="dv">0</span>,<span class="cn">NA</span>,rdf[,<span class="dv">3</span>])</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">head</span>(rdf2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       x    y richness
-1 -166.5 69.5       NA
-2 -165.5 69.5       NA
-3 -164.5 69.5       NA
-4 -163.5 69.5       NA
-5 -162.5 69.5       NA
-6 -161.5 69.5       NA</code></pre>
+<pre><code>      x    y richness
+1 -99.5 41.5       NA
+2 -98.5 41.5       NA
+3 -97.5 41.5       NA
+4 -96.5 41.5       NA
+5 -95.5 41.5       NA
+6 -94.5 41.5       NA</code></pre>
 </div>
 </div>
 </div>
@@ -537,131 +866,80 @@ values     : 0, 18  (min, max)</code></pre>
 <h2></h2>
 <p>Ahora sí, lo graficamos</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rdf2)<span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_raster</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">fill=</span>richness))<span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours=</span> <span class="fu">rev</span>(<span class="fu">inferno</span>(<span class="dv">10</span>)), <span class="at">name=</span><span class="st">'Richness'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rdf2)<span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">geom_raster</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">fill=</span>richness))<span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours=</span> <span class="fu">rev</span>(<span class="fu">inferno</span>(<span class="dv">10</span>)), <span class="at">name=</span><span class="st">'Richness'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
-<section>
-<section id="ecophylomapper---epm-title-et-al.-2022-mee" class="title-slide slide level1 center">
-<h1>EcoPhyloMapper - epm (Title et al.&nbsp;2022 MEE)</h1>
-
-</section>
+<img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="section-6" class="slide level2">
 <h2></h2>
-<p>Cargar nuevamente los polígonos, pero ahora con el paquete ‘nuevo’ y recomendado a partir de junio 2023! (sf)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>icteri_file <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"icteridae_maps"</span>,<span class="st">"icteridae_maps.shp"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a>icteri_maps.sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(icteri_file, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Reading layer `icteridae_maps' from data source 
-  `/home/luisd/Dropbox/darcyDB/PDRF/curso-R-biodiversidad/data/icteridae_maps/icteridae_maps.shp' 
-  using driver `ESRI Shapefile'
-Simple feature collection with 190 features and 26 fields
-Geometry type: MULTIPOLYGON
-Dimension:     XY
-Bounding box:  xmin: -166.1927 ymin: -55.98218 xmax: -34.7901 ymax: 69.60669
-Geodetic CRS:  GCS_unknown</code></pre>
-</div>
+<p>¿Qué más podemos hacer con esto?</p>
+<div class="fragment">
+<p>Por ejemplo, relacionar el patrón de riqueza con alguna variable ambiental</p>
 </div>
 <div class="fragment">
-<p>Checar que la columna de especies (en este caso: SCINAME) sea de caracteres (para evitar problemas más adelante)</p>
+<p>Carguemos una variable ambiental (temperatura máxima, que viene de <a href="https://www.worldclim.org">WorldClim</a>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">class</span>(icteri_maps.sf<span class="sc">$</span>SCINAME)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"dados"</span>,<span class="st">"bio1.bil"</span>))</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">plot</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-<p>Crear un vector con los nombres de todas las especies en el multipoligono</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>allspp <span class="ot">&lt;-</span> <span class="fu">unique</span>(icteri_maps.sf<span class="sc">$</span>SCINAME)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"dados"</span>,<span class="st">"bio1.bil"</span>))</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">plot</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</section>
+<img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="section-8" class="slide level2">
 <h2></h2>
-<p>Creamos polígonos individuales por especie</p>
+<p>Ahora, podemos extraer ambos valores/variables de interés: riqueza y temperatura</p>
+<p>¿Cómo? . . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>spList <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">'list'</span>, <span class="fu">length</span>(allspp))</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">names</span>(spList) <span class="ot">&lt;-</span> allspp</span>
-<span id="cb20-3"><a href="#cb20-3"></a></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(allspp)) {</span>
-<span id="cb20-5"><a href="#cb20-5"></a>  ind <span class="ot">&lt;-</span> <span class="fu">which</span>(icteri_maps.sf<span class="sc">$</span>SCINAME <span class="sc">==</span> allspp[i])</span>
-<span id="cb20-6"><a href="#cb20-6"></a>  spList[[i]] <span class="ot">&lt;-</span> icteri_maps.sf[ind,]</span>
-<span id="cb20-7"><a href="#cb20-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<p>Checamos la geometría de los polígonos e intentamos corregirla si es necesario</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(spList)) {</span>
-<span id="cb21-2"><a href="#cb21-2"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">any</span>(<span class="fu">st_is_valid</span>(spList[[i]]))) {</span>
-<span id="cb21-3"><a href="#cb21-3"></a>            <span class="fu">message</span>(<span class="st">'</span><span class="sc">\t</span><span class="st">repairing poly '</span>, i)</span>
-<span id="cb21-4"><a href="#cb21-4"></a>            spList[[i]] <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(spList[[i]])</span>
-<span id="cb21-5"><a href="#cb21-5"></a>        }</span>
-<span id="cb21-6"><a href="#cb21-6"></a>   }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>primates.pam2 <span class="ot">&lt;-</span> primates.pam2 <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(primates.pam<span class="sc">$</span>Presence_and_Absence_Matrix)</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a>primates.richness <span class="ot">&lt;-</span> primates.pam2 <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">mutate</span>(<span class="at">richness=</span><span class="fu">rowSums</span>(primates.pam2[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)])) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Longitude(x)</span><span class="st">`</span>,<span class="st">`</span><span class="at">Latitude(y)</span><span class="st">`</span>,richness) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">filter</span>(richness<span class="sc">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb18-9"><a href="#cb18-9"></a></span>
+<span id="cb18-10"><a href="#cb18-10"></a></span>
+<span id="cb18-11"><a href="#cb18-11"></a>temp2 <span class="ot">&lt;-</span> <span class="fu">extract</span>(temp, primates.pam2[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-<p>Ahora sí, creamos el gradiente de riqueza con el paquete epm</p>
+<p>Ahora ya podemos evaluar la relación entre riqueza y temperatura</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>icteriEPM <span class="ot">&lt;-</span> <span class="fu">createEPMgrid</span>(spList, <span class="at">resolution =</span> <span class="dv">1</span>, <span class="at">retainSmallRanges =</span> <span class="cn">TRUE</span>, <span class="at">extent =</span> <span class="st">'auto'</span>, <span class="at">method =</span> <span class="st">'percentOverlap'</span>, <span class="at">cellType =</span> <span class="st">'square'</span>, <span class="at">percentThreshold =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">plot</span>(primates.richness<span class="sc">$</span>richness<span class="sc">~</span>temp2<span class="sc">$</span>bio1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">cor.test</span>(temp2<span class="sc">$</span>bio1, primates.richness<span class="sc">$</span>richness, <span class="at">method=</span><span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-  |                                                                            
-  |                                                                      |   0%
-  |                                                                            
-  |=======================                                               |  33%
-  |                                                                            
-  |===============================================                       |  67%
-  |                                                                            
-  |======================================================================| 100%</code></pre>
-</div>
-</div>
-</section>
-<section id="qué-tiene-el-objeto-generado" class="slide level2">
-<h2>¿Qué tiene el objeto generado?</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>icteriEPM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Summary of epm object:
+    Spearman's rank correlation rho
 
-    metric: spRichness 
-    grid type:  square 
-    number of grid cells: 16764 
-    grid resolution: 1 by 1 
-    projected: FALSE 
-    crs: +proj=longlat +datum=WGS84 +no_defs 
-
-    number of unique species: 99 (richness range: 1 - 21) 
-    data present: No 
-    phylogeny present: No </code></pre>
+data:  temp2$bio1 and primates.richness$richness
+S = 1.0509e+10, p-value &lt; 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+     rho 
+0.188953 </code></pre>
 </div>
-</div>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<p>Lo graficamos</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">plot</span>(icteriEPM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5-gradiente_riqueza_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<p>Ahora generamos la matriz de presencia-ausencia a partir del objeto creado. Esta matriz nos puede servir para comparar con los resultados de <code>letsR</code> o para derivar otras métricas/patrones</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>icteri.pamEPM <span class="ot">&lt;-</span> <span class="fu">epmToPhyloComm</span>(icteriEPM, <span class="at">sites =</span> <span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>

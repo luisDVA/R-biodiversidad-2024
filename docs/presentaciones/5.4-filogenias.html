@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../maevolab.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -10,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.151">
 
-  <meta name="author" content="Axel Arango &amp; Fabricio Villalobos">
+  <meta name="author" content="Axel Arango &amp; Fabricio Villalobos &amp; Juliana Herrera">
   <title>Herramientas para el manejo de datos de biodiversidad en R - Filogenias en R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -396,7 +397,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Axel Arango &amp; Fabricio Villalobos 
+Axel Arango &amp; Fabricio Villalobos &amp; Juliana Herrera 
 </div>
 </div>
 </div>
@@ -404,20 +405,20 @@ Axel Arango &amp; Fabricio Villalobos
 </section>
 <section id="filogenias-en-r" class="slide level2">
 <h2>Filogenias en R</h2>
-<p>Primero, ¿Qué es un árbol Filogenético?</p>
+<p>. . . Primero, ¿Qué es un árbol Filogenético?</p>
+<div class="fragment">
+<ul>
+<li><p>Un árbol filogenético es un diagrama que muestra la relación de parentesco entre especies (o taxones)</p></li>
+<li><p>Uno de los formatos más utilizados para representar filogenias son el <em>Newick</em>(.tree)</p></li>
+<li><p>El formato Newick es una notación para representar parentescos utilizando paréntesis y comas.</p></li>
+</ul>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p>Un árbol filogenético es un diagrama que muestra la relación de parentezco entre especies (o taxones)</p>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p>Uno de los formatos más utilizados para representar filogenias son el <em>Newick</em>(.tree)</p>
-<p>El formato Newick es una notación para representar parentescos utilizando parentesis y comas.</p>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p>Si queremos decir que A y B se parecen más entre ellos que con X, lo anotaríamos así:</p>
+<ul>
+<li>Si queremos decir que A y B se parecen más entre ellos que con X, lo anotaríamos así:</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="st">"((A,B),X);"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -425,63 +426,59 @@ Axel Arango &amp; Fabricio Villalobos
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p>Para que <em>R</em> pueda identificar está notación, se puede usar <code>ape</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(ape)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span><span class="st">"((A,B),X);"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span><span class="st">"((A,B),X);"</span>) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="5.4-filogenias_files/figure-revealjs/newick-1.png" width="960" class="r-stretch"></section>
-<section id="section-4" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <p>El formato Newick es anidado, por lo que podemos explorar la relación entre diferentes grupos. Por ejemplo:</p>
 <p>Sabemos que los lobos, los coyotes y los zorros pertenecen a Canidae, pero que los lobos y los coyotes son del mismo género</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>Canidae <span class="ot">&lt;-</span><span class="st">"(Vulpes_vulpes,(Canis_lupus,Canis_latrans));"</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span>Canidae) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span>Canidae) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/canii-1.png" width="960" class="r-stretch"></section>
-<section id="section-5" class="slide level2">
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="section-3" class="slide level2">
 <h2></h2>
 <p>Y si agregamos murciélagos, todos ellos pertenecen a los mamíferos:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Mammalia <span class="ot">&lt;-</span><span class="st">"(Desmodus_rotundus,(Vulpes_vulpes,(Canis_lupus,Canis_latrans)));"</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span>Mammalia) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">read.tree</span>(<span class="at">text=</span>Mammalia) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="5.4-filogenias_files/figure-revealjs/murcis-1.png" width="960" class="r-stretch"></section>
-<section id="section-6" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
-<p>Si quisieramos agregar cuervos y zanates. ¿Estos dónde irían?</p>
+<p>Si quisiéramos agregar cuervos y zanates. ¿Estos dónde irían?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>tetrapoda<span class="ot">&lt;-</span><span class="st">"((Quiscalus_mexicanus,Corvus_corax),(Desmodus_rotundus,(Vulpes_vulpes,(Canis_lupus,Canis_latrans))));"</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">read.tree</span>(<span class="at">text=</span>tetrapoda) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">read.tree</span>(<span class="at">text=</span>tetrapoda) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="5.4-filogenias_files/figure-revealjs/zan-1.png" width="960" class="r-stretch"></section>
-<section id="section-7" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <p>Y si agregamos una planta, los mamíferos y las aves se anidarían.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>Eukarya<span class="ot">&lt;-</span><span class="st">"(Sideroxylon_celastrinum,((Quiscalus_mexicanus,Corvus_corax),(Desmodus_rotundus,(Vulpes_vulpes,(Canis_lupus,Canis_latrans)))));"</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>Nktree<span class="ot">&lt;-</span><span class="fu">read.tree</span>(<span class="at">text=</span>Eukarya)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>Nktree<span class="ot">&lt;-</span><span class="fu">read.tree</span>(<span class="at">text=</span>Eukarya) </span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="fu">plot</span>(Nktree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="5.4-filogenias_files/figure-revealjs/planta-1.png" width="960" class="r-stretch"></section>
-<section id="section-8" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <ul>
-<li>En este ejercicio haremos uso del paquete <em>ggtree</em> para graficar, personalizar, anotar y en general mejorar árboles filogenéticos</li>
+<li>En este ejercicio haremos uso del paquete <code>ggtree</code> para graficar, personalizar, anotar y en general mejorar árboles filogenéticos</li>
 </ul>
 </section>
 <section id="paquetes-necesarios" class="slide level2">
@@ -498,631 +495,522 @@ Axel Arango &amp; Fabricio Villalobos
 <span id="cb8-9"><a href="#cb8-9"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="filogenia-pimelodidae" class="slide level2">
+<h2>Filogenia <em>Pimelodidae</em></h2>
+<p>En este ejercicio utilizaremos una filogenia con las especies del Orden Siluriforme a las cuales se le conoce su tipo de migración. Esto es un subset de la Megafilogenia para peces propuesta por Rabosky (2018)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>fishtree <span class="ot">&lt;-</span><span class="fu">read.tree</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"treefish.txt"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2"></a>fishdata<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"DataFish.txt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Veamos esta filogenia graficándola, usando <code>ape</code>, la manera base para R.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">plot</span>(fishtree, <span class="at">show.tip.label=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-8-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p>Ahora graficaremos el mismo árbol utilizando ggtree, el cual sigue una formula idéntica a la de ggplot. Nuestro árbol base se llamará <strong>p1</strong>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>p1<span class="ot">&lt;-</span><span class="fu">ggtree</span>(fishtree,<span class="at">color=</span><span class="st">"black"</span>,<span class="at">size=</span><span class="fl">0.5</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">plot</span>(p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-9-1.png" width="384" class="r-stretch quarto-figure-center"></section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-<p>En este caso usaremos un árbol filogenético en particular (la filogenia de <em>Icteridae</em>). Sin embargo, estos ejemplos se pueden hacer en su mayoría con cualquier otra filogenía que tengan disponible.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>ictree <span class="ot">&lt;-</span><span class="fu">read.tree</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"Icteridae_tree.txt"</span>))</span>
-<span id="cb9-2"><a href="#cb9-2"></a>ictree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Phylogenetic tree with 100 tips and 99 internal nodes.
-
-Tip labels:
-  Icterus_melanopsis, Icterus_northropi, Icterus_laudabilis, Icterus_dominicensis, Icterus_cayanensis, Icterus_pyrrhopterus, ...
-Node labels:
-  761, 762, 763, 764, 765, 766, ...
-
-Rooted; includes branch lengths.</code></pre>
-</div>
-</div>
+<p>Con <strong>p1</strong>, al igual que con cualquier otro gráfico de <code>ggplot</code>, podemos agregar parámetros gráficos para personalizar o agregar anotaciones a nuestra filogenia. Primero empezaremos con los parámetros de personalización. Por ejemplo, podemos cambiar la disposición de la filogenia utilizando el parámetro <code>layout_</code>:</p>
 </section>
 <section id="section-10" class="slide level2">
 <h2></h2>
-<p>Veamos esta filogenia graficandola usando <em>ape</em>, la manera base para R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">plot</span>(ictree, <span class="at">show.tip.label=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<p>Ahora graficaremos el mismo árbol utilizando ggtree, el cual sigue una formula idéntica a la de ggplot. Nuestro árbol base se llamará <em>p1</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>p1<span class="ot">&lt;-</span><span class="fu">ggtree</span>(ictree,<span class="at">color=</span><span class="st">"black"</span>,<span class="at">size=</span><span class="fl">0.5</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">plot</span>(p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section id="section-12" class="slide level2">
-<h2></h2>
-<p>Con <em>p1</em>, al igual que con cualquier otro gráfico de ggplot, podemos agregar parametros de graficación para personalizar o agregar anotaciones a nuestra filogenia. Primero empezaremos con los parametros de personalización. Por ejemplo, podemos cambiar la disposición de la filogenia utilizando el parametro <em>layout_</em>:</p>
-</section>
-<section id="section-13" class="slide level2">
-<h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>p1<span class="sc">+</span><span class="fu">layout_dendrogram</span>()<span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>p1<span class="sc">+</span><span class="fu">layout_fan</span>()<span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>p1<span class="sc">+</span><span class="fu">layout_circular</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="section-14" class="slide level2">
-<h2></h2>
-<p>También podemos cambiar el color del fondo del gráfico</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>p1<span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">theme_tree</span>(<span class="at">bgcolor=</span><span class="st">"lightblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>p1<span class="sc">+</span><span class="fu">layout_dendrogram</span>()<span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>p1<span class="sc">+</span><span class="fu">layout_fan</span>()<span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>p1<span class="sc">+</span><span class="fu">layout_circular</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="section-15" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
-<p>Agregar las etiquetas para las puntas de una manera personalizable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>p1<span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">geom_tiplab</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"darkblue"</span>,<span class="at">angle=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También podemos cambiar el color del fondo del gráfico</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>p1<span class="sc">+</span>  <span class="fu">theme_tree</span>(<span class="at">bgcolor=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
-<section id="section-16" class="slide level2">
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-11-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="etiquetas-y-formas-en-tips" class="slide level2">
+<h2>Etiquetas y formas en tips</h2>
+<p>Agregar las etiquetas para las puntas de una manera personalizable:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">110</span>)<span class="sc">+</span><span class="fu">geom_tiplab</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"red"</span>,<span class="at">angle=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-12-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="section-12" class="slide level2">
 <h2></h2>
 <p>formas a las puntas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>p1<span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_tippoint</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"brown"</span>,<span class="at">shape=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>p1<span class="sc">+</span><span class="fu">geom_tippoint</span>(<span class="at">size=</span><span class="dv">3</span>,<span class="at">color=</span><span class="st">"black"</span>,<span class="at">fill=</span><span class="st">"skyblue"</span>,<span class="at">shape=</span><span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
-<section id="section-17" class="slide level2">
-<h2></h2>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-13-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="etiquetasy-formas-en-nodos" class="slide level2">
+<h2>Etiquetasy formas en nodos</h2>
 <p>Etiquetas a los nodos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>p1<span class="sc">+</span> </span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_nodelab</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"purple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>p1<span class="sc">+</span><span class="fu">geom_nodelab</span>(<span class="fu">aes</span>(<span class="at">label=</span>node),<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_nodelab</span>(<span class="fu">aes</span>(<span class="at">subset =</span> (node <span class="sc">==</span> <span class="dv">109</span>), <span class="at">label =</span> <span class="st">"*"</span>),<span class="at">color =</span> <span class="st">"red"</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">hjust=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
-<section id="section-18" class="slide level2">
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-14-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="section-13" class="slide level2">
 <h2></h2>
 <p>o formas a los nodos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>p1<span class="sc">+</span> </span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_nodepoint</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"red"</span>,<span class="at">shape=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>p1<span class="sc">+</span><span class="fu">geom_nodelab</span>(<span class="fu">aes</span>(<span class="at">label=</span>node),<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.6</span>)<span class="sc">+</span> <span class="fu">geom_nodelab</span>(<span class="fu">aes</span>(<span class="at">subset =</span> (node <span class="sc">==</span> <span class="dv">109</span>), <span class="at">label =</span> <span class="st">"*"</span>),<span class="at">color =</span> <span class="st">"red"</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">hjust=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_nodepoint</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"red"</span>,<span class="at">fill=</span><span class="st">"black"</span>,<span class="at">shape=</span><span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-15-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="escalas-temporales" class="slide level2">
+<h2>Escalas temporales</h2>
+<p>e incluso agregar una escala temporal a la filogenia, con la ayuda del paquete <code>deeptime</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>py<span class="ot">&lt;-</span><span class="fu">revts</span>(p1)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>py<span class="sc">+</span> <span class="fu">geom_tiplab</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"black"</span>,<span class="at">angle=</span><span class="dv">0</span>)<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">100</span>,<span class="dv">30</span>)<span class="sc">+</span><span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">70</span>)<span class="sc">+</span><span class="fu">coord_geo</span>(<span class="at">abbrv =</span> T,<span class="at">neg=</span>T,<span class="at">skip=</span><span class="cn">NULL</span>,<span class="at">dat=</span><span class="st">"epochs"</span>,<span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">theme_tree2</span>(<span class="at">axis.text.x=</span><span class="fu">element_blank</span>())<span class="sc">+</span><span class="fu">guides</span>(<span class="at">x =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-16-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="juntar-varios-parametros-en-ggtree" class="slide level2">
+<h2>Juntar varios parametros en <code>ggtree</code></h2>
+<p>Cómo en ggplot, todos estos parámetros son aditivos, por lo cual puedes construir la filogenia de manera gradual</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>p1<span class="sc">+</span> <span class="fu">layout_circular</span>()<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>,<span class="dv">150</span>)<span class="sc">+</span><span class="fu">geom_tiplab</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_tippoint</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"brown"</span>,<span class="at">shape=</span><span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">geom_nodelab</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"purple"</span>)<span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">geom_nodepoint</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"red"</span>,<span class="at">alpha=</span><span class="fl">0.3</span>,<span class="at">shape=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-18-1.png" width="384" class="r-stretch quarto-figure-center"></section>
+<section id="anotaciones-en-árboles" class="slide level2">
+<h2>Anotaciones en Árboles</h2>
+<p>Ahora para la anotación de los árboles, se pueden hacer varias cosas, por ejemplo, quiero seleccionar la parte de la filogenia donde se encuentra las especies de la Familia <em>Pimelodidae</em></p>
+</section>
+<section id="obtener-nodos" class="slide level2">
+<h2>Obtener nodos</h2>
+<p>Para esto primero debemos encontrar el nodo del ancestro en común más reciente para este grupo. Usando un <em>tibble</em> y la estructura de <code>dplyr</code> es muy fácil</p>
+<p>Después usando la función <code>getMRCA()</code> podemos encontrar el ancestro en común de estas especies</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>fishdata<span class="sc">$</span>sciname<span class="ot">&lt;-</span><span class="fu">row.names</span>(fishdata)</span>
+<span id="cb20-2"><a href="#cb20-2"></a>pimelo<span class="ot">&lt;-</span>fishdata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Family<span class="sc">==</span><span class="st">"Pimelodidae"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>nodepimelo<span class="ot">&lt;-</span><span class="fu">getMRCA</span>(fishtree,pimelo<span class="sc">$</span>sciname)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>nodepimelo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 80</code></pre>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<p>Ahora sabiendo que el ancestro en común de la familia <em>Pimelodidae</em> se encuentra en el nodo 80, puedo utilizar esta información para anotar la filogenia utilizando el parámetro <em>geom_cladelab</em>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">110</span>)<span class="sc">+</span> <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodepimelo,<span class="at">label =</span> <span class="st">"Pimelodidae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"red"</span>,<span class="at">textcolor=</span><span class="st">"red"</span>,<span class="at">angle=</span><span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-20-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<p>y que tal si identificamos varias familias:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>Siluridae<span class="ot">&lt;-</span>fishdata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Family<span class="sc">==</span><span class="st">"Siluridae"</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sciname)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>nodesiluri<span class="ot">&lt;-</span><span class="fu">getMRCA</span> (fishtree,Siluridae<span class="sc">$</span>sciname)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>Loricariidae<span class="ot">&lt;-</span>fishdata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Family<span class="sc">==</span><span class="st">"Loricariidae"</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sciname)</span>
+<span id="cb23-4"><a href="#cb23-4"></a>nodelori<span class="ot">&lt;-</span><span class="fu">getMRCA</span> (fishtree,Loricariidae<span class="sc">$</span>sciname)</span>
+<span id="cb23-5"><a href="#cb23-5"></a>Bagriidae<span class="ot">&lt;-</span>fishdata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Family<span class="sc">==</span><span class="st">"Bagridae"</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sciname)</span>
+<span id="cb23-6"><a href="#cb23-6"></a>nodeBagri<span class="ot">&lt;-</span><span class="fu">getMRCA</span> (fishtree,Bagriidae<span class="sc">$</span>sciname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<p>Ahora podemos jugar con varios parámetros gráficos</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">110</span>)<span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodepimelo,<span class="at">label =</span><span class="st">"Pimelodidae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"red"</span>,<span class="at">textcolor=</span><span class="st">"brown"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodesiluri,<span class="at">label=</span><span class="st">"Siluridae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"blue"</span>,<span class="at">textcolor=</span><span class="st">"blue"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodelori,<span class="at">label=</span><span class="st">"Loricariidae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"green"</span>,<span class="at">textcolor=</span><span class="st">"green"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodeBagri,<span class="at">label =</span> <span class="st">"Bagridae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"black"</span>,<span class="at">textcolor=</span><span class="st">"black"</span>,<span class="at">angle=</span><span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">110</span>)<span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodepimelo,<span class="at">label =</span><span class="st">"Pimelodidae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"red"</span>,<span class="at">textcolor=</span><span class="st">"brown"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodesiluri,<span class="at">label=</span><span class="st">"Siluridae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"blue"</span>,<span class="at">textcolor=</span><span class="st">"blue"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodelori,<span class="at">label=</span><span class="st">"Loricariidae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"green"</span>,<span class="at">textcolor=</span><span class="st">"green"</span>,<span class="at">angle=</span><span class="dv">0</span>,<span class="at">offset.text=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodeBagri,<span class="at">label =</span> <span class="st">"Bagridae"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"black"</span>,<span class="at">textcolor=</span><span class="st">"black"</span>,<span class="at">angle=</span><span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-24-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-19" class="slide level2">
 <h2></h2>
-<p>e incluso agregar una escala temporal a la filogenia, con la ayuda del paquete <code>deeptime</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>py<span class="ot">&lt;-</span><span class="fu">revts</span>(p1)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>py<span class="sc">+</span><span class="fu">coord_geo</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="sc">-</span><span class="dv">1</span>),<span class="at">abbrv =</span> F,<span class="at">neg=</span>T,<span class="at">skip=</span><span class="cn">NULL</span>,<span class="at">dat=</span><span class="st">"stage"</span>,<span class="at">size=</span><span class="fl">1.5</span>)<span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">theme_tree2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También podemos modificar parámetros gráficos de las anotaciones.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">110</span>)<span class="sc">+</span> <span class="fu">geom_cladelab</span>(<span class="at">node=</span>nodeBagri,<span class="at">label=</span><span class="st">"Bagridae"</span>,<span class="at">geom=</span><span class="st">"label"</span>,<span class="at">fill=</span><span class="st">"skyblue"</span>,<span class="at">textcolor=</span><span class="st">"black"</span>, <span class="at">barcolor=</span><span class="st">"gray"</span>,<span class="at">angle=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-25-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-20" class="slide level2">
 <h2></h2>
-<p>Cómo en ggplot, todos estos parámetros son aditivos, por lo cual puedes construir la filogenía de manera gradual</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>p1<span class="sc">+</span> </span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">layout_dendrogram</span>()<span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">theme_tree</span>(<span class="at">bgcolor=</span><span class="st">"#e9f0ea"</span>)<span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">geom_tiplab</span>(<span class="at">size=</span><span class="fl">0.5</span>,<span class="at">color=</span><span class="st">"darkblue"</span>,<span class="at">angle=</span><span class="dv">45</span>)<span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">geom_tippoint</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"brown"</span>,<span class="at">shape=</span><span class="dv">10</span>)<span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">geom_nodelab</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">color=</span><span class="st">"purple"</span>)<span class="sc">+</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a>  <span class="fu">geom_nodepoint</span>(<span class="at">size=</span><span class="dv">2</span>,<span class="at">color=</span><span class="st">"red"</span>,<span class="at">alpha=</span><span class="fl">0.3</span>,<span class="at">shape=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También podemos realizar una anotación entre dos taxa, que pudieran o no estar relacionados, utilizando el parámetro <code>geom_strip()</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">120</span>)<span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_strip</span>(<span class="st">"Neoarius_graeffei"</span>,<span class="st">"Gogo_arcuatus"</span>, <span class="at">label=</span><span class="st">" un clado polifilético"</span>, <span class="at">barsize =</span> <span class="dv">2</span>, <span class="at">offset.text =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-26-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="resaltar" class="slide level2">
+<h2>Resaltar</h2>
+<p>Otro parámetro de anotación muy interesante es <em>geom_highlight</em>, el cual nos permite destacar clados en particular, utilizando los nodos de ancestro en común:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>p1<span class="sc">+</span> <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"purple"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-27-1.png" width="768" class="r-stretch quarto-figure-center"><p>¿Qué clado es este? …</p>
+</section>
 <section id="section-21" class="slide level2">
 <h2></h2>
-<p>Ahora para la anotación de los árboles, se pueden hacer varias cosas, a mi, por ejemplo, me gusta mucho el género <em>Quiscalus</em>, y quisiera saber donde se encuentra en la filogenia.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>p1<span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"purple"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)<span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">label =</span> <span class="st">"Pimelodiade"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#9418f2"</span>,<span class="at">textcolor=</span><span class="st">"#4c0980"</span>, <span class="at">offset.text=</span><span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">110</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-28-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="phylopic" class="slide level2">
+<h2>Phylopic</h2>
+<p>Una función bastante interesante de <code>ggtree</code> es que se pueden personalizar las filogenías utilizando recursos en línea como <em>phylopic</em> o enriquecerlas con imágenes propias.</p>
+<p>Para poder hacer uso de esta función, primero debemos cargar 2 paquete extra:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">library</span>(<span class="st">"rsvg"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">library</span>(<span class="st">"rphylopic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="section-22" class="slide level2">
 <h2></h2>
-<p>Para esto primero debemos encontrar el nodo del ancestro en común más reciente para este grupo. Usando un <em>tibble</em> y la estructura de <em>dplyr</em> es muy facil, primero transformamos nuestro árbol en un tibble y despues utilizando un filtro buscamos las especies de <em>Quiscalus</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>as_tibble <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Quiscalus"</span>,label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>podemos probar de la siguiente manera:</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  parent  node branch.length label                  
-   &lt;int&gt; &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;                  
-1    146    41         1.82  Quiscalus_quiscula     
-2    148    42         0.851 Quiscalus_niger        
-3    149    43         0.335 Quiscalus_major        
-4    149    44         0.335 Quiscalus_mexicanus    
-5    150    45         1.02  Quiscalus_nicaraguensis
-6    150    46         1.02  Quiscalus_lugubris     </code></pre>
+<pre><code>[1] "575eaa51-6c9b-4d36-9881-b8463c68ebbc"</code></pre>
 </div>
+
 </div>
-</section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-30-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-23" class="slide level2">
 <h2></h2>
-<p>Después usando la función <em>MRCA</em> podemos encontrar el ancestro en común de estas especies, en las cuales podemos usar los nombres de las especie con la longitud de rama más alargada y con la longitud de rama más corta, o sus nodos:</p>
+<p>Hacer uso de <em>phylopic</em> para personalizar las anotaciones de las filogenias requiere que primero hagamos una tabla con los nodos, el nombre de la especie o clado a los cuales vamos a anotar y el phylopic_id.</p>
+<p>En este ejemplo utilizaré los clados <em>Pimelodidae</em>, <em>Siluridae</em>,<em>Loricariidae</em>. Encontrar los phylopic_id es fácil usando la función <code>phylopic_uid()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>as_tibble <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="fu">MRCA</span>(<span class="dv">41</span>,<span class="dv">43</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-  parent  node branch.length label
-   &lt;int&gt; &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;
-1    144   146          1.37 806  </code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>as_tibble <span class="sc">%&gt;%</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">MRCA</span>(<span class="st">"Quiscalus_quiscula"</span>,<span class="st">"Quiscalus_mexicanus"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-  parent  node branch.length label
-   &lt;int&gt; &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;
-1    144   146          1.37 806  </code></pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>ids<span class="ot">&lt;-</span><span class="fu">phylopic_uid</span>(<span class="fu">c</span>(<span class="st">"Phractocephalus hemioliopterus"</span>,<span class="st">"Siluridae"</span>,<span class="st">"Ameiurus"</span>,<span class="st">"Chaetostoma microps"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-24" class="slide level2">
 <h2></h2>
-<p>Ahora sabiendo que el ancestro en común de <em>Quiscalus</em> se encuentra en el nodo 146, puedo utilizar esta información para anotar la filogenia utilizando el parametro <em>geom_cladelab</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>p1<span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">146</span>,<span class="at">label =</span> <span class="st">"Quiscalus"</span>,<span class="at">offset=</span><span class="dv">0</span>,</span>
-<span id="cb27-3"><a href="#cb27-3"></a>            <span class="at">barcolor=</span><span class="st">"red"</span>,<span class="at">textcolor=</span><span class="st">"brown"</span>,</span>
-<span id="cb27-4"><a href="#cb27-4"></a>            <span class="at">angle=</span><span class="dv">90</span>, <span class="at">offset.text=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<p>Con estos ids, ya podemos crear nuestra tabla con los datos necesarios y después gráficar nuestra filogenia:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">node=</span><span class="fu">c</span>(nodepimelo,nodesiluri,nodeBagri,nodelori),</span>
+<span id="cb33-2"><a href="#cb33-2"></a>               <span class="at">image=</span>ids<span class="sc">$</span>uid,<span class="at">Family=</span><span class="fu">c</span>(<span class="st">"Pimelodidae"</span>,<span class="st">"Siluridae"</span>,<span class="st">"Bagridae"</span>,<span class="st">"Loricariidae"</span>),</span>
+<span id="cb33-3"><a href="#cb33-3"></a>               <span class="at">size=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.05</span>))</span>
+<span id="cb33-4"><a href="#cb33-4"></a>dt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  node                                image       Family size
+1   80 6cb85c3d-c455-4e9f-bfa3-fa1f8bc5c0cd  Pimelodidae 0.10
+2  119 7cb387d7-9b23-4e5c-a007-2d938339cb8a    Siluridae 0.10
+3  113 7a6448e5-09c4-40c8-8378-599d7f974bfe     Bagridae 0.10
+4  128 e557aeed-4adf-4953-ad1b-45490d3d7f3d Loricariidae 0.05</code></pre>
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+</div>
+</section>
 <section id="section-25" class="slide level2">
 <h2></h2>
-<p>y que tal el genero que tiene el nombre de la familia: <em>Icterus</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>  as_tibble <span class="sc">%&gt;%</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Icterus"</span>,label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 31 × 4
-   parent  node branch.length label                
-    &lt;int&gt; &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;                
- 1    111     1         0.193 Icterus_melanopsis   
- 2    111     2         0.193 Icterus_northropi    
- 3    114     3         1.47  Icterus_laudabilis   
- 4    114     4         1.47  Icterus_dominicensis 
- 5    116     5         0.197 Icterus_cayanensis   
- 6    116     6         0.197 Icterus_pyrrhopterus 
- 7    115     7         0.943 Icterus_auricapillus 
- 8    117     8         1.49  Icterus_bonana       
- 9    117     9         1.49  Icterus_portoricensis
-10    118    10         2.24  Icterus_prosthemelas 
-# ℹ 21 more rows</code></pre>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a> p1<span class="sc">+</span><span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">80</span>)<span class="sc">+</span><span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt,<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> Family,<span class="at">image =</span> image, <span class="at">color =</span> Family),<span class="at">geom =</span> <span class="st">"phylopic"</span>,<span class="at">imagesize=</span>dt<span class="sc">$</span>size, <span class="at">offset.text=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>as_tibble <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">MRCA</span>(<span class="dv">25</span>,<span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-  parent  node branch.length label
-   &lt;int&gt; &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;
-1    103   104          2.92 764  </code></pre>
-</div>
-</div>
-</div>
-</section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-33-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-26" class="slide level2">
 <h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">11</span>)<span class="sc">+</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">104</span>,<span class="at">label=</span><span class="st">"Icterus"</span>,<span class="at">geom=</span><span class="st">"label"</span>,</span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="at">fill=</span><span class="st">"yellow"</span>,<span class="at">textcolor=</span><span class="st">"red"</span>, <span class="at">barcolor=</span><span class="st">"gray"</span>,<span class="at">angle=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Además, usando la argumentación como en <code>ggplot</code>, podemos personalizar los colores de nuestros <em>phylopics</em>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>dt<span class="sc">$</span>colourss<span class="ot">=</span><span class="fu">c</span>(<span class="st">"#3d5a80"</span>,<span class="st">"#98c1d9"</span>,<span class="st">"#ee6c4d"</span>,<span class="st">"#293241"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a></span>
+<span id="cb36-3"><a href="#cb36-3"></a>p1<span class="sc">+</span><span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">80</span>)<span class="sc">+</span><span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> Family, <span class="at">image =</span> image, <span class="at">color =</span> Family), <span class="at">geom =</span> <span class="st">"phylopic"</span>, <span class="at">imagecolor=</span>dt<span class="sc">$</span>colourss,<span class="at">barcolour=</span>dt<span class="sc">$</span>colourss,<span class="at">imagesize=</span>dt<span class="sc">$</span>size,<span class="at">offset.text=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-34-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-27" class="slide level2">
 <h2></h2>
-<p>También podemos dibujar una linea entre dos taxa, que pudieran o no estár relacionados, utilizando el parametro <em>geom_strip</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>p1<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_strip</span>(<span class="st">"Quiscalus_quiscula"</span>,<span class="st">"Icterus_icterus"</span>,</span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="at">label=</span><span class="st">" un clado polifilético"</span>, <span class="at">barsize =</span> <span class="dv">2</span>, <span class="at">offset.text =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
-<section id="section-28" class="slide level2">
-<h2></h2>
-<p>Un parametro de anotación muy bueno, también es el <em>geom_highlight</em>, el cual nos permite destacar clados en particular, utilizando los nodos de ancestro en común:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>p1<span class="sc">+</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">146</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"purple"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
-<section id="section-29" class="slide level2">
-<h2></h2>
-<p>¿Qué clado es este?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>p1<span class="sc">+</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">146</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"purple"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)<span class="sc">+</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">146</span>,<span class="at">label =</span> <span class="st">"Quiscalus"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#9418f2"</span>,<span class="at">textcolor=</span><span class="st">"#4c0980"</span>, <span class="at">offset.text=</span><span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">11.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
-<section id="section-30" class="slide level2">
-<h2></h2>
-<p>Una función bastante interesante de <em>ggtree</em> es que se pueden personalizar las filogenías utilizando recursos en línea como <em>phylopic</em> o enriquecerlas con imagenes propias. Para poder hacer uso de esta función, primero debemos cargar un paquete extra:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">library</span>(<span class="st">"rsvg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<p>Hacer uso de <em>phylopic</em> para personalizar las anotaciones de las filogenias requiere que primero hagamos una tabla con los nodos, el nombre de la especie o clado a los cuales vamos a anotar y el phylopic_id.</p>
+<p>Utilizando las funciones que ya conocemos, podemos crear una filogenia bastante atractiva:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a> p1<span class="sc">+</span><span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">80</span>)<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">120</span>)<span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>   <span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, </span>
+<span id="cb37-3"><a href="#cb37-3"></a>                       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> Family, </span>
+<span id="cb37-4"><a href="#cb37-4"></a>                                     <span class="at">image =</span> image, <span class="at">color =</span> Family), </span>
+<span id="cb37-5"><a href="#cb37-5"></a>                       <span class="at">geom =</span> <span class="st">"phylopic"</span>, </span>
+<span id="cb37-6"><a href="#cb37-6"></a>                       <span class="at">imagecolor=</span>dt<span class="sc">$</span>colourss,</span>
+<span id="cb37-7"><a href="#cb37-7"></a>                       <span class="at">barcolour=</span>dt<span class="sc">$</span>colourss,</span>
+<span id="cb37-8"><a href="#cb37-8"></a>                       <span class="at">imagesize=</span>dt<span class="sc">$</span>size,<span class="at">offset.text=</span><span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a>  <span class="fu">geom_highlight</span>(dt,<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> Family,<span class="at">color =</span> Family),<span class="at">type=</span><span class="st">"rect"</span>,<span class="at">fill=</span>dt<span class="sc">$</span>colourss,<span class="at">color=</span>dt<span class="sc">$</span>colourss)<span class="sc">+</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">label =</span> <span class="st">"Pimelodiade"</span>,<span class="at">geom =</span> <span class="st">"text"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#3d5a80"</span>,<span class="at">textcolor=</span> <span class="st">"#3d5a80"</span>, <span class="at">offset.text=</span><span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb37-11"><a href="#cb37-11"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">113</span>,<span class="at">label =</span> <span class="st">"Bagridae"</span>,<span class="at">geom =</span> <span class="st">"text"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#98c1d9"</span>,<span class="at">textcolor=</span> <span class="st">"#98c1d9"</span>, <span class="at">offset.text=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb37-12"><a href="#cb37-12"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">119</span>,<span class="at">label =</span><span class="st">"Siluridae"</span> ,<span class="at">geom =</span> <span class="st">"text"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#ee6c4d"</span>,<span class="at">textcolor=</span> <span class="st">"#ee6c4d"</span>,<span class="at">offset.text=</span><span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb37-13"><a href="#cb37-13"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">128</span>,<span class="at">label =</span> <span class="st">"Loricarridae"</span>,<span class="at">geom =</span> <span class="st">"text"</span>,<span class="at">offset=</span><span class="dv">0</span>,<span class="at">barcolor=</span><span class="st">"#293241"</span>,<span class="at">textcolor=</span> <span class="st">"#293241"</span>,<span class="at">offset.text=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="section-28" class="slide level2">
+<h2></h2>
+
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-36-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="section-29" class="slide level2">
+<h2></h2>
+<p>O estas:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>p2<span class="ot">&lt;-</span><span class="fu">ggtree</span>(fishtree,<span class="at">layout=</span><span class="st">"circular"</span>,<span class="at">color=</span><span class="st">"white"</span>)<span class="sc">+</span><span class="fu">theme_tree</span>(<span class="st">"black"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2"></a></span>
+<span id="cb38-3"><a href="#cb38-3"></a>p3<span class="ot">&lt;-</span>p2<span class="sc">+</span><span class="fu">xlim</span>(<span class="cn">NA</span>,<span class="dv">250</span>)<span class="sc">+</span><span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt,<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> Family, </span>
+<span id="cb38-4"><a href="#cb38-4"></a>                                     <span class="at">image =</span> image, <span class="at">color =</span> Family), </span>
+<span id="cb38-5"><a href="#cb38-5"></a>              <span class="at">geom =</span> <span class="st">"phylopic"</span>, </span>
+<span id="cb38-6"><a href="#cb38-6"></a>              <span class="at">barcolour=</span>dt<span class="sc">$</span>colourss,</span>
+<span id="cb38-7"><a href="#cb38-7"></a>              <span class="at">imagecolor=</span>dt<span class="sc">$</span>colourss,</span>
+<span id="cb38-8"><a href="#cb38-8"></a>              <span class="at">alpha=</span><span class="fu">c</span>(<span class="fl">0.8</span>,<span class="fl">0.8</span>,<span class="fl">0.8</span>,<span class="fl">0.8</span>),</span>
+<span id="cb38-9"><a href="#cb38-9"></a>              <span class="at">imagesize=</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.2</span>,<span class="fl">0.2</span>,<span class="fl">0.1</span>),<span class="at">offset.text=</span><span class="fu">c</span>(<span class="dv">130</span>,<span class="dv">120</span>,<span class="dv">100</span>,<span class="dv">100</span>))<span class="sc">+</span></span>
+<span id="cb38-10"><a href="#cb38-10"></a></span>
+<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">fill=</span><span class="st">"#3d5a80"</span>)<span class="sc">+</span></span>
+<span id="cb38-12"><a href="#cb38-12"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">80</span>,<span class="at">label=</span><span class="st">"Pimelodidae"</span>,<span class="at">barcolor=</span><span class="st">"#3d5a80"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">2</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">angle =</span><span class="sc">-</span><span class="dv">30</span>)<span class="sc">+</span></span>
+<span id="cb38-13"><a href="#cb38-13"></a>  </span>
+<span id="cb38-14"><a href="#cb38-14"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">113</span>,<span class="at">fill=</span><span class="st">"#98c1d9"</span>)<span class="sc">+</span></span>
+<span id="cb38-15"><a href="#cb38-15"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">113</span>,<span class="at">label=</span><span class="st">"Bagridae"</span>,<span class="at">barcolor=</span><span class="st">"#98c1d9"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">2</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">angle =</span><span class="dv">110</span>)<span class="sc">+</span></span>
+<span id="cb38-16"><a href="#cb38-16"></a>  </span>
+<span id="cb38-17"><a href="#cb38-17"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">119</span>,<span class="at">fill=</span><span class="st">"#ee6c4d"</span>)<span class="sc">+</span></span>
+<span id="cb38-18"><a href="#cb38-18"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">119</span>,<span class="at">label=</span><span class="st">"Siluridae"</span>,<span class="at">barcolor=</span><span class="st">"#ee6c4d"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">2</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">angle =</span><span class="dv">80</span>)<span class="sc">+</span></span>
+<span id="cb38-19"><a href="#cb38-19"></a>  </span>
+<span id="cb38-20"><a href="#cb38-20"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">128</span>,<span class="at">fill=</span><span class="st">"#293241"</span>)<span class="sc">+</span></span>
+<span id="cb38-21"><a href="#cb38-21"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">128</span>,<span class="at">label=</span><span class="st">"Loricariidae"</span>,<span class="at">barcolor=</span><span class="st">"#293241"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">2</span>,<span class="at">angle =</span> <span class="dv">8</span>)</span>
+<span id="cb38-22"><a href="#cb38-22"></a>  </span>
+<span id="cb38-23"><a href="#cb38-23"></a></span>
+<span id="cb38-24"><a href="#cb38-24"></a>p3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-38-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="section-31" class="slide level2">
 <h2></h2>
-<p>En este ejemplo utilizaré los clados <em>Quiscalus</em> y <em>Agelaius</em>, que sé que tienen imagenes indexadas en <em>phylopic</em>. Encontrar los phylopic_id es fácil usando la función <em>phylopic_uid</em>:</p>
+</section>
+<section id="atributos-en-la-filogenia" class="slide level2">
+<h2>Atributos en la filogenia</h2>
+<p>Finalmente, se puede usar <code>ggtree()</code>, para graficar atributos de las especies en la filogenia.</p>
+<p>Para hacer esto, primero debemos cargar los atributos de los en este caso usaremos la longitud estándar máxima y el hábito migratorio:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>ids<span class="ot">&lt;-</span><span class="fu">phylopic_uid</span>(<span class="fu">c</span>(<span class="st">"Quiscalus"</span>,<span class="st">"Agelaius"</span>))</span>
-<span id="cb37-2"><a href="#cb37-2"></a>ids</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>fishdata<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"DataFish.txt"</span>))</span>
+<span id="cb39-2"><a href="#cb39-2"></a></span>
+<span id="cb39-3"><a href="#cb39-3"></a></span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">head</span>(fishdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               name                                  uid
-Quiscalus Quiscalus 2ada4e2f-35ab-48d2-b32e-3bad57033dd4
-Agelaius   Agelaius 9a3f70a3-2ea9-45aa-8a1a-7c599952fd6c</code></pre>
-</div>
-</div>
-<p>Con estos ids, ya podemos crear nuestra tabla con los datos necesarios y después gráficar nuestra filogenia:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">node=</span><span class="fu">c</span>(<span class="dv">146</span>,<span class="dv">136</span>),<span class="at">image=</span>ids<span class="sc">$</span>uid,<span class="at">genus=</span><span class="fu">c</span>(<span class="st">"Quiscalus"</span>,<span class="st">"Agelaius"</span>))</span>
-<span id="cb39-2"><a href="#cb39-2"></a>dt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  node                                image     genus
-1  146 2ada4e2f-35ab-48d2-b32e-3bad57033dd4 Quiscalus
-2  136 9a3f70a3-2ea9-45aa-8a1a-7c599952fd6c  Agelaius</code></pre>
+<pre><code>                                   Genus.x      Family        Order       Class
+Synodontis_contractus           Synodontis  Mochokidae Siluriformes Actinopteri
+Mochokiella_paynei             Mochokiella  Mochokidae Siluriformes Actinopteri
+Chiloglanis_asymetricaudalis   Chiloglanis  Mochokidae Siluriformes Actinopteri
+Atopochilus_savorgnani         Atopochilus  Mochokidae Siluriformes Actinopteri
+Amphilius_atesuensis             Amphilius Amphiliidae Siluriformes Actinopteri
+Auchenoglanis_biscutatus     Auchenoglanis Claroteidae Siluriformes Actinopteri
+                                      salinity Length        AnaCat
+Synodontis_contractus               Freshwater    9.7 Non-migratory
+Mochokiella_paynei                  Freshwater    3.6 Non-migratory
+Chiloglanis_asymetricaudalis        Freshwater    7.6 Non-migratory
+Atopochilus_savorgnani              Freshwater   10.5 Non-migratory
+Amphilius_atesuensis         Freshwater-Marine    9.3 Non-migratory
+Auchenoglanis_biscutatus            Freshwater   54.0 Potamodromous
+                                                    label
+Synodontis_contractus               Synodontis_contractus
+Mochokiella_paynei                     Mochokiella_paynei
+Chiloglanis_asymetricaudalis Chiloglanis_asymetricaudalis
+Atopochilus_savorgnani             Atopochilus_savorgnani
+Amphilius_atesuensis                 Amphilius_atesuensis
+Auchenoglanis_biscutatus         Auchenoglanis_biscutatus</code></pre>
 </div>
 </div>
 </section>
 <section id="section-32" class="slide level2">
 <h2></h2>
+<p>Una vez cargados los datos, la manera más fácil de utilizarlos es uniendolos a la filogenia usando la función <code>full_join</code>, es importante que las especies estén etiquetadas como label, para que la función las reconozca:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>p1<span class="sc">+</span> <span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, </span>
-<span id="cb41-2"><a href="#cb41-2"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> genus, </span>
-<span id="cb41-3"><a href="#cb41-3"></a>                                    <span class="at">image =</span> image, <span class="at">color =</span> genus), </span>
-<span id="cb41-4"><a href="#cb41-4"></a>                      <span class="at">geom =</span> <span class="st">"phylopic"</span>, <span class="at">offset =</span> <span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>datatree<span class="ot">&lt;-</span><span class="fu">left_join</span>(fishtree,fishdata,<span class="at">by=</span><span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section>
+</section>
 <section id="section-33" class="slide level2">
 <h2></h2>
-<p>Además, usando la argumentación como en ggplot, podemos personalizar los colores de nuestros <em>phylopics</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p1<span class="sc">+</span> <span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, </span>
-<span id="cb42-2"><a href="#cb42-2"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> genus, </span>
-<span id="cb42-3"><a href="#cb42-3"></a>                                    <span class="at">image =</span> image, <span class="at">color =</span> genus), </span>
-<span id="cb42-4"><a href="#cb42-4"></a>                      <span class="at">geom =</span> <span class="st">"phylopic"</span>, <span class="at">offset =</span> <span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.5</span>)<span class="sc">+</span> <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#f75419"</span>,<span class="st">"purple"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>¡Listo! Ahora tenemos una filogenia con atributos y podemos graficarlos juntos</p>
+<p>Primero graficaremos los valores continuos de la longitud sobre las puntas del árbol en una escala de colores:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p4<span class="ot">&lt;-</span><span class="fu">ggtree</span>(datatree)</span>
+<span id="cb42-2"><a href="#cb42-2"></a>p4<span class="sc">+</span><span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span> Length),<span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-41-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-34" class="slide level2">
 <h2></h2>
-<p>Utilizando estas parametrizaciones, podemos crear una filogenia bastante atractiva:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>pr<span class="ot">&lt;-</span>p1<span class="sc">+</span> <span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, </span>
-<span id="cb43-2"><a href="#cb43-2"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> genus, </span>
-<span id="cb43-3"><a href="#cb43-3"></a>                                    <span class="at">image =</span> image, <span class="at">color =</span> genus), </span>
-<span id="cb43-4"><a href="#cb43-4"></a>                      <span class="at">geom =</span> <span class="st">"phylopic"</span>, <span class="at">offset =</span> <span class="dv">0</span>, <span class="at">offset.text=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#f75419"</span>,<span class="st">"purple"</span>))<span class="sc">+</span></span>
-<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">146</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"purple"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)<span class="sc">+</span></span>
-<span id="cb43-7"><a href="#cb43-7"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">136</span>,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">fill=</span><span class="st">"#f75419"</span>,<span class="at">type =</span> <span class="st">"rect"</span>)</span>
-<span id="cb43-8"><a href="#cb43-8"></a>pr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>podemos también personalizar esta escala:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>p4<span class="sc">+</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span> Length),<span class="at">shape=</span><span class="dv">19</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span><span class="fu">scale_colour_gradient</span>(<span class="at">low=</span><span class="st">'blue'</span>, <span class="at">high=</span><span class="st">'red'</span>,<span class="at">breaks=</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">50</span>,<span class="dv">100</span>,<span class="dv">150</span>,<span class="dv">200</span>,<span class="dv">300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-42-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-35" class="slide level2">
 <h2></h2>
-<p>y este es un ejemplo de el tipo de filogenias que pueden crearse haciendo uso de todas estas parametrizaciones:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>tree<span class="ot">&lt;-</span><span class="fu">read.tree</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"nodedtree.txt"</span>))</span>
-<span id="cb44-2"><a href="#cb44-2"></a>nodes<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">825</span>,<span class="dv">725</span>,<span class="dv">921</span>,<span class="dv">1042</span>,<span class="dv">1080</span>,<span class="dv">1375</span>,<span class="dv">707</span>)</span>
-<span id="cb44-3"><a href="#cb44-3"></a>labels<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Parulidae"</span>,<span class="st">"Icteridae"</span>,<span class="st">"Passerellidae"</span>,<span class="st">"Cardinalidae"</span>,<span class="st">"Thraupidae"</span>,<span class="st">"Emberizidae"</span>,<span class="st">"Calcariidae"</span>)</span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="co">#</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a></span>
-<span id="cb44-6"><a href="#cb44-6"></a>iu2<span class="ot">&lt;-</span><span class="fu">phylopic_uid</span>(<span class="fu">c</span>(<span class="st">"Setophaga"</span>,<span class="st">"Quiscalus"</span>,<span class="st">"Passerellidae"</span>,<span class="st">"Cardinalis"</span>,<span class="st">"Thraupidae"</span>,<span class="st">"Emberizidae"</span>,<span class="st">"Emberiza"</span>),<span class="at">seed=</span><span class="dv">1</span>)</span>
-<span id="cb44-7"><a href="#cb44-7"></a></span>
-<span id="cb44-8"><a href="#cb44-8"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">node=</span>nodes,<span class="at">name=</span>labels,<span class="at">image=</span>iu2<span class="sc">$</span>uid)</span>
-<span id="cb44-9"><a href="#cb44-9"></a></span>
-<span id="cb44-10"><a href="#cb44-10"></a>p2<span class="ot">&lt;-</span><span class="fu">ggtree</span>(tree,<span class="at">layout=</span><span class="st">"circular"</span>,<span class="at">color=</span><span class="st">"white"</span>)<span class="sc">+</span><span class="fu">theme_tree</span>(<span class="st">"black"</span>)</span>
-<span id="cb44-11"><a href="#cb44-11"></a></span>
-<span id="cb44-12"><a href="#cb44-12"></a>p3<span class="ot">&lt;-</span>p2<span class="sc">+</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">825</span>,<span class="at">fill=</span><span class="st">"yellow"</span>)<span class="sc">+</span></span>
-<span id="cb44-14"><a href="#cb44-14"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">825</span>,<span class="at">label=</span><span class="st">"Parulidae"</span>,<span class="at">barcolor=</span><span class="st">"yellow"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">4</span>, <span class="at">fontsize=</span><span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb44-15"><a href="#cb44-15"></a>  </span>
-<span id="cb44-16"><a href="#cb44-16"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">725</span>,<span class="at">fill=</span><span class="st">"orange"</span>)<span class="sc">+</span></span>
-<span id="cb44-17"><a href="#cb44-17"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">725</span>,<span class="at">label=</span><span class="st">"Icteridae"</span>,<span class="at">barcolor=</span><span class="st">"orange"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">5</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">angle=</span><span class="dv">45</span>)<span class="sc">+</span></span>
-<span id="cb44-18"><a href="#cb44-18"></a>    </span>
-<span id="cb44-19"><a href="#cb44-19"></a>    <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">921</span>,<span class="at">fill=</span><span class="st">"brown"</span>)<span class="sc">+</span></span>
-<span id="cb44-20"><a href="#cb44-20"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">921</span>,<span class="at">label=</span><span class="st">"Passerellidae"</span>,<span class="at">barcolor=</span><span class="st">"brown"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">1</span>, <span class="at">fontsize=</span><span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb44-21"><a href="#cb44-21"></a>  </span>
-<span id="cb44-22"><a href="#cb44-22"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">1042</span>,<span class="at">fill=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb44-23"><a href="#cb44-23"></a><span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">1042</span>,<span class="at">label=</span><span class="st">"Cardinalidae"</span>,<span class="at">barcolor=</span><span class="st">"red"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">7</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">angle=</span><span class="sc">-</span><span class="dv">45</span>,<span class="at">align=</span>T)<span class="sc">+</span></span>
-<span id="cb44-24"><a href="#cb44-24"></a>  </span>
-<span id="cb44-25"><a href="#cb44-25"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">1079</span>,<span class="at">fill=</span><span class="st">"lightgreen"</span>)<span class="sc">+</span></span>
-<span id="cb44-26"><a href="#cb44-26"></a><span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">1079</span>,<span class="at">label=</span><span class="st">"Thraupidae"</span>,<span class="at">barcolor=</span><span class="st">"lightgreen"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">2</span>, <span class="at">fontsize=</span><span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb44-27"><a href="#cb44-27"></a>  </span>
-<span id="cb44-28"><a href="#cb44-28"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">1375</span>,<span class="at">fill=</span><span class="st">"magenta"</span>)<span class="sc">+</span></span>
-<span id="cb44-29"><a href="#cb44-29"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">1375</span>,<span class="at">label=</span><span class="st">"Emberizidae"</span>,<span class="at">barcolor=</span><span class="st">"magenta"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">1</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">align=</span>T)<span class="sc">+</span></span>
-<span id="cb44-30"><a href="#cb44-30"></a>  </span>
-<span id="cb44-31"><a href="#cb44-31"></a>  <span class="fu">geom_highlight</span>(<span class="at">node=</span><span class="dv">707</span>,<span class="at">fill=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
-<span id="cb44-32"><a href="#cb44-32"></a>  <span class="fu">geom_cladelab</span>(<span class="at">node=</span><span class="dv">707</span>,<span class="at">label=</span><span class="st">"Calcariidae"</span>,<span class="at">barcolor=</span><span class="st">"blue"</span>,<span class="at">textcolor=</span><span class="st">"white"</span>,<span class="at">offset.text=</span><span class="dv">1</span>, <span class="at">fontsize=</span><span class="dv">4</span>,<span class="at">align=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>¿Y cómo se verían los datos discretos?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>p4<span class="sc">+</span><span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>salinity),<span class="at">shape=</span><span class="dv">15</span>)<span class="sc">+</span> <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"gray"</span>,<span class="st">"skyblue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-43-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-36" class="slide level2">
 <h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>p3<span class="sc">+</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">geom_cladelab</span>(<span class="at">data =</span> dt, </span>
-<span id="cb45-3"><a href="#cb45-3"></a>              <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">node =</span> node, <span class="at">label =</span> name, </span>
-<span id="cb45-4"><a href="#cb45-4"></a>                            <span class="at">image =</span> image, <span class="at">color =</span> name), </span>
-<span id="cb45-5"><a href="#cb45-5"></a>              <span class="at">geom =</span> <span class="st">"phylopic"</span>, <span class="at">offset.text=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>,<span class="st">"magenta"</span>,<span class="st">"orange"</span>,<span class="st">"yellow"</span>,<span class="st">"brown"</span>,<span class="st">"lightgreen"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section>
-<section id="section-37" class="slide level2">
-<h2></h2>
-<p>Para poder anotar las filogenias con imagenes, es recomendable usar árboles filogéticos pequeños, en los cuales quizá con un grupo de representantes bastaría. En este ejemplo usaremos una filogenia parafiletica con los generos <em>Quiscalus</em> (Los zanates), <em>Icterus</em> (Las calandrias), <em>Molothrus</em> (Los tordos), <em>Agelaius</em> (Los sargentos) y <em>Psarocolius</em> (Las oropendolas):</p>
-<p>Entonces, primero recuperamos un representante de cada grupo, <em>ape</em> es muy bueno para esto usando la función <em>keep.tip</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>grouptree<span class="ot">&lt;-</span>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">keep.tip</span>(<span class="fu">c</span>(<span class="st">"Quiscalus_mexicanus"</span>, <span class="st">"Icterus_galbula"</span>,<span class="st">"Molothrus_aeneus"</span>,<span class="st">"Agelaius_phoeniceus"</span>,<span class="st">"Psarocolius_montezuma"</span>))</span>
-<span id="cb46-3"><a href="#cb46-3"></a></span>
-<span id="cb46-4"><a href="#cb46-4"></a>grouptree<span class="sc">$</span>tip.label<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Calandrias"</span>,<span class="st">"Sargentos"</span>,<span class="st">"Zanates"</span>,<span class="st">"Tordos"</span>,<span class="st">"Oropendolas"</span>)</span>
-<span id="cb46-5"><a href="#cb46-5"></a></span>
-<span id="cb46-6"><a href="#cb46-6"></a>p4<span class="ot">&lt;-</span><span class="fu">ggtree</span>(grouptree,<span class="at">size=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>y ¿Pueden combinarse?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>px<span class="ot">&lt;-</span> p4<span class="sc">+</span> <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>salinity),<span class="at">shape=</span><span class="dv">15</span>)<span class="sc">+</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"gray"</span>,<span class="st">"skyblue"</span>))<span class="sc">+</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"gray"</span>,<span class="st">"skyblue"</span>))</span>
+<span id="cb45-4"><a href="#cb45-4"></a></span>
+<span id="cb45-5"><a href="#cb45-5"></a>dd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span>p4<span class="sc">$</span>data<span class="sc">$</span>label,<span class="at">value=</span>p4<span class="sc">$</span>data<span class="sc">$</span>Length)  </span>
+<span id="cb45-6"><a href="#cb45-6"></a>  </span>
+<span id="cb45-7"><a href="#cb45-7"></a>px<span class="sc">+</span> <span class="fu">geom_facet</span>(<span class="at">panel=</span><span class="st">"Length"</span>,<span class="at">data =</span>dd[<span class="dv">1</span><span class="sc">:</span><span class="dv">65</span>,],<span class="at">geom=</span>geom_col, </span>
+<span id="cb45-8"><a href="#cb45-8"></a>               <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Length,<span class="at">color=</span>salinity,<span class="at">fill=</span>salinity),<span class="at">orientation=</span><span class="st">'y'</span>)<span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>    <span class="fu">theme_tree2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-45-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-38" class="slide level2">
 <h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>p4<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"navyblue"</span>,<span class="at">offset =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
+</section>
 <section id="section-39" class="slide level2">
 <h2></h2>
-<p>Una vez teniendo este árbol parafilético, podemos colocar las imagenes gusto en sus grupos correspondientes, es importante considerar, que las imagenes deben tener el nombre exacto del grupo o especie y el mismo formato:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>p4<span class="sc">+</span> </span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="dv">15</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="cn">NA</span>, <span class="fl">5.5</span>)<span class="sc">+</span></span>
-<span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">geom_tiplab</span>(<span class="fu">aes</span>(<span class="at">image=</span><span class="fu">paste0</span>(<span class="st">"imgs/imagenes/"</span>, label, <span class="st">'.jpg'</span>)),<span class="at">geom=</span><span class="st">"image"</span>, <span class="at">offset=</span><span class="dv">3</span>, <span class="at">align=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">0.18</span>)<span class="sc">+</span></span>
-<span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">geom_tiplab</span>(<span class="at">geom=</span><span class="st">"label"</span>,<span class="at">color=</span><span class="st">"black"</span>,<span class="at">fill=</span><span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>ggtreeExtra</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">library</span>(ggtreeExtra)</span>
+<span id="cb46-2"><a href="#cb46-2"></a></span>
+<span id="cb46-3"><a href="#cb46-3"></a>p5<span class="ot">&lt;-</span>p4<span class="sc">+</span><span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">colour=</span>AnaCat))<span class="sc">+</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#3d5a80"</span>,<span class="st">"#98c1d9"</span>,<span class="st">"#e0fbfc"</span>,<span class="st">"#293241"</span>,<span class="st">"#ee6c4d"</span>))</span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a>p5<span class="sc">+</span><span class="fu">geom_fruit</span>(<span class="at">data=</span>dd[<span class="dv">1</span><span class="sc">:</span><span class="dv">65</span>,],</span>
+<span id="cb46-6"><a href="#cb46-6"></a>         <span class="at">geom=</span>geom_bar,</span>
+<span id="cb46-7"><a href="#cb46-7"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb46-8"><a href="#cb46-8"></a>                     <span class="at">y=</span>id,</span>
+<span id="cb46-9"><a href="#cb46-9"></a>                     <span class="at">x=</span>value,</span>
+<span id="cb46-10"><a href="#cb46-10"></a>                     <span class="at">group=</span>salinity,</span>
+<span id="cb46-11"><a href="#cb46-11"></a>                     <span class="at">fill=</span>salinity),<span class="at">pwidth=</span><span class="fl">0.38</span>, </span>
+<span id="cb46-12"><a href="#cb46-12"></a>                    <span class="at">orientation=</span><span class="st">"y"</span>, </span>
+<span id="cb46-13"><a href="#cb46-13"></a>                    <span class="at">stat=</span><span class="st">"identity"</span>,<span class="at">axis.params=</span><span class="fu">list</span>(</span>
+<span id="cb46-14"><a href="#cb46-14"></a>                         <span class="at">axis       =</span> <span class="st">"x"</span>,</span>
+<span id="cb46-15"><a href="#cb46-15"></a>                         <span class="at">text.size  =</span> <span class="fl">1.8</span>,</span>
+<span id="cb46-16"><a href="#cb46-16"></a>                         <span class="at">hjust      =</span> <span class="dv">1</span>,</span>
+<span id="cb46-17"><a href="#cb46-17"></a>                         <span class="at">vjust      =</span> <span class="fl">0.5</span>,</span>
+<span id="cb46-18"><a href="#cb46-18"></a>                         <span class="at">nbreak     =</span> <span class="dv">3</span>))<span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"gray"</span>,<span class="st">"skyblue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-40" class="slide level2">
 <h2></h2>
 
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-38-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-47-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-41" class="slide level2">
 <h2></h2>
-<p>También es posible agregar especies a la filogenia dentro de sus respectivos generos, pero hay que tener cuidado con esto, pues posiblemente nos genere politomías o colocarlas de manera discordante, y esto puede ser problématico para estudios de diversificación o evolución de atributos.</p>
-</section>
+<p>Para poder anotar las filogenias con imagenes, es recomendable usar árboles filogéticos pequeños. En este ejemplo usaremos una filogenia parafiletica con las Familias <em>Pimelodidae</em>,<em>Doradidae</em> y <em>Loricariidae</em></p>
+<p>Entonces, primero recuperamos un representante de cada grupo, <em>ape</em> es muy bueno para esto usando la función <em>keep.tip</em>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>grouptree<span class="ot">&lt;-</span>fishtree <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">keep.tip</span>(<span class="fu">c</span>(<span class="st">"Pimelodus_maculatus"</span>, <span class="st">"Lithodoras_dorsalis"</span>,<span class="st">"Loricariichthys_anus"</span>))</span>
+<span id="cb47-3"><a href="#cb47-3"></a></span>
+<span id="cb47-4"><a href="#cb47-4"></a>grouptree<span class="sc">$</span>tip.label<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Pimelodidae"</span>, <span class="st">"Doraridae"</span>,<span class="st">"Loricariidae"</span>)</span>
+<span id="cb47-5"><a href="#cb47-5"></a></span>
+<span id="cb47-6"><a href="#cb47-6"></a>p6<span class="ot">&lt;-</span><span class="fu">ggtree</span>(grouptree,<span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">120</span>)<span class="sc">+</span> <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"navyblue"</span>,<span class="at">offset =</span> <span class="fl">0.5</span>,<span class="at">size=</span><span class="dv">5</span>)</span>
+<span id="cb47-7"><a href="#cb47-7"></a>p6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-48-1.png" width="576" class="r-stretch quarto-figure-center"></section>
 <section id="section-42" class="slide level2">
 <h2></h2>
-<p>Volveremos a usar nuestra filogenia de grupos y le agregaremos dos especies de <em>Icterus</em> y una especie de <em>Quiscalus</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>grouptree<span class="ot">&lt;-</span>ictree <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">keep.tip</span>(<span class="fu">c</span>(<span class="st">"Quiscalus_mexicanus"</span>, <span class="st">"Icterus_galbula"</span>,<span class="st">"Molothrus_aeneus"</span>,<span class="st">"Agelaius_phoeniceus"</span>,<span class="st">"Psarocolius_montezuma"</span>))</span>
-<span id="cb49-3"><a href="#cb49-3"></a><span class="fu">ggtree</span>(grouptree)<span class="sc">+</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez teniendo este árbol parafilético, podemos colocar las imagenes en cada tip, es importante considerar, que las imagenes deben tener el nombre exacto del grupo o especie y el mismo formato:</p>
+<p>Las fotos aqui presentadas provienen del Proyecto <code>cavfish</code></p>
 
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-49-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="section-43" class="slide level2">
 <h2></h2>
-<p>Para agregar las especies, utilizamos la función <em>add.species.to.genus</em> de <em>phytools</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>grouptree2<span class="ot">&lt;-</span>grouptree</span>
-<span id="cb50-2"><a href="#cb50-2"></a>grouptree2<span class="ot">&lt;-</span><span class="fu">add.species.to.genus</span>(grouptree2,<span class="st">"Quiscalus_quiscula"</span>)</span>
-<span id="cb50-3"><a href="#cb50-3"></a>grouptree2<span class="ot">&lt;-</span><span class="fu">add.species.to.genus</span>(grouptree2,<span class="st">"Icterus_bullocki"</span>)</span>
-<span id="cb50-4"><a href="#cb50-4"></a>grouptree2<span class="ot">&lt;-</span><span class="fu">add.species.to.genus</span>(grouptree2,<span class="st">"Icterus_gullaris"</span>)</span>
-<span id="cb50-5"><a href="#cb50-5"></a><span class="fu">ggtree</span>(grouptree2)<span class="sc">+</span></span>
-<span id="cb50-6"><a href="#cb50-6"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)<span class="sc">+</span></span>
-<span id="cb50-7"><a href="#cb50-7"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-40-1.png" width="960" class="r-stretch"></section>
+<p>Pero, ¿Qué pasa si no me sé la taxonomía o no tengo la filogenia del grupo que estoy estudiando?</p>
+</section>
 <section id="section-44" class="slide level2">
 <h2></h2>
-<p>Finalmente, se puede usar ggtree, para graficar atributos de las especies en la filogenia.</p>
-<p>Para hacer esto, primero debemos cargar los atributos de los Icteridos, en este caso usaremos el Hand Wing Index (HWI) y el hábito migratorio:</p>
+<p>¿Se acuerdan de esta filogenia?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>hwi<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"hwi_icteridae.csv"</span>),<span class="at">header=</span>T)</span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">head</span>(hwi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                     X      HWI
-1   Icterus_melanopsis 26.51912
-2    Icterus_northropi 21.02135
-3   Icterus_laudabilis 22.22500
-4 Icterus_dominicensis 26.52877
-5   Icterus_cayanensis 26.26213
-6 Icterus_pyrrhopterus 17.75463</code></pre>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>phylopicNK</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-51-1.png" width="960" class="r-stretch"></section>
 <section id="section-45" class="slide level2">
 <h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>migrants<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"icterimigrants.csv"</span>),<span class="at">header=</span>T)</span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">head</span>(migrants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                   sp  migratory
-1  Agelaioides_badius No-migrant
-2  Agelaius_assimilis No-migrant
-3  Agelaius_humeralis No-migrant
-4 Agelaius_phoeniceus    Migrant
-5   Agelaius_tricolor No-migrant
-6  Agelaius_xanthomus No-migrant</code></pre>
-</div>
-</div>
+<p>Haciendo uso de recursos en línea como <em>Open tree of Life</em>(OTL), podemoos obtener una filogenia utilizando las especies que necesitemos.</p>
 </section>
 <section id="section-46" class="slide level2">
 <h2></h2>
-<p>Una vez cargados los datos, la manera más fácil de utilizarlos es uniendolos a la filogenia usando la funcion <em>full_join</em>, es importante que las especies estén etiquetadas como label, para que la función las reconozca:</p>
+<p>OTL tiene un útil paquete en R (<code>rotl</code>),para obtener filogenia</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">names</span>(hwi)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"label"</span>,<span class="st">"hwi"</span>)</span>
-<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">names</span>(migrants)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"label"</span>,<span class="st">"migratory"</span>)</span>
-<span id="cb55-3"><a href="#cb55-3"></a></span>
-<span id="cb55-4"><a href="#cb55-4"></a>hwimigrants<span class="ot">&lt;-</span>hwi<span class="sc">%&gt;%</span></span>
-<span id="cb55-5"><a href="#cb55-5"></a><span class="fu">left_join</span>(migrants,<span class="at">by=</span><span class="st">"label"</span>)</span>
-<span id="cb55-6"><a href="#cb55-6"></a>datatree<span class="ot">&lt;-</span><span class="fu">full_join</span>(ictree,hwimigrants,<span class="at">by=</span><span class="st">"label"</span>)</span>
-<span id="cb55-7"><a href="#cb55-7"></a>datatree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">library</span>(<span class="st">"rotl"</span>)</span>
+<span id="cb49-2"><a href="#cb49-2"></a>otl_tree<span class="ot">&lt;-</span>rotl<span class="sc">::</span><span class="fu">tnrs_match_names</span>(<span class="fu">c</span>(<span class="st">"Quiscalus mexicanus"</span>,<span class="st">"Canis lupus"</span>,<span class="st">"Corvus corax"</span>,<span class="st">"Canis latrans"</span>,<span class="st">"Vulpes vulpes"</span>,<span class="st">"Desmodus rotundus"</span>,<span class="st">"Sideroxylon celastrinum"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="fu">pull</span>(ott_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb49-4"><a href="#cb49-4"></a>  <span class="fu">tol_induced_subtree</span>(<span class="at">label_format=</span><span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'treedata' S4 object'.
-
-...@ phylo:
-
-Phylogenetic tree with 100 tips and 99 internal nodes.
-
-Tip labels:
-  Icterus_melanopsis, Icterus_northropi, Icterus_laudabilis,
-Icterus_dominicensis, Icterus_cayanensis, Icterus_pyrrhopterus, ...
-Node labels:
-  761, 762, 763, 764, 765, 766, ...
-
-Rooted; includes branch lengths.
-
-with the following features available:
-  '', 'hwi', 'migratory'.
-
-# The associated data tibble abstraction: 199 × 5
-# The 'node', 'label' and 'isTip' are from the phylo tree.
-    node label                 isTip   hwi migratory 
-   &lt;int&gt; &lt;chr&gt;                 &lt;lgl&gt; &lt;dbl&gt; &lt;chr&gt;     
- 1     1 Icterus_melanopsis    TRUE   26.5 No-migrant
- 2     2 Icterus_northropi     TRUE   21.0 No-migrant
- 3     3 Icterus_laudabilis    TRUE   22.2 No-migrant
- 4     4 Icterus_dominicensis  TRUE   26.5 No-migrant
- 5     5 Icterus_cayanensis    TRUE   26.3 No-migrant
- 6     6 Icterus_pyrrhopterus  TRUE   17.8 No-migrant
- 7     7 Icterus_auricapillus  TRUE   17.3 No-migrant
- 8     8 Icterus_bonana        TRUE   16.9 No-migrant
- 9     9 Icterus_portoricensis TRUE   22.3 No-migrant
-10    10 Icterus_prosthemelas  TRUE   24.1 No-migrant
-# ℹ 189 more rows</code></pre>
+<pre><code>
+Progress [---------------------------------] 0/209 (  0%) ?s
+Progress [==============================] 209/209 (100%)  0s
+                                                            </code></pre>
 </div>
 </div>
 </section>
 <section id="section-47" class="slide level2">
 <h2></h2>
-<p>¡Listo! Ahora tenemos una filogenia con atributos y podemos gráficarlos juntos</p>
-<p>Primero gráficaremos los valores continuos del HWI sobre las puntas del árbol en una escala de colores:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>p5<span class="ot">&lt;-</span><span class="fu">ggtree</span>(datatree)</span>
-<span id="cb57-2"><a href="#cb57-2"></a>p5<span class="sc">+</span></span>
-<span id="cb57-3"><a href="#cb57-3"></a>  <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>hwi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>p_ott<span class="ot">&lt;-</span><span class="fu">ggtree</span>(otl_tree)<span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">9</span>)<span class="sc">+</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"blue"</span>)</span>
+<span id="cb51-4"><a href="#cb51-4"></a>p_ott</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-53-1.png" width="960" class="r-stretch"></section>
 <section id="section-48" class="slide level2">
 <h2></h2>
-<p>podemos también personalizar esta escala:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>p5<span class="sc">+</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>hwi),<span class="at">shape=</span><span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb58-3"><a href="#cb58-3"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low=</span><span class="st">'blue'</span>, <span class="at">high=</span><span class="st">'red'</span>,<span class="at">breaks=</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">35</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-45-1.png" width="960" class="r-stretch"></section>
-<section id="section-49" class="slide level2">
-<h2></h2>
-<p>¿Y cómo se verían los datos binarios?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>p5<span class="sc">+</span></span>
-<span id="cb59-2"><a href="#cb59-2"></a>  <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>migratory),<span class="at">shape=</span><span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb59-3"><a href="#cb59-3"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>,<span class="st">"orange"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-46-1.png" width="960" class="r-stretch"></section>
-<section id="section-50" class="slide level2">
-<h2></h2>
-<p>y ¿Pueden combinarse?</p>
-<p>Esto puede hacerse con un lenguaje de <em>dplyr</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>px<span class="ot">&lt;-</span> py<span class="sc">%&lt;+%</span> migrants <span class="sc">+</span> <span class="fu">geom_tippoint</span>(<span class="fu">aes</span>(<span class="at">color=</span>migratory),<span class="at">shape=</span><span class="dv">15</span>)<span class="sc">+</span></span>
-<span id="cb60-2"><a href="#cb60-2"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#961d29"</span>,<span class="st">"#1420a3"</span>))<span class="sc">+</span></span>
-<span id="cb60-3"><a href="#cb60-3"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#961d29"</span>,<span class="st">"#1420a3"</span>))</span>
-<span id="cb60-4"><a href="#cb60-4"></a>  </span>
-<span id="cb60-5"><a href="#cb60-5"></a>  </span>
-<span id="cb60-6"><a href="#cb60-6"></a>px<span class="sc">+</span> <span class="fu">geom_facet</span>(<span class="at">panel=</span><span class="st">"HWI"</span>,<span class="at">data =</span> hwi,<span class="at">geom=</span>geom_col,<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>hwi,<span class="at">color=</span>migratory,<span class="at">fill=</span>migratory),<span class="at">orientation=</span><span class="st">'y'</span>)<span class="sc">+</span></span>
-<span id="cb60-7"><a href="#cb60-7"></a>    <span class="fu">theme_tree2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-47-1.png" width="960" class="r-stretch"></section>
-<section id="section-51" class="slide level2">
-<h2></h2>
-<p>Pero, ¿Qué pasa si no me sé la taxonomía o no tengo la filogenía del grupo que estoy estudiando?</p>
-</section>
-<section id="section-52" class="slide level2">
-<h2></h2>
-<p>¿Se acuerdan de esta filogenia?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>phylopicNK</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-49-1.png" width="960" class="r-stretch"></section>
-<section id="section-53" class="slide level2">
-<h2></h2>
-<p>Haciendo uso de recursos en línea como <em>Open tree of Life</em>(OTL), podemoos obtener una filogenia utilizando las especies que necesitemos.</p>
-</section>
-<section id="section-54" class="slide level2">
-<h2></h2>
-<p>OTL tiene un útil paquete en R (<code>rotl</code>), que usaremos para obtener la filogenia con la planta, aves y mamiferos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">library</span>(<span class="st">"rotl"</span>)</span>
-<span id="cb62-2"><a href="#cb62-2"></a>otl_tree<span class="ot">&lt;-</span>rotl<span class="sc">::</span><span class="fu">tnrs_match_names</span>(<span class="fu">c</span>(<span class="st">"Quiscalus mexicanus"</span>,<span class="st">"Canis lupus"</span>,<span class="st">"Corvus corax"</span>,<span class="st">"Canis latrans"</span>,<span class="st">"Vulpes vulpes"</span>,<span class="st">"Desmodus rotundus"</span>,<span class="st">"Sideroxylon celastrinum"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb62-3"><a href="#cb62-3"></a>  <span class="fu">pull</span>(ott_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb62-4"><a href="#cb62-4"></a>  <span class="fu">tol_induced_subtree</span>(<span class="at">label_format=</span><span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Progress [---------------------------------] 0/211 (  0%) ?s
-Progress [==============================] 211/211 (100%)  0s
-                                                            </code></pre>
-</div>
-</div>
-</section>
-<section id="section-55" class="slide level2">
-<h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>p_ott<span class="ot">&lt;-</span><span class="fu">ggtree</span>(otl_tree)<span class="sc">+</span></span>
-<span id="cb64-2"><a href="#cb64-2"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">9</span>)<span class="sc">+</span></span>
-<span id="cb64-3"><a href="#cb64-3"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"blue"</span>)</span>
-<span id="cb64-4"><a href="#cb64-4"></a>p_ott</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-51-1.png" width="960" class="r-stretch"></section>
-<section id="section-56" class="slide level2">
-<h2></h2>
-<p>Para la función de <code>rtol</code>, no es necesario introducir las especies en orden, ya que ésta recuperará la taxonomia válida y nos arrojará una filogenia podada.</p>
+<p>Para la función de <code>rtol</code>, <strong>NO</strong> es necesario introducir las especies en orden, ya que ésta recuperará la taxonomia válida y nos arrojará una filogenia podada.</p>
 <p>En este caso, OTL nos regresó exactamente la misma filogenia que creamos al principio:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>p_nk<span class="ot">&lt;-</span><span class="fu">ggtree</span>(Nktree)<span class="sc">+</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">9</span>)<span class="sc">+</span></span>
-<span id="cb65-3"><a href="#cb65-3"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"red"</span>)</span>
-<span id="cb65-4"><a href="#cb65-4"></a></span>
-<span id="cb65-5"><a href="#cb65-5"></a>p_ott<span class="sc">/</span>p_nk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>p_nk<span class="ot">&lt;-</span><span class="fu">ggtree</span>(Nktree)<span class="sc">+</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">9</span>)<span class="sc">+</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="fu">geom_tiplab</span>(<span class="at">color=</span><span class="st">"red"</span>)</span>
+<span id="cb52-4"><a href="#cb52-4"></a></span>
+<span id="cb52-5"><a href="#cb52-5"></a>p_ott<span class="sc">/</span>p_nk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-52-1.png" width="960" class="r-stretch"></section>
-<section id="section-57" class="slide level2">
+<img data-src="5.4-filogenias_files/figure-revealjs/unnamed-chunk-54-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="section-49" class="slide level2">
 <h2></h2>
 
 <div class="footer footer-default">
