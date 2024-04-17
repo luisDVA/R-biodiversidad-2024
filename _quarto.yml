@@ -27,7 +27,8 @@ website:
 
 format:
   html:
-    theme: yeti
+    theme: 
+      light: [yeti, web_styles.scss]
     toc: true
     mainfont: "Cabin"
     
